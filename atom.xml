@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>HongboSherlock&#39;blog</title>
-  
+  <icon>https://www.gravatar.com/avatar/fc33d8d0e0913284522921ee035146a1</icon>
   <subtitle>Stay Hungry, Stay Foolish.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -11,7 +11,7 @@
   
   <author>
     <name>Xu Hongbo</name>
-    
+    <email>alanturing1998@gmail.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
