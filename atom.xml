@@ -5,9 +5,9 @@
   <subtitle>Stay Hungry, Stay Foolish.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://hongbosherlock.github.io/"/>
   <updated>2018-02-03T14:09:39.651Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://hongbosherlock.github.io/</id>
   
   <author>
     <name>Xu Hongbo</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>我的第一篇博客</title>
-    <link href="http://yoursite.com/2018/02/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/2018/02/03/我的第一篇博客/</id>
+    <link href="https://hongbosherlock.github.io/2018/02/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://hongbosherlock.github.io/2018/02/03/我的第一篇博客/</id>
     <published>2018-02-03T13:48:57.000Z</published>
     <updated>2018-02-03T14:09:39.651Z</updated>
     
@@ -33,14 +33,14 @@
     </summary>
     
     
-      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://hongbosherlock.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2018/02/02/hello-world/"/>
-    <id>http://yoursite.com/2018/02/02/hello-world/</id>
+    <link href="https://hongbosherlock.github.io/2018/02/02/hello-world/"/>
+    <id>https://hongbosherlock.github.io/2018/02/02/hello-world/</id>
     <published>2018-02-02T03:03:19.152Z</published>
     <updated>2018-02-03T14:13:28.098Z</updated>
     
