@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hongbosherlock.github.io">
-  <title>Archives: 2018/4 | HongboSherlock&#39;blog</title>
+  <title>动态规划-数字三角形 | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In me the tiger sniffs the rose.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HongboSherlock&#39;blog">
-<meta property="og:url" content="https://hongbosherlock.github.io/archives/2018/04/index.html">
+  <meta name="description" content="数字三角形 例题一、数字三角形 (POJ1163) 　　　　7　　　3　 8　　　8 　1　 0　2 　7　 4 　 44 　5　 2　 6　 5在上面的数字三角形中寻找一条从顶部到底边路径，使得 路径上所经过的数字之和最大。每一步都只能往左下或右下走。只需要求出这个最大和即可，不必给具体路径。三角形的行数大于 1小于 等100 ，数字为 0 -99">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动态规划-数字三角形">
+<meta property="og:url" content="https://hongbosherlock.github.io/2018/05/08/Dg1/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
-<meta property="og:description" content="In me the tiger sniffs the rose.">
+<meta property="og:description" content="数字三角形 例题一、数字三角形 (POJ1163) 　　　　7　　　3　 8　　　8 　1　 0　2 　7　 4 　 44 　5　 2　 6　 5在上面的数字三角形中寻找一条从顶部到底边路径，使得 路径上所经过的数字之和最大。每一步都只能往左下或右下走。只需要求出这个最大和即可，不必给具体路径。三角形的行数大于 1小于 等100 ，数字为 0 -99">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-08T07:13:07.915Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HongboSherlock&#39;blog">
-<meta name="twitter:description" content="In me the tiger sniffs the rose.">
+<meta name="twitter:title" content="动态规划-数字三角形">
+<meta name="twitter:description" content="数字三角形 例题一、数字三角形 (POJ1163) 　　　　7　　　3　 8　　　8 　1　 0　2 　7　 4 　 44 　5　 2　 6　 5在上面的数字三角形中寻找一条从顶部到底边路径，使得 路径上所经过的数字之和最大。每一步都只能往左下或右下走。只需要求出这个最大和即可，不必给具体路径。三角形的行数大于 1小于 等100 ，数字为 0 -99">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -157,63 +158,226 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Dg1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      动态规划-数字三角形
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/23/ToList/" class="archive-article-date">
-  	<time datetime="2018-04-23T14:45:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-23</time>
+
+        
+        <a href="/2018/05/08/Dg1/" class="archive-article-date">
+  	<time datetime="2018-05-08T07:10:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-08</time>
   	
 </a>
 
 
-        </div>
-    	 
+        
+   
+   <div>    
+     <!-- <span id="busuanzi_container_page_pv">
+  阅读量(<span id="busuanzi_value_page_pv"></span>)
+</span> -->
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/23/ToList/">近期的ToList</a>
-    </h1>
-  
+    <span class="archive-article-date">
+     view <span id="busuanzi_value_page_pv"></span> times
+    </span> 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
+    </div>
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数字三角形"><a href="#数字三角形" class="headerlink" title="数字三角形"></a>数字三角形</h2><blockquote>
+<p>例题一、数字三角形 (POJ1163)<br> 　　　　7<br>　　　3　 8　<br>　　8 　1　 0<br>　2 　7　 4 　 4<br>4 　5　 2　 6　 5<br>在上面的数字三角形中寻找一条从顶部到底边路径，使得 路径上所经过的数字之和最大。每一步都只能往左下或右下走。只需要求出这个最大和即可，不必给具体路径。<br>三角形的行数大于 1小于 等100 ，数字为 0 -99</p>
+<a id="more"></a>
+<p>输入格式：<br>5　// 三角形行数。下面是三角形<br>7<br>3 8<br>8 1 0<br>2 7 4 ４<br>4 5 2 6 5</p>
+</blockquote>
+<p>####1. 递归<br>直接使用递归的话，因为重复计算，时间效率很低</p>
+<p>####2. 递推计算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int i,j;</span><br><span class="line">for(j=1;j&lt;=n;j++)</span><br><span class="line">   maxsum[n][j]=D[i][j]; /*从最底层的点出发的最大值，就是本身*/</span><br><span class="line">for(i=n-1;i&gt;=1;--i)   /*从第n-1层倒推*/</span><br><span class="line"> for(j=1;j&lt;=i;j++)</span><br><span class="line">   maxsum[i][j]=D[i][j]+max(maxsum[i][j],maxsum[i][j+1]);</span><br></pre></td></tr></table></figure>
+<p>####3. 记忆化搜索</p>
+<blockquote>
+<p>D[i][j]的初始值设为-1，memset(D,-1,sizeof(D));<br>递归函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int MaxSum(int i,int j)&#123;</span><br><span class="line">   if(maxsum[i][j]!=-1)</span><br><span class="line">	   return maxsum[i][j];</span><br><span class="line">	if(i==n)</span><br><span class="line">		return maxsum[i][j] = D[i][j]; /*赋值语句本身有返回值*/</span><br><span class="line">	return maxsum[i][j]=D[i][j]+max(maxsum[i][j],maxsum[i][j+1]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>####4.  空间优化</p>
+<p>#####（1）方法一<br>没必要用二维maxsum数组储存每一个MaxSum(i,j),只要从底层一行行向上递推，那么只要一维数组maxsum[100]即可，只要储存一行的MaxSum值就可以。<br>即计算第i行的MaxSum（i.j）时，在不影响计算的情况下，覆盖第i+1行的MaxSum(i,j)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(int i=1;i&lt;=n;i++)</span><br><span class="line">         maxsum[i]=D[n][i]; </span><br><span class="line"> for(int i=n-1;i&gt;=1;--i)  </span><br><span class="line">     for(int j=1;j&lt;=i;j++)</span><br><span class="line">       maxsum[j]=D[i][j]+max(maxsum[j],maxsum[j+1]);</span><br></pre></td></tr></table></figure></p>
+<p>#####(2)方法二<br>不使用maxsum数组，直接用D[n]代替。<br><strong>完整代码</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define MAX 101</span><br><span class="line">int D[MAX][MAX];</span><br><span class="line">int n;</span><br><span class="line">int* maxsum;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    for(i=1;i&lt;=n;i++)</span><br><span class="line">      for(j=1;j&lt;=i;j++)</span><br><span class="line">         cin&gt;&gt;D[i][j];</span><br><span class="line">    maxsum = D[n]; //maxsum指向第n行   </span><br><span class="line">	 </span><br><span class="line">    for(int i=n-1;i&gt;=1;--i)  //从倒数第2行开始递推 </span><br><span class="line">      for(int j=1;j&lt;=i;j++)</span><br><span class="line">        maxsum[j]=D[i][j]+max(maxsum[j],maxsum[j+1]);</span><br><span class="line">    </span><br><span class="line">    cout&lt;&lt;maxsum[1];</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
+        			<a href="/categories/动态规划//" class="article-tag-list-link color5">动态规划</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://hongbosherlock.github.io/2018/05/08/Dg1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/04/23/ToList/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">近期的ToList</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数字三角形"><span class="toc-number">1.</span> <span class="toc-text">数字三角形</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+ 
+
+
+  
+  
   
 
-    
+  
+
+  
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'true'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  
+
+  
+
 
 
           </div>
@@ -271,8 +435,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
