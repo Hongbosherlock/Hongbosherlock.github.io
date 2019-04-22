@@ -19,7 +19,8 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006w4HKkgy1g260sx6ajpj32220opkch.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006w4HKkly1g25z8qrt14j30is05c0te.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006w4HKkly1g25z9q03ruj30gu0593yr.jpg">
-<meta property="og:updated_time" content="2019-04-17T14:54:58.584Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006w4HKkly1g2bn7p1j6uj30up0dsmyt.jpg">
+<meta property="og:updated_time" content="2019-04-22T11:47:16.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SCUNET使用IPv6的方法">
 <meta name="twitter:description" content="引言之前我一直是在 vps 上自搭梯子来科学上网（Do+ssr），虽说网速挺快，也能触达大部分网站。但还有一类网站无法访问，那就是 IPv6 网站。我曾经在 Ubuntu 下折腾了很久，都没有成功用上我的 ssr。最后看网上的教程，接入 IPv6 网络（开启 Teredo 隧道）">
@@ -231,7 +232,7 @@
 <p>Win+X 打开 CMD 或 Windows PowerShell（管理员）, 在命令行下操作。</p>
 <p>若系统自动启用了其他隧道会影响正常访问，可选择禁用其他IPv6隧道：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netsh interface teredo set state disable    （禁用 teredo 隧道）</span><br><span class="line">netsh interface 6to4 set state disable      （禁用 6to4 隧道）</span><br></pre></td></tr></table></figure></p>
 <p>设定 ISATAP 路由器和启用 ISATAP 隧道：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netsh interface isatap set state default</span><br><span class="line">netsh int ipv6 isatap set router 202.115.39.98</span><br><span class="line">netsh int ipv6 isatap set state enabled</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netsh interface isatap set state default</span><br><span class="line">netsh int ipv6 isatap set router 202.115.39.98  //&lt;ISATAP隧道服务器地址&gt;</span><br><span class="line">netsh int ipv6 isatap set state enabled</span><br></pre></td></tr></table></figure>
 <p><strong>测试 IPv6 连接</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping -6 ipv6.test-ipv6.com</span><br><span class="line">ping -6 [2001:470:1:18::125]</span><br></pre></td></tr></table></figure></p>
 <p>连接成功：</p>
 <p><img src="http://ww1.sinaimg.cn/large/006w4HKkly1g25z8qrt14j30is05c0te.jpg" alt=""></p>
@@ -275,7 +276,8 @@
 <p><a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Win10" target="_blank" rel="noopener">IPv6 Win10</a></p>
 <p><a href="http://imc.scu.edu.cn/info/1012/1089.htm" target="_blank" rel="noopener">CNGI驻地网开通及IPv6使用指南</a></p>
 <p><a href="https://www.cnblogs.com/xuanmanstein/p/7675406.html" target="_blank" rel="noopener">ping找不到主机问题</a></p>
-
+<p><br></p>
+<div style="text-align: center"><br><img src="http://ww1.sinaimg.cn/large/006w4HKkly1g2bn7p1j6uj30up0dsmyt.jpg" width="50%" height="50%" align="center"><br></div>
       
 
       
@@ -605,15 +607,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Love</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,6 +620,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Love</a>
               </li>
              
               <li class="article-tag-list-item">
