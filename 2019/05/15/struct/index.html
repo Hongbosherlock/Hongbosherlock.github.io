@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hongbosherlock.github.io">
-  <title>struct | HongboSherlock&#39;blog</title>
+  <title>结构体 | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="结构体基本概念 声明结构的形式：12345678910111213141516171819202122(1)struct point&amp;#123;    int x;    int y;&amp;#125;;struct point p1,p2;       // p1,p2 都是 point，里面有 x,y 的值。（2）struct point&amp;#123;    int x;    int y;&amp;#125">
+  <meta name="description" content="基本概念 声明结构的形式：12345678910111213141516171819202122(1)struct point&amp;#123;    int x;    int y;&amp;#125;;struct point p1,p2;       // p1,p2 都是 point，里面有 x,y 的值。（2）struct point&amp;#123;    int x;    int y;&amp;#125;p1">
 <meta name="keywords" content="结构体">
 <meta property="og:type" content="article">
-<meta property="og:title" content="struct">
+<meta property="og:title" content="结构体">
 <meta property="og:url" content="https://hongbosherlock.github.io/2019/05/15/struct/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
-<meta property="og:description" content="结构体基本概念 声明结构的形式：12345678910111213141516171819202122(1)struct point&amp;#123;    int x;    int y;&amp;#125;;struct point p1,p2;       // p1,p2 都是 point，里面有 x,y 的值。（2）struct point&amp;#123;    int x;    int y;&amp;#125">
+<meta property="og:description" content="基本概念 声明结构的形式：12345678910111213141516171819202122(1)struct point&amp;#123;    int x;    int y;&amp;#125;;struct point p1,p2;       // p1,p2 都是 point，里面有 x,y 的值。（2）struct point&amp;#123;    int x;    int y;&amp;#125;p1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-18T15:26:14.908Z">
+<meta property="og:updated_time" content="2019-05-18T15:31:26.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="struct">
-<meta name="twitter:description" content="结构体基本概念 声明结构的形式：12345678910111213141516171819202122(1)struct point&amp;#123;    int x;    int y;&amp;#125;;struct point p1,p2;       // p1,p2 都是 point，里面有 x,y 的值。（2）struct point&amp;#123;    int x;    int y;&amp;#125">
+<meta name="twitter:title" content="结构体">
+<meta name="twitter:description" content="基本概念 声明结构的形式：12345678910111213141516171819202122(1)struct point&amp;#123;    int x;    int y;&amp;#125;;struct point p1,p2;       // p1,p2 都是 point，里面有 x,y 的值。（2）struct point&amp;#123;    int x;    int y;&amp;#125;p1">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -170,7 +170,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      struct
+      结构体
     </h1>
   
 
@@ -198,7 +198,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
 <li>声明结构的形式：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">p1</span>,<span class="title">p2</span>;</span>       <span class="comment">// p1,p2 都是 point，里面有 x,y 的值。</span></span><br><span class="line"></span><br><span class="line">（<span class="number">2</span>）</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">&#125;p1,p2;                   <span class="comment">// p1,p2 都是 point，里面有 x,y 的值。</span></span><br><span class="line"></span><br><span class="line">(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">&#125;p1,p2;                  <span class="comment">//p1 和 p2都是一种⽆无名结构，⾥里⾯面有x和y</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -379,7 +379,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#结构体"><span class="toc-number">1.</span> <span class="toc-text">结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构与函数"><span class="toc-number">1.2.</span> <span class="toc-text">结构与函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构体数组"><span class="toc-number">1.3.</span> <span class="toc-text">结构体数组</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构与函数"><span class="toc-number">2.</span> <span class="toc-text">结构与函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构体数组"><span class="toc-number">3.</span> <span class="toc-text">结构体数组</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -565,7 +565,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,7 +573,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,19 +581,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">基本输入输出</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指针</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+                <a href="javascript:void(0)" class="js-tag color2">基本输入输出</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">科技</a>
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -602,6 +598,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">结构体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">科技</a>
               </li>
             
             <div class="clearfix"></div>
