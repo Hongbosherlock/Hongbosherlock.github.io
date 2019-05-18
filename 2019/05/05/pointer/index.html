@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hongbosherlock.github.io">
-  <title>Archives: 2018/9 | HongboSherlock&#39;blog</title>
+  <title>指针 | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In me the tiger sniffs the rose.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HongboSherlock&#39;blog">
-<meta property="og:url" content="https://hongbosherlock.github.io/archives/2018/09/index.html">
+  <meta name="description" content="基本概念1、 &amp;amp; 不能对没有地址的东西取址。 2、指针是能够保存地址的变量。123456int i;int* p = &amp;amp;i;int* p,q;    // p 是 int* 类型的指针，大小为8；q 是 int 整数，大小为4。int *p,q;    // p 是 int* 类型的指针，q 是 int 整数。       int *p,*q;   // p 和 q 都是 int*">
+<meta name="keywords" content="指针">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指针">
+<meta property="og:url" content="https://hongbosherlock.github.io/2019/05/05/pointer/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
-<meta property="og:description" content="In me the tiger sniffs the rose.">
+<meta property="og:description" content="基本概念1、 &amp;amp; 不能对没有地址的东西取址。 2、指针是能够保存地址的变量。123456int i;int* p = &amp;amp;i;int* p,q;    // p 是 int* 类型的指针，大小为8；q 是 int 整数，大小为4。int *p,q;    // p 是 int* 类型的指针，q 是 int 整数。       int *p,*q;   // p 和 q 都是 int*">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006w4HKkly1g2pjx2gpzcj30px070jrq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/006w4HKkly1g2x6lgm2isj30wc0jognz.jpg">
+<meta property="og:updated_time" content="2019-05-18T15:26:10.790Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HongboSherlock&#39;blog">
-<meta name="twitter:description" content="In me the tiger sniffs the rose.">
+<meta name="twitter:title" content="指针">
+<meta name="twitter:description" content="基本概念1、 &amp;amp; 不能对没有地址的东西取址。 2、指针是能够保存地址的变量。123456int i;int* p = &amp;amp;i;int* p,q;    // p 是 int* 类型的指针，大小为8；q 是 int 整数，大小为4。int *p,q;    // p 是 int* 类型的指针，q 是 int 整数。       int *p,*q;   // p 和 q 都是 int*">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006w4HKkly1g2pjx2gpzcj30px070jrq.jpg">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -161,63 +166,310 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-pointer" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      指针
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/19/gift/" class="archive-article-date">
-  	<time datetime="2018-09-19T15:05:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
+
+        
+        <a href="/2019/05/05/pointer/" class="archive-article-date">
+  	<time datetime="2019-05-05T04:27:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
   	
 </a>
 
 
-        </div>
-    	 
+        
+   
+   <div>    
+     <!-- <span id="busuanzi_container_page_pv">
+  阅读量(<span id="busuanzi_value_page_pv"></span>)
+</span> -->
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/19/gift/">仙女的馅饼</a>
-    </h1>
-  
+    <span class="archive-article-date">
+     view <span id="busuanzi_value_page_pv"></span> times
+    </span> 
 
-        <div class="article-info info-on-right">
-          
+    </div>
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>1、 &amp; 不能对没有地址的东西取址。</p>
+<p>2、指针是能够保存地址的变量。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">int</span>* p = &amp;i;</span><br><span class="line"><span class="keyword">int</span>* p,q;    <span class="comment">// p 是 int* 类型的指针，大小为8；q 是 int 整数，大小为4。</span></span><br><span class="line"><span class="keyword">int</span> *p,q;    <span class="comment">// p 是 int* 类型的指针，q 是 int 整数。       </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> *p,*q;   <span class="comment">// p 和 q 都是 int* 类型的指针。</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>这说明指针也有内存地址，而且指针变量的值就是其他变量的内存地址。</p>
+<p>3、* 是一个单目运算符, 用来访问指针的值所表示的地址上的变量。</p>
+<ul>
+<li><p>可以做右值也可以做左值</p>
+<p> • int k = *p;</p>
+<p> • *p = k+1;</p>
+</li>
+</ul>
+<p>互相反作⽤：</p>
+<ul>
+<li><em>&amp;yptr -&gt; </em> (&amp;yptr) -&gt; * (yptr的地址)-&gt; 得到那个地址上的变量 -&gt; yptr</li>
+<li>&amp;<em>yptr -&gt; &amp;(</em>yptr) -&gt; &amp;(y) -&gt; 得到y的地址，也就是yptr -&gt; yptr</li>
+</ul>
+<p>4、<strong>应用场景一：</strong><br>交换两个变量的值：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *pa, <span class="keyword">int</span> *pb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = *pa;</span><br><span class="line">    *pa = *pb;</span><br><span class="line">    *pb = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用指针之前要初始化。</p>
+<p>5、 以下四种函数原型是等价的：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">• <span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> *ar, <span class="keyword">int</span> n)</span></span>;</span><br><span class="line">• <span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> *, <span class="keyword">int</span>)</span></span>;</span><br><span class="line">• <span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> ar[], <span class="keyword">int</span> n)</span></span>;</span><br><span class="line">• <span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> [], <span class="keyword">int</span>)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>6、指针与const<br><img src="http://ww1.sinaimg.cn/large/006w4HKkly1g2pjx2gpzcj30px070jrq.jpg" alt=""></p>
+<p>（1）指针是const：<br> 一旦得到某个变量的地址，不能再指向其他变量。</p>
+<p>（2）所指内容是const<br> 表⽰示不能通过这个指针去修改那个变量（并不能使得那个变量成为const）</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* p1 = &amp;i;    <span class="comment">//p1所指是const</span></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span>* p2 = &amp;i;    <span class="comment">//p2所指是const， const在 * 的前面</span></span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> p3 = &amp;i;    <span class="comment">//指针 p3 是const， const 在 * 的后面</span></span><br></pre></td></tr></table></figure>
+<p>7、 const数组</p>
+<ul>
+<li>const int a[] = {1,2,3,4,5,6,};</li>
+<li>数组变量已经是const的指针了，这⾥里的 const 表明数组的每个单元都是 const int</li>
+<li>所以必须通过初始化进⾏行赋值</li>
+</ul>
+<p>8、保护数组</p>
+<ul>
+<li>把数组传⼊入函数时传递的是地址，则那个函数内部可以修改数组的值</li>
+<li>为了保护数组不被函数破坏，可以设置参数为const</li>
+<li>int sum(const int a[], int length);</li>
+</ul>
+<p>9、指针运算<br>(1) *p++</p>
+<ul>
+<li>取出p所指的那个数据来，完事之后顺便把 p 移到下⼀一个位置去</li>
+<li>*的优先级虽然⾼高，但是没有 ++ ⾼高</li>
+</ul>
+<p>(2) 两个同类型的指针变量可以相加减:</p>
+<ul>
+<li>两个 T* 类型的指针 p1,p2 </li>
+<li>p1 - p2 = (地址 p1 - 地址 p2)/sizeof(T)</li>
+</ul>
+<p>(3) 指针变量加减一个整数的结果是指针:<br> p : T* 类型的指针<br> n ：整数<br> p + n : 指向地址 ：地址 p + sizeof(T)</p>
+<p>(4)可以用“ NULL”关键字对任何类型的指针进行赋值。NULL实际上就是整数 0, 值为 NULL的指针 就是空指针。</p>
+<p>(5) 指针的用处</p>
+<ul>
+<li>需要传⼊入较⼤大的数据时⽤用作参数</li>
+<li>传⼊入数组后对数组做操作</li>
+<li><p>函数返回不⽌止⼀一个结果</p>
+<p>• 需要⽤用函数来修改不⽌止⼀一个变量</p>
+</li>
+</ul>
+<p>10、指针与数组<br>数组的名字是一个指针常量，指向数字的起始地址。</p>
+<h3 id="指针和二维数组"><a href="#指针和二维数组" class="headerlink" title="指针和二维数组"></a>指针和二维数组</h3><p>1、二维数组</p>
+<p> T a[M][N];</p>
+<ul>
+<li>a[i] 是一个一维数组。</li>
+<li>列数 N必须给出，行数 M可以不给，由编译器给出。</li>
+<li><strong>a[i] 的类型是 T*</strong></li>
+<li>a[i] 指向的地址：数组 a 的起始地址 + i × N × sizeof(T)</li>
+</ul>
+<p>2、指向指针的指针</p>
+<ul>
+<li>T <em>*p;<br>p是指向指针的指针， p指向的地方应该存放着一个类型为 T </em> 的指针。<br><em>p 的类型是 T </em><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> **pp;</span><br><span class="line"><span class="keyword">int</span> *p;</span><br><span class="line"><span class="keyword">int</span> n=<span class="number">1234</span>;</span><br><span class="line">p=&amp;n;</span><br><span class="line">pp=&amp;p;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,*(*pp));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>3、指针和字符串<br>字符串常量的类型就是 char <em><br>字符数组名的类型也是 char </em> </p>
+<h3 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h3><p>将函数的入口地址赋给一个指针变量，使该指针变量向函数。然后通过变量就可以调用这个函数。种指向的指针变量称为“ 函数指针 ”。<br>类型名 (* 指针变量名 )( 参数类型 1, 参数类型 2,…);<br>例如：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>  (* pf )(<span class="keyword">int</span> ,<span class="keyword">char</span>);</span><br></pre></td></tr></table></figure></p>
+<p>表示 pf 是一个函数指针，它所向的返回值类型应是int，该函数应有两个参数，第一是 int  类型，第二个是 char 类型。</p>
+<h5 id="函数指针和-qsort-函数"><a href="#函数指针和-qsort-函数" class="headerlink" title="函数指针和 qsort 函数"></a>函数指针和 qsort 函数</h5><p>c 语言快速排序库函数：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qsort</span> <span class="params">( <span class="keyword">void</span> *base, <span class="keyword">int</span> nelem, <span class="keyword">unsigned</span> <span class="keyword">int</span> width,</span></span></span><br><span class="line">int (*pfCompare)(const void *, const void *));</span><br></pre></td></tr></table></figure></p>
+<p>可以对任意类型的数组进行排序。</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/006w4HKkly1g2x6lgm2isj30wc0jognz.jpg" alt=""></p>
+<p>pfCompare: 函数指针，它指向一个“比较函数”。该比较函数应为以下形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int 函数名 (const void *elem1, const void *elem2);</span><br></pre></td></tr></table></figure></p>
+<p>比较函数是由我们自定义的。</p>
+<p>比较函数编写规则：<br>1) 如果 <em> elem1 应该排在 </em> elem2  <strong>前面</strong> ，则函数返回值是<strong>负整数</strong>。<br>2) 如果 <em> elem1和</em> elem2 哪个排在前面都行，那么函数返回0<br>3) 如果 <em> elem1 应该排在 </em> elem2 <strong>后面</strong> ，则函数返回值是<strong>正整数</strong>。</p>
+<p>下面的程序，功能是调用 qsort qsortqsort库函数，将一个 库函数，将一个 unsigned int unsigned int unsigned int 数组按 照个位数从小到大进行排序。比如 8，23 ，15 三个数，按位从小到 三个数，按位从小到 大排序，就应该是 23 ，15 ，8<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> num 5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">myCompare</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span>* elem1, <span class="keyword">const</span> <span class="keyword">void</span>* elem2)</span></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> *p1,*p2;</span><br><span class="line">	p1 = (<span class="keyword">unsigned</span> <span class="keyword">int</span>*) elem1;</span><br><span class="line">	p2 = (<span class="keyword">unsigned</span> <span class="keyword">int</span>*) elem2;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> (*p1%<span class="number">10</span>)-(*p2%<span class="number">10</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> a[num]=&#123;<span class="number">8</span>,<span class="number">123</span>,<span class="number">11</span>,<span class="number">10</span>,<span class="number">4</span>&#125;;</span><br><span class="line">	qsort(a,num,<span class="keyword">sizeof</span>(<span class="keyword">unsigned</span> <span class="keyword">int</span>),myCompare);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num;i++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Love</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">指针</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习//" class="article-tag-list-link color3">学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://hongbosherlock.github.io/2019/05/05/pointer/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/05/10/string/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          string
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/04/17/ipv6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SCUNET使用IPv6的方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指针和二维数组"><span class="toc-number">2.</span> <span class="toc-text">指针和二维数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数指针"><span class="toc-number">3.</span> <span class="toc-text">函数指针</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#函数指针和-qsort-函数"><span class="toc-number">3.0.1.</span> <span class="toc-text">函数指针和 qsort 函数</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+ 
+
+
+  
+  
   
 
-    
+  
+
+  
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'true'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  
+
+  
+
 
 
           </div>
@@ -276,8 +528,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -375,11 +627,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color2">基本输入输出</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">指针</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -391,7 +647,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">基本输入输出</a>
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
              
               <li class="article-tag-list-item">

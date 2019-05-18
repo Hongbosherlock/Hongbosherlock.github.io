@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hongbosherlock.github.io">
-  <title>Tag: 排序 | HongboSherlock&#39;blog</title>
+  <title>struct | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In me the tiger sniffs the rose.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HongboSherlock&#39;blog">
-<meta property="og:url" content="https://hongbosherlock.github.io/tags/排序/index.html">
+  <meta name="description" content="结构体基本概念 声明结构的形式：12345678910111213141516171819202122(1)struct point&amp;#123;    int x;    int y;&amp;#125;;struct point p1,p2;       // p1,p2 都是 point，里面有 x,y 的值。（2）struct point&amp;#123;    int x;    int y;&amp;#125">
+<meta name="keywords" content="结构体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="struct">
+<meta property="og:url" content="https://hongbosherlock.github.io/2019/05/15/struct/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
-<meta property="og:description" content="In me the tiger sniffs the rose.">
+<meta property="og:description" content="结构体基本概念 声明结构的形式：12345678910111213141516171819202122(1)struct point&amp;#123;    int x;    int y;&amp;#125;;struct point p1,p2;       // p1,p2 都是 point，里面有 x,y 的值。（2）struct point&amp;#123;    int x;    int y;&amp;#125">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-18T15:26:14.908Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HongboSherlock&#39;blog">
-<meta name="twitter:description" content="In me the tiger sniffs the rose.">
+<meta name="twitter:title" content="struct">
+<meta name="twitter:description" content="结构体基本概念 声明结构的形式：12345678910111213141516171819202122(1)struct point&amp;#123;    int x;    int y;&amp;#125;;struct point p1,p2;       // p1,p2 都是 point，里面有 x,y 的值。（2）struct point&amp;#123;    int x;    int y;&amp;#125">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -161,126 +163,259 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-struct" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      struct
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/23/sort1/" class="archive-article-date">
-  	<time datetime="2019-01-23T03:24:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-23</time>
+
+        
+        <a href="/2019/05/15/struct/" class="archive-article-date">
+  	<time datetime="2019-05-15T13:28:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
   	
 </a>
 
 
-        </div>
-    	 
+        
+   
+   <div>    
+     <!-- <span id="busuanzi_container_page_pv">
+  阅读量(<span id="busuanzi_value_page_pv"></span>)
+</span> -->
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/23/sort1/">成绩排序（选择排序，结构体数组）</a>
-    </h1>
-  
+    <span class="archive-article-date">
+     view <span id="busuanzi_value_page_pv"></span> times
+    </span> 
 
-        <div class="article-info info-on-right">
-          
+    </div>
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li>声明结构的形式：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">p1</span>,<span class="title">p2</span>;</span>       <span class="comment">// p1,p2 都是 point，里面有 x,y 的值。</span></span><br><span class="line"></span><br><span class="line">（<span class="number">2</span>）</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">&#125;p1,p2;                   <span class="comment">// p1,p2 都是 point，里面有 x,y 的值。</span></span><br><span class="line"></span><br><span class="line">(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">&#125;p1,p2;                  <span class="comment">//p1 和 p2都是一种⽆无名结构，⾥里⾯面有x和y</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<p>对于第⼀和第二种形式，都声明了结构point。但是第三种形式没有声明point，只是定义了两个变量。</p>
+<p>一般来说，一个结构变量所占的内存空间的大小就是结构中所有成员变量大小之和。结构变量中的各个成员变量在内存中一般是连续存放的。</p>
+<ul>
+<li><p>访问变量：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p1.x</span><br><span class="line">p1.y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于整个结构，可以做赋值、取地址，也可以传递给函数参数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">• p1 = (struct point)&#123;<span class="number">5</span>, <span class="number">10</span>&#125;;</span><br><span class="line"><span class="comment">// 相当于p1.x = 5;p1.y = 10;</span></span><br><span class="line">• p1 = p2;</span><br><span class="line"><span class="comment">// 相当于p1.x = p2.x; p1.y = p2.y;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结构体指针</p>
+</li>
+</ul>
+<p>和数组不同，结构变量的名字并不是结构变量的地址，必须使⽤用&amp;运算符。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> *<span class="title">p</span> = &amp;<span class="title">p1</span>;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="结构与函数"><a href="#结构与函数" class="headerlink" title="结构与函数"></a>结构与函数</h3><p>（1）结构体作为参数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">function</span><span class="params">(struct point p)</span></span></span><br></pre></td></tr></table></figure>
+<p>• 整个结构可以作为参数的值传⼊入函数</p>
+<p>• 这时候是在函数内新建⼀一个结构变量，并复制调⽤用者的结构的值</p>
+<p>• 也可以返回⼀一个结构</p>
+<p><strong>注意</strong>：传⼊入结构和传⼊数组是不同的：</p>
+<ul>
+<li>函数参数传入的是数组的引用。</li>
+<li>传入结构时，传入的是结构体的拷贝。</li>
+</ul>
+<p>（2）结构指针作为参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">struct point *p = &amp;p1;</span><br><span class="line">(*p).x = 2;</span><br><span class="line">p-&gt;x = 2;</span><br></pre></td></tr></table></figure></p>
+<p>⽤用<strong>-&gt;</strong>表⽰示指针所指的结构变量中的成员</p>
+<p><strong>示例</strong>：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="keyword">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">struct point* <span class="title">inputPoint</span><span class="params">(struct point* p)</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;(p-&gt;x),&amp;(p-&gt;y));        </span><br><span class="line">	<span class="comment">// 	同 (*p).x 和 (*p).y</span></span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(struct point p)</span></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d %d"</span>,p.x,p.y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">y</span>=&#123;</span><span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">	inputPoint(&amp;y);</span><br><span class="line">	output(y);	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>• 好处是传⼊传出只是一个指针的大小。</p>
+<p>• 如果需要保护传入的结构不被函数修改。</p>
+<ul>
+<li>const struct point *p</li>
+</ul>
+<p>• 返回传⼊的指针是一种套路。</p>
+<h3 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">p</span>[100];</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">p</span>[]=&#123;</span>&#123;<span class="number">1</span>,<span class="number">1</span>&#125;,&#123;<span class="number">2</span>,<span class="number">2</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">结构体</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        			<a href="/categories/学习//" class="article-tag-list-link color3">学习</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://hongbosherlock.github.io/2019/05/15/struct/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/21/sort/" class="archive-article-date">
-  	<time datetime="2019-01-21T06:09:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-21</time>
-  	
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/10/string/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">string</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/21/sort/">简单排序算法-以“谁考了第K名”为例</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#结构体"><span class="toc-number">1.</span> <span class="toc-text">结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构与函数"><span class="toc-number">1.2.</span> <span class="toc-text">结构与函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构体数组"><span class="toc-number">1.3.</span> <span class="toc-text">结构体数组</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+ 
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'true'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  
+
+  
+
 
 
           </div>
@@ -339,9 +474,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
