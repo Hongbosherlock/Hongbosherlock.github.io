@@ -4,17 +4,57 @@
 
     
   <url>
-    <loc>https://hongbosherlock.github.io/2019/05/26/stl/</loc>
-    <lastmod>2019-05-26T11:47:28.607Z</lastmod>
+    <loc>https://hongbosherlock.github.io/2019/06/08/malloc/</loc>
+    <lastmod>2019-06-08T13:04:23.555Z</lastmod>
     <data>
         <display>
-        <title>stl</title>
+        <title>malloc 和 memset 总结</title>
+        <pubTime>2019-06-08T12:57:28.000Z</pubTime>
+        
+        <tag>malloc memeset</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习" url="https://hongbosherlock.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hongbosherlock.github.io/2019/05/26/stl/</loc>
+    <lastmod>2019-06-08T12:56:54.744Z</lastmod>
+    <data>
+        <display>
+        <title>STL 简介</title>
         <pubTime>2019-05-26T11:40:15.000Z</pubTime>
         
         <tag>STL</tag>
          
          
            
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hongbosherlock.github.io/2019/05/05/pointer/</loc>
+    <lastmod>2019-06-08T12:31:19.323Z</lastmod>
+    <data>
+        <display>
+        <title>指针</title>
+        <pubTime>2019-05-05T04:27:07.000Z</pubTime>
+        
+        <tag>指针</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习" url="https://hongbosherlock.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+          
         </display>
     </data>
     </url>
@@ -49,26 +89,6 @@
         <pubTime>2019-05-10T10:28:32.000Z</pubTime>
         
         <tag>字符串</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习" url="https://hongbosherlock.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hongbosherlock.github.io/2019/05/05/pointer/</loc>
-    <lastmod>2019-05-18T15:26:10.790Z</lastmod>
-    <data>
-        <display>
-        <title>指针</title>
-        <pubTime>2019-05-05T04:27:07.000Z</pubTime>
-        
-        <tag>指针</tag>
          
          
            

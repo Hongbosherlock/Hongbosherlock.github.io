@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hongbosherlock.github.io/2019/06/08/malloc/</loc>
+    
+    <lastmod>2019-06-08T13:04:23.555Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hongbosherlock.github.io/2019/05/26/stl/</loc>
     
-    <lastmod>2019-05-26T11:47:28.607Z</lastmod>
+    <lastmod>2019-06-08T12:56:54.744Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hongbosherlock.github.io/2019/05/05/pointer/</loc>
+    
+    <lastmod>2019-06-08T12:31:19.323Z</lastmod>
     
   </url>
   
@@ -19,13 +33,6 @@
     <loc>https://hongbosherlock.github.io/2019/05/10/string/</loc>
     
     <lastmod>2019-05-18T15:29:02.242Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hongbosherlock.github.io/2019/05/05/pointer/</loc>
-    
-    <lastmod>2019-05-18T15:26:10.790Z</lastmod>
     
   </url>
   

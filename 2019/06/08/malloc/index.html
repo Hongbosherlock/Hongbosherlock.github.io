@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hongbosherlock.github.io">
-  <title>Google Year In Search 2018 | HongboSherlock&#39;blog</title>
+  <title>malloc 和 memset 总结 | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="“今天下午手机里场库推送了一条消息：“Google感人年度回顾【Year In Search 2018】”">
-<meta name="keywords" content="生活">
+  <meta name="description" content="malloc()函数1、函数原型及说明：头文件：#include  malloc() 函数用来动态地分配内存空间其原型为：1void* malloc (size_t size);">
+<meta name="keywords" content="malloc memeset">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Google Year In Search 2018">
-<meta property="og:url" content="https://hongbosherlock.github.io/2018/12/12/google2018/index.html">
+<meta property="og:title" content="malloc 和 memset 总结">
+<meta property="og:url" content="https://hongbosherlock.github.io/2019/06/08/malloc/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
-<meta property="og:description" content="“今天下午手机里场库推送了一条消息：“Google感人年度回顾【Year In Search 2018】”">
+<meta property="og:description" content="malloc()函数1、函数原型及说明：头文件：#include  malloc() 函数用来动态地分配内存空间其原型为：1void* malloc (size_t size);">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-12T11:53:58.143Z">
+<meta property="og:updated_time" content="2019-06-08T13:04:23.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Google Year In Search 2018">
-<meta name="twitter:description" content="“今天下午手机里场库推送了一条消息：“Google感人年度回顾【Year In Search 2018】”">
+<meta name="twitter:title" content="malloc 和 memset 总结">
+<meta name="twitter:description" content="malloc()函数1、函数原型及说明：头文件：#include  malloc() 函数用来动态地分配内存空间其原型为：1void* malloc (size_t size);">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -163,20 +163,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-google2018" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-malloc" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Google Year In Search 2018
+      malloc 和 memset 总结
     </h1>
   
 
         
-        <a href="/2018/12/12/google2018/" class="archive-article-date">
-  	<time datetime="2018-12-12T11:36:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-12</time>
+        <a href="/2019/06/08/malloc/" class="archive-article-date">
+  	<time datetime="2019-06-08T12:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-08</time>
   	
 </a>
 
@@ -198,14 +198,61 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><strong><font size="7" face="黑体" weight="">            “</font></strong>今天下午手机里场库推送了一条消息：“Google感人年度回顾【Year In Search 2018】”<a id="more"></a>， 我一边想着Google怎么这么快就退出年度总结了（我记得去年是二十几号啊），一边意识到今年真的快要结束了……</p>
-</blockquote>
-<p><br></p>
-<h3 id="美好的事物，值得我们不断搜索"><a href="#美好的事物，值得我们不断搜索" class="headerlink" title="美好的事物，值得我们不断搜索"></a>美好的事物，值得我们不断搜索</h3><p><iframe height="480" width="854" src="http://player.youku.com/embed/XMzk2MTEwODg4NA==" frameborder="0" 'allowfullscreen'=""></iframe><br>In a year of ups and downs, the world searched for “good” more than ever before — according to Google Trends. From the epic headlines to the everyday moments, here’s to all the good that people discovered in 2018. Explore more trends from the year at <a href="https://google.com/2018" target="_blank" rel="noopener">https://google.com/2018</a> </p>
-<blockquote>
-<p><strong> <em> Hope is a good thing, maybe the best of things.</em> </strong><br> 在这个寒冷的冬日，Google的视频给我们带来了些许的温暖与感动。</p>
-</blockquote>
+        <h3 id="malloc-函数"><a href="#malloc-函数" class="headerlink" title="malloc()函数"></a>malloc()函数</h3><h4 id="1、函数原型及说明："><a href="#1、函数原型及说明：" class="headerlink" title="1、函数原型及说明："></a>1、函数原型及说明：</h4><p>头文件：#include <stdlib.h></stdlib.h></p>
+<p>malloc() 函数用来动态地分配内存空间其原型为：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span>* <span class="title">malloc</span> <span class="params">(<span class="keyword">size_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><strong>参数说明:</strong></p>
+<ul>
+<li>size 为需要分配的内存空间的大小，以字节（Byte）计。</li>
+<li>size -t 是无符号整数类型。</li>
+</ul>
+<p><strong>函数说明:</strong><br>malloc() 在堆区分配一块指定大小的内存空间，用来存放数据。<br>这块内存空间在函数执行完成后不会被初始化，它们的值是不确定的。<br>如果希望在分配内存的同时进行初始化，请使用 calloc() 函数。</p>
+<p><strong>返回值:</strong><br>分配成功返回指向该内存的地址，失败则返回NULL。<br>关于分配失败的原因，应该有多种，比如说空间不足就是一种。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void free(void *FirstByte)：</span><br></pre></td></tr></table></figure></p>
+<p>该函数是将之前用malloc分配的空间还给程序或者是操作系统，也就是释放了这块内存，让它重新得到自由。</p>
+<h4 id="2、函数的用法："><a href="#2、函数的用法：" class="headerlink" title="2、函数的用法："></a>2、函数的用法：</h4><p>向malloc申请的空间的⼤大⼩小是以字节为单位的。</p>
+<ul>
+<li>返回的结果是void*，需要类型转换为自己需要的类型 。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* num;</span><br><span class="line">num = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(n*<span class="keyword">sizeof</span>(<span class="keyword">int</span>))</span><br></pre></td></tr></table></figure>
+<p>程序示例：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* malloc example: random string generator*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;      /* printf, scanf, NULL */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;     /* malloc, free, rand */</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i,n;</span><br><span class="line">  <span class="keyword">char</span> * buffer;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span> (<span class="string">"How long do you want the string? "</span>);</span><br><span class="line">  <span class="built_in">scanf</span> (<span class="string">"%d"</span>, &amp;i);</span><br><span class="line"></span><br><span class="line">  buffer = (<span class="keyword">char</span>*) <span class="built_in">malloc</span> (i+<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">if</span> (buffer==<span class="literal">NULL</span>) <span class="built_in">exit</span> (<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (n=<span class="number">0</span>; n&lt;i; n++)</span><br><span class="line">    buffer[n]=rand()%<span class="number">26</span>+<span class="string">'a'</span>;</span><br><span class="line">  buffer[i]=<span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span> (<span class="string">"Random string: %s\n"</span>,buffer);</span><br><span class="line">  <span class="built_in">free</span> (buffer);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>该程序生成一个由用户指定的长度的字符串，由字母字符组成。此字符串的可能长度仅受malloc可用内存量的限制。</p>
+<h4 id="3、注意事项："><a href="#3、注意事项：" class="headerlink" title="3、注意事项："></a>3、注意事项：</h4><ul>
+<li>malloc的返回值是一个指针，指向一段可用内存的起始地址。</li>
+<li>申请了内存空间后，必须检查是否分配成功。</li>
+<li>当不需要再使用申请的内存时，记得释放；释放后应该把指向这块内存的指针指向NULL，防止程序后面不小心使用了它。</li>
+<li>malloc() 和 free() 这两个函数应该配对。如果申请后不释放会出现内存泄露</li>
+<li>虽然malloc()函数的类型是(void<em>),任何类型的指针都可以转换成(void </em>),但是最好还是在前面进行强制类型转换，因为这样可以躲过一些编译器的检查。</li>
+</ul>
+<h3 id="memset-函数"><a href="#memset-函数" class="headerlink" title="memset()函数"></a>memset()函数</h3><h4 id="1、函数原型及说明：-1"><a href="#1、函数原型及说明：-1" class="headerlink" title="1、函数原型及说明："></a>1、函数原型及说明：</h4><p>头文件：#include <string.h></string.h></p>
+<p>memset() 函数用来将指定内存的前n个字节设置为特定的值，其原型为：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> * <span class="title">memset</span><span class="params">( <span class="keyword">void</span> * ptr, <span class="keyword">int</span> value, <span class="keyword">size_t</span> num )</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>ptr 为要操作的内存的指针。</li>
+<li>value 为要设置的值。你既可以向 value 传递 int 类型的值，也可以传递 char 类型的值，int 和 char 可以根据 ASCII 码相互转换。（最终解释为 unsigned char)</li>
+<li>num 为 ptr 的前 num 个字节。</li>
+<li>size_t 就是unsigned int。</li>
+</ul>
+<p><strong>函数说明:</strong>  memset() 会将 ptr 所指的内存区域的前 num 个字节的值都设置为 value，然后返回指向 ptr 的指针。</p>
+<p><strong>返回值:</strong>   返回指向 ptr 的指针。</p>
+<h4 id="2、函数用法："><a href="#2、函数用法：" class="headerlink" title="2、函数用法："></a>2、函数用法：</h4><p>memset() 可以将一段内存空间全部设置为特定的值，所以经常用来初始化字符数组。例如：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">memset</span>(str, <span class="string">'\0'</span>, <span class="keyword">sizeof</span>(str)<span class="number">-1</span>); <span class="comment">// 0或者'\0'是等价的</span></span><br></pre></td></tr></table></figure></p>
+<p>对整型数组初始化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int* num;</span><br><span class="line">num = (int*)malloc( n*sizeof(int) );</span><br><span class="line">memset(num,0,n*sizeof(int) );</span><br></pre></td></tr></table></figure></p>
+<h4 id="3、注意事项：-1"><a href="#3、注意事项：-1" class="headerlink" title="3、注意事项："></a>3、注意事项：</h4><ul>
+<li>memset() 中的第三个参数一定要使用 sizeof 操作符，因为每个系统下对类型长度的定义可能不一样。</li>
+<li>memset() 中的第一个参数一定要是一个已知的、已经被分配内存的地址，否则会出错。</li>
+</ul>
+<ul>
+<li><strong>最重要的一点：</strong> 对于单字节数据类型（char）可以初始化为任意支持的值，多字节数据类型只能初始化为 0。</li>
+</ul>
+<p><strong>原因：</strong></p>
+<p>memset是按照字节对待初始化空间进行初始化的，也就是说，函数里面的第二个参数的那个初值（一般为0）是按照一个个字节往第一个参数所指区域赋值的，所以，对于单字节数据类型（char）可以初始化为任意支持的值，都没有问题。</p>
+<p>但是对于多字节数据类型只能初始化为0，而不能初始化成别的初值，因为对所有字节按任意顺序赋值0的结果都是0，而如果初始化为其他的值，就会一个字节一个字节的进行赋值，从而出现奇怪的结果。如果将 int 类型数组初始化为1，那么因为int一般是4个字节，那么相当于将一个int元素初始化成了 <strong>0000 0001 0000 0001 0000 0001 0000 0001</strong>，<br>这样对于一个int元素肯定不是1，而是一个很大的数，结果出乎意料。</p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="https://www.cnblogs.com/hanyonglu/archive/2011/04/28/2031271.html" target="_blank" rel="noopener">malloc和free函数详解</a></li>
+<li><a href="https://blog.csdn.net/dan15188387481/article/details/49621447" target="_blank" rel="noopener">透彻分析C/C++中memset函数
+</a></li>
+<li><a href="http://www.cplusplus.com/reference/cstdlib/malloc/" target="_blank" rel="noopener">malloc -C++ Reference</a></li>
+<li><a href="http://www.cplusplus.com/reference/cstring/memset/" target="_blank" rel="noopener">memset -C++ Reference</a></li>
+</ul>
 
       
 
@@ -240,13 +287,24 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">malloc memeset</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习//" class="article-tag-list-link color3">学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -296,7 +354,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://hongbosherlock.github.io/2018/12/12/google2018/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://hongbosherlock.github.io/2019/06/08/malloc/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -310,18 +368,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/21/sort/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          简单排序算法-以“谁考了第K名”为例
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/08/Dg1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">动态规划-数字三角形</div>
+    <a href="/2019/05/26/stl/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">STL 简介</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -348,7 +397,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#美好的事物，值得我们不断搜索"><span class="toc-number">1.</span> <span class="toc-text">美好的事物，值得我们不断搜索</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#malloc-函数"><span class="toc-number">1.</span> <span class="toc-text">malloc()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、函数原型及说明："><span class="toc-number">1.1.</span> <span class="toc-text">1、函数原型及说明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、函数的用法："><span class="toc-number">1.2.</span> <span class="toc-text">2、函数的用法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、注意事项："><span class="toc-number">1.3.</span> <span class="toc-text">3、注意事项：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#memset-函数"><span class="toc-number">2.</span> <span class="toc-text">memset()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、函数原型及说明：-1"><span class="toc-number">2.1.</span> <span class="toc-text">1、函数原型及说明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、函数用法："><span class="toc-number">2.2.</span> <span class="toc-text">2、函数用法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、注意事项：-1"><span class="toc-number">2.3.</span> <span class="toc-text">3、注意事项：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考链接"><span class="toc-number">3.</span> <span class="toc-text">参考链接</span></a></li></ol>
                     </div>
                 </span>
             </div>
