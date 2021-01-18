@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://hongbosherlock.github.io">
   <title>STL 简介 | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="STL (Standard Template Library) 标准模板库 需要引入头文件：1#include &amp;lt;algorithm&amp;gt; 排序算法sort用法一对基本类型的数组从小到大排序：1sort(数组名+n1, 数组名+n2);">
+  <meta name="description" content="STL (Standard Template Library) 标准模板库 需要引入头文件：1#include &amp;lt;algorithm&amp;gt; 排序算法sort用法一对基本类型的数组从小到大排序：1sort(数组名+n1, 数组名+n2); n1 和 n2 都是 int 类型的表达式，可以包含变量。将数组下标范围为 [n1,n2) 的元素从小到大排列，下标为 n2 的元素不在排列区间内。">
 <meta name="keywords" content="STL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL 简介">
 <meta property="og:url" content="https://hongbosherlock.github.io/2019/05/26/stl/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
-<meta property="og:description" content="STL (Standard Template Library) 标准模板库 需要引入头文件：1#include &amp;lt;algorithm&amp;gt; 排序算法sort用法一对基本类型的数组从小到大排序：1sort(数组名+n1, 数组名+n2);">
+<meta property="og:description" content="STL (Standard Template Library) 标准模板库 需要引入头文件：1#include &amp;lt;algorithm&amp;gt; 排序算法sort用法一对基本类型的数组从小到大排序：1sort(数组名+n1, 数组名+n2); n1 和 n2 都是 int 类型的表达式，可以包含变量。将数组下标范围为 [n1,n2) 的元素从小到大排列，下标为 n2 的元素不在排列区间内。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-17T15:05:21.653Z">
+<meta property="og:updated_time" content="2021-01-18T10:31:59.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL 简介">
-<meta name="twitter:description" content="STL (Standard Template Library) 标准模板库 需要引入头文件：1#include &amp;lt;algorithm&amp;gt; 排序算法sort用法一对基本类型的数组从小到大排序：1sort(数组名+n1, 数组名+n2);">
+<meta name="twitter:description" content="STL (Standard Template Library) 标准模板库 需要引入头文件：1#include &amp;lt;algorithm&amp;gt; 排序算法sort用法一对基本类型的数组从小到大排序：1sort(数组名+n1, 数组名+n2); n1 和 n2 都是 int 类型的表达式，可以包含变量。将数组下标范围为 [n1,n2) 的元素从小到大排列，下标为 n2 的元素不在排列区间内。">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -197,8 +197,8 @@
         <p>STL (Standard Template Library) 标准模板库</p>
 <p>需要引入头文件：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <h3 id="排序算法sort"><a href="#排序算法sort" class="headerlink" title="排序算法sort"></a>排序算法sort</h3><h4 id="用法一"><a href="#用法一" class="headerlink" title="用法一"></a>用法一</h4><p>对基本类型的数组从小到大排序：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort(数组名+n1, 数组名+n2);</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
 <p>n1 和 n2 都是 int 类型的表达式，可以包含变量。<br>将数组下标范围为 [n1,n2) 的元素从小到大排列，下标为 n2 的元素不在排列区间内。</p>
+<a id="more"></a>
 <h4 id="用法二"><a href="#用法二" class="headerlink" title="用法二"></a>用法二</h4><p>对元素类型为 T的基本类型数组从大到小排序：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort(数组名+n1, 数组名+n2, greater&lt;T&gt;());</span><br></pre></td></tr></table></figure></p>
 <h4 id="用法三"><a href="#用法三" class="headerlink" title="用法三"></a>用法三</h4><p>用自定义的排序规则，对任何类型 T 的数组排序，<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort(数组名+n1, 数组名+n2, 排序规则结构名());</span><br></pre></td></tr></table></figure></p>
 <p>排序规则结构的定义方式：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Rule</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(<span class="keyword">const</span>  T &amp;a1, <span class="keyword">const</span> T &amp;a2)</span></span>&#123;</span><br><span class="line">        <span class="comment">//若 a1 应该在 a2 前面，则返回 true。</span></span><br><span class="line">        <span class="comment">//否则返回 false。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
@@ -596,6 +596,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
               </li>
              
@@ -604,11 +608,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,7 +616,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
+                <a href="javascript:void(0)" class="js-tag color3">指针</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,15 +628,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">指针</a>
+                <a href="javascript:void(0)" class="js-tag color2">SpaceX</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+                <a href="javascript:void(0)" class="js-tag color4">马斯克</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,7 +640,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpaceX;马斯克</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -653,6 +653,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">马尔克斯</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
             
             <div class="clearfix"></div>

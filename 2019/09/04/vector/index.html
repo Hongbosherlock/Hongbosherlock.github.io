@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://hongbosherlock.github.io">
   <title>vector 用法总结 | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vector 介绍vector 是表示可以改变大小的数组的序列容器。 vector 能够容纳许多其他类型相同的元素,因此又被称为容器。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够存放任意类型的动态数组，能够增加和压缩数据。 与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。">
+  <meta name="description" content="vector 介绍vector 是表示可以改变大小的数组的序列容器。 vector 能够容纳许多其他类型相同的元素,因此又被称为容器。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够存放任意类型的动态数组，能够增加和压缩数据。 与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。 容器特性 1.顺序序列  顺">
 <meta name="keywords" content="vector">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vector 用法总结">
 <meta property="og:url" content="https://hongbosherlock.github.io/2019/09/04/vector/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
-<meta property="og:description" content="vector 介绍vector 是表示可以改变大小的数组的序列容器。 vector 能够容纳许多其他类型相同的元素,因此又被称为容器。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够存放任意类型的动态数组，能够增加和压缩数据。 与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。">
+<meta property="og:description" content="vector 介绍vector 是表示可以改变大小的数组的序列容器。 vector 能够容纳许多其他类型相同的元素,因此又被称为容器。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够存放任意类型的动态数组，能够增加和压缩数据。 与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。 容器特性 1.顺序序列  顺">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-17T15:04:05.727Z">
+<meta property="og:updated_time" content="2021-01-18T10:33:04.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vector 用法总结">
-<meta name="twitter:description" content="vector 介绍vector 是表示可以改变大小的数组的序列容器。 vector 能够容纳许多其他类型相同的元素,因此又被称为容器。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够存放任意类型的动态数组，能够增加和压缩数据。 与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。">
+<meta name="twitter:description" content="vector 介绍vector 是表示可以改变大小的数组的序列容器。 vector 能够容纳许多其他类型相同的元素,因此又被称为容器。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够存放任意类型的动态数组，能够增加和压缩数据。 与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。 容器特性 1.顺序序列  顺">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -196,7 +196,7 @@
       
         <h4 id="vector-介绍"><a href="#vector-介绍" class="headerlink" title="vector 介绍"></a>vector 介绍</h4><p>vector 是表示可以改变大小的数组的序列容器。</p>
 <p>vector 能够容纳许多其他类型相同的元素,因此又被称为<strong>容器</strong>。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够<strong>存放任意类型的动态数组</strong>，能够增加和压缩数据。</p>
-<p>与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。<br><a id="more"></a></p>
+<p>与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。</p>
 <p><strong>容器特性</strong></p>
 <p>1.顺序序列</p>
 <blockquote>
@@ -210,6 +210,7 @@
 <blockquote>
 <p>容器使用一个内存分配器对象来动态地处理它的存储需求。</p>
 </blockquote>
+<a id="more"></a>
 <h4 id="声明及初始化"><a href="#声明及初始化" class="headerlink" title="声明及初始化"></a>声明及初始化</h4><p><strong>头文件</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <p>vector 是一个模板类，所以需要用 vector<typename> arry 这样的方式来声明一个 vector。<br>vector 型变量的声明以及初始化的形式也有许多, 常用的有以下几种形式:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a;             <span class="comment">//声明一个 int 型向量 a</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(<span class="number">10</span>);         <span class="comment">//声明一个初始大小为 10 的向量</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(<span class="number">10</span>, <span class="number">1</span>);      <span class="comment">//声明一个初始大小为 10 且初始值都为 1 的向量</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; b(a);          <span class="comment">//声明并用向量 a 初始化向量 b </span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; b(a.begin(), a.begin()+<span class="number">3</span>); <span class="comment">//将a向量中从第0个到第2个(共3个)作为向量b的初始值</span></span><br></pre></td></tr></table></figure></typename></p>
 <p>除此之外, 还可以直接使用数组来初始化向量。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125; ;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(n, n+<span class="number">5</span>) ;      <span class="comment">//将数组 n 的前 5 个元素作为向量 a 的初值</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(n+<span class="number">1</span>, n+<span class="number">4</span>) ;    <span class="comment">//将 n[1]-n[4] 范围内的元素作为向量 a 的初值</span></span><br></pre></td></tr></table></figure></p>
@@ -581,6 +582,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
               </li>
              
@@ -589,11 +594,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,7 +602,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
+                <a href="javascript:void(0)" class="js-tag color3">指针</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,15 +614,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">指针</a>
+                <a href="javascript:void(0)" class="js-tag color2">SpaceX</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+                <a href="javascript:void(0)" class="js-tag color4">马斯克</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -629,7 +626,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpaceX;马斯克</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,6 +639,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">马尔克斯</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
             
             <div class="clearfix"></div>
