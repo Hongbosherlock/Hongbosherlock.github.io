@@ -159,6 +159,121 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-binary-tree" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/10/binary-tree/">LeetCode——二叉树 (更新中)</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/10/binary-tree/" class="archive-article-date">
+  	<time datetime="2021-01-10T09:45:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-10</time>
+  	
+</a>
+
+
+        
+   
+   <div>    
+     <!-- <span id="busuanzi_container_page_pv">
+  阅读量(<span id="busuanzi_value_page_pv"></span>)
+</span> -->
+  
+    </div>
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="如何遍历一棵树"><a href="#如何遍历一棵树" class="headerlink" title="如何遍历一棵树"></a>如何遍历一棵树</h3><p><strong>1. 前序遍历</strong></p>
+<blockquote>
+<p>前序遍历首先访问根节点，然后遍历左子树，最后遍历右子树。</p>
+</blockquote>
+<p><strong>2. 中序遍历</strong></p>
+<blockquote>
+<p>中序遍历是先遍历左子树，然后访问根节点，然后遍历右子树。</p>
+</blockquote>
+<p>通常来说，对于<strong>二叉搜索树</strong>，我们可以通过中序遍历得到一个<strong>递增</strong>的有序序列。 </p>
+<p><strong>3. 后序遍历</strong></p>
+<blockquote>
+<p>后序遍历是先遍历左子树，然后遍历右子树，最后访问树的根节点。</p>
+</blockquote>
+<p>当删除树中的节点时，删除过程将按照后序遍历的顺序进行。 也就是说，当你删除一个节点时，你将首先删除它的左节点和它的右边的节点，然后再删除节点本身。</p>
+<ul>
+<li>前、中、后遍历用到了 <strong>栈</strong>，层序遍历用到了 <strong>队列</strong>。<br><img src="https://pic.leetcode-cn.com/8e21fed563ab0c9564fb6aaba01934ee6986e0097af51e21e792bee1f4eef4d4-102.png" alt="image"></li>
+</ul>
+        
+          <a class="article-more-a" href="/2021/01/10/binary-tree/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/10/binary-tree/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+ 
+
+
+
+
+  
     <article id="post-2020-sum" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -676,112 +791,6 @@
 
 
   
-    <article id="post-malloc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/08/malloc/">malloc 和 memset 总结</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/08/malloc/" class="archive-article-date">
-  	<time datetime="2019-06-08T12:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-08</time>
-  	
-</a>
-
-
-        
-   
-   <div>    
-     <!-- <span id="busuanzi_container_page_pv">
-  阅读量(<span id="busuanzi_value_page_pv"></span>)
-</span> -->
-  
-    </div>
-      </header>
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="malloc-函数"><a href="#malloc-函数" class="headerlink" title="malloc()函数"></a>malloc()函数</h3><h4 id="1、函数原型及说明："><a href="#1、函数原型及说明：" class="headerlink" title="1、函数原型及说明："></a>1、函数原型及说明：</h4><p>头文件：#include <stdlib.h></stdlib.h></p>
-<p>malloc() 函数用来动态地分配内存空间其原型为：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span>* <span class="title">malloc</span> <span class="params">(<span class="keyword">size_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure></p>
-<p><strong>参数说明:</strong></p>
-<ul>
-<li>size 为需要分配的内存空间的大小，以字节（Byte）计。</li>
-<li>size -t 是无符号整数类型。</li>
-</ul>
-<p><strong>函数说明:</strong><br>malloc() 在堆区分配一块指定大小的内存空间，用来存放数据。<br>这块内存空间在函数执行完成后不会被初始化，它们的值是不确定的。<br>如果希望在分配内存的同时进行初始化，请使用 calloc() 函数。</p>
-        
-          <a class="article-more-a" href="/2019/06/08/malloc/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">malloc</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C//" class="article-tag-list-link color2">C</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/08/malloc/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
- 
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -944,15 +953,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">malloc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">斐波那锲</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">malloc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -968,6 +985,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vector</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SpaceX</a>
               </li>
              
@@ -976,27 +1005,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">STL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vector</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">马尔克斯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
             
             <div class="clearfix"></div>
