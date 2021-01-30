@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
 <meta property="og:description" content="基本概念1、 &amp;amp; 不能对没有地址的东西取址。 2、指针是能够保存地址的变量。123456int i;int* p = &amp;amp;i;int* p,q;    // p 是 int* 类型的指针，大小为8；q 是 int 整数，大小为4。int *p,q;    // p 是 int* 类型的指针，q 是 int 整数。       int *p,*q;   // p 和 q 都是 int*">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/006w4HKkly1g2pjx2gpzcj30px070jrq.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/006w4HKkly1g2x6lgm2isj30wc0jognz.jpg">
-<meta property="og:updated_time" content="2021-01-18T10:30:34.546Z">
+<meta property="og:image" content="https://ww1.sinaimg.cn/large/006w4HKkly1g2pjx2gpzcj30px070jrq.jpg">
+<meta property="og:image" content="https://ww1.sinaimg.cn/mw690/006w4HKkly1g2x6lgm2isj30wc0jognz.jpg">
+<meta property="og:updated_time" content="2021-01-30T02:28:08.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="指针">
 <meta name="twitter:description" content="基本概念1、 &amp;amp; 不能对没有地址的东西取址。 2、指针是能够保存地址的变量。123456int i;int* p = &amp;amp;i;int* p,q;    // p 是 int* 类型的指针，大小为8；q 是 int 整数，大小为4。int *p,q;    // p 是 int* 类型的指针，q 是 int 整数。       int *p,*q;   // p 和 q 都是 int*">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006w4HKkly1g2pjx2gpzcj30px070jrq.jpg">
+<meta name="twitter:image" content="https://ww1.sinaimg.cn/large/006w4HKkly1g2pjx2gpzcj30px070jrq.jpg">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -235,7 +235,7 @@ var _hmt = _hmt || [];
 <p>4、<strong>应用场景一：</strong><br>交换两个变量的值：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *pa, <span class="keyword">int</span> *pb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = *pa;</span><br><span class="line">    *pa = *pb;</span><br><span class="line">    *pb = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>使用指针之前要初始化。</p>
 <p>5、 以下四种函数原型是等价的：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">• <span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> *ar, <span class="keyword">int</span> n)</span></span>;</span><br><span class="line">• <span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> *, <span class="keyword">int</span>)</span></span>;</span><br><span class="line">• <span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> ar[], <span class="keyword">int</span> n)</span></span>;</span><br><span class="line">• <span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> [], <span class="keyword">int</span>)</span></span>;</span><br></pre></td></tr></table></figure></p>
-<p>6、指针与const<br><img src="http://ww1.sinaimg.cn/large/006w4HKkly1g2pjx2gpzcj30px070jrq.jpg" alt=""></p>
+<p>6、指针与const<br><img src="https://ww1.sinaimg.cn/large/006w4HKkly1g2pjx2gpzcj30px070jrq.jpg" alt=""></p>
 <p>（1）指针是const：<br> 一旦得到某个变量的地址，不能再指向其他变量。</p>
 <p>（2）所指内容是const<br> 表⽰示不能通过这个指针去修改那个变量（并不能使得那个变量成为const）</p>
  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* p1 = &amp;i;    <span class="comment">//p1所指是const</span></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span>* p2 = &amp;i;    <span class="comment">//p2所指是const， const在 * 的前面</span></span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> p3 = &amp;i;    <span class="comment">//指针 p3 是const， const 在 * 的后面</span></span><br></pre></td></tr></table></figure>
@@ -298,7 +298,7 @@ var _hmt = _hmt || [];
 <p>表示 pf 是一个函数指针，它所向的返回值类型应是int，该函数应有两个参数，第一是 int  类型，第二个是 char 类型。</p>
 <h5 id="函数指针和-qsort-函数"><a href="#函数指针和-qsort-函数" class="headerlink" title="函数指针和 qsort 函数"></a>函数指针和 qsort 函数</h5><p>c 语言快速排序库函数：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qsort</span> <span class="params">( <span class="keyword">void</span> *base, <span class="keyword">int</span> nelem, <span class="keyword">unsigned</span> <span class="keyword">int</span> width,</span></span></span><br><span class="line">int (*pfCompare)(const void *, const void *));</span><br></pre></td></tr></table></figure></p>
 <p>可以对任意类型的数组进行排序。</p>
-<p><img src="http://ww1.sinaimg.cn/mw690/006w4HKkly1g2x6lgm2isj30wc0jognz.jpg" alt=""></p>
+<p><img src="https://ww1.sinaimg.cn/mw690/006w4HKkly1g2x6lgm2isj30wc0jognz.jpg" alt=""></p>
 <p>pfCompare: 函数指针，它指向一个“比较函数”。该比较函数应为以下形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int 函数名 (const void *elem1, const void *elem2);</span><br></pre></td></tr></table></figure></p>
 <p>比较函数是由我们自定义的。</p>
 <p>比较函数编写规则：<br>1) 如果 <em> elem1 应该排在 </em> elem2  <strong>前面</strong> ，则函数返回值是<strong>负整数</strong>。<br>2) 如果 <em> elem1和</em> elem2 哪个排在前面都行，那么函数返回0<br>3) 如果 <em> elem1 应该排在 </em> elem2 <strong>后面</strong> ，则函数返回值是<strong>正整数</strong>。</p>
@@ -646,11 +646,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,10 +659,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">斐波那锲</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -682,6 +678,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
@@ -698,11 +698,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+                <a href="javascript:void(0)" class="js-tag color2">vector</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,7 +710,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vector</a>
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
              
               <li class="article-tag-list-item">
