@@ -16,15 +16,15 @@
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
 <meta property="og:description" content="如何遍历一棵树1. 前序遍历  前序遍历首先访问根节点，然后遍历左子树，最后遍历右子树。  2. 中序遍历  中序遍历是先遍历左子树，然后访问根节点，然后遍历右子树。  通常来说，对于二叉搜索树，我们可以通过中序遍历得到一个递增的有序序列。  3. 后序遍历  后序遍历是先遍历左子树，然后遍历右子树，最后访问树的根节点。  当删除树中的节点时，删除过程将按照后序遍历的顺序进行。 也就是说，当你删除">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/006w4HKkly1gmymmjeuu8j317w0l6gof.jpg">
+<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1gmymmjeuu8j317w0l6gof.jpg">
 <meta property="og:image" content="https://leetcode-cn.com/explore/learn/card/data-structure-binary-tree/2/traverse-a-tree/Figures/binary_tree/mathematical_expression.png">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/006w4HKkly1gmymos6v6qj30zk0k0tat.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/006w4HKkly1gmymr2itr5j31jk0v9dn2.jpg">
-<meta property="og:updated_time" content="2021-01-30T02:27:15.779Z">
+<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1gmymos6v6qj30zk0k0tat.jpg">
+<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1gmymr2itr5j31jk0v9dn2.jpg">
+<meta property="og:updated_time" content="2021-02-10T04:33:04.831Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode——二叉树 (更新中)">
 <meta name="twitter:description" content="如何遍历一棵树1. 前序遍历  前序遍历首先访问根节点，然后遍历左子树，最后遍历右子树。  2. 中序遍历  中序遍历是先遍历左子树，然后访问根节点，然后遍历右子树。  通常来说，对于二叉搜索树，我们可以通过中序遍历得到一个递增的有序序列。  3. 后序遍历  后序遍历是先遍历左子树，然后遍历右子树，最后访问树的根节点。  当删除树中的节点时，删除过程将按照后序遍历的顺序进行。 也就是说，当你删除">
-<meta name="twitter:image" content="https://ww1.sinaimg.cn/large/006w4HKkly1gmymmjeuu8j317w0l6gof.jpg">
+<meta name="twitter:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1gmymmjeuu8j317w0l6gof.jpg">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -233,10 +233,8 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>当删除树中的节点时，删除过程将按照后序遍历的顺序进行。 也就是说，当你删除一个节点时，你将首先删除它的左节点和它的右边的节点，然后再删除节点本身。</p>
 <ul>
-<li>前、中、后遍历用到了 <strong>栈</strong>，层序遍历用到了 <strong>队列</strong>。<br><img src="https://ww1.sinaimg.cn/large/006w4HKkly1gmymmjeuu8j317w0l6gof.jpg" alt="image"></li>
+<li>前、中、后遍历用到了 <strong>栈</strong>，层序遍历用到了 <strong>队列</strong>。<br><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1gmymmjeuu8j317w0l6gof.jpg" alt=""><a id="more"></a><br><strong>后缀表达式</strong></li>
 </ul>
-<a id="more"></a>
-<p><strong>后缀表达式</strong></p>
 <p>编写程序来解析后缀表示法更为容易。 这里是一个例子：</p>
 <p><img src="https://leetcode-cn.com/explore/learn/card/data-structure-binary-tree/2/traverse-a-tree/Figures/binary_tree/mathematical_expression.png" alt="image"></p>
 <ul>
@@ -323,7 +321,7 @@ var _hmt = _hmt || [];
 <li>它们的两个根结点具有相同的值</li>
 <li>每个树的右子树都与另一个树的左子树镜像对称</li>
 </ul>
-<p><img src="https://ww1.sinaimg.cn/large/006w4HKkly1gmymos6v6qj30zk0k0tat.jpg" alt="image"></p>
+<p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1gmymos6v6qj30zk0k0tat.jpg" alt=""></p>
 <p><strong>递归</strong></p>
 <p>我们可以实现这样一个递归函数，通过「同步移动」两个指针的方法来遍历这棵树，pp 指针和 qq 指针一开始都指向这棵树的根，随后 pp 右移时，qq 左移，pp 左移时，qq 右移。每次检查当前 pp 和 qq 节点的值是否相等，如果相等再判断左右子树是否对称。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> check(root,root);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(TreeNode* p ,TreeNode* q)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!p&amp;&amp;!q)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(!p||!q)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">     <span class="keyword">return</span> (q-&gt;val==p-&gt;val)&amp;&amp;check(p-&gt;left,q-&gt;right)&amp;&amp;check(p-&gt;right,q-&gt;left);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -339,7 +337,7 @@ var _hmt = _hmt || [];
 <p>这样我们使用两个队列，分别存储将要遍历的节点，以及根节点到这些节点的路径和即可。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasPathSum</span><span class="params">(TreeNode* root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode*&gt; q;</span><br><span class="line">        <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; qval;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        q.push(root);</span><br><span class="line">        qval.push(root-&gt;val);</span><br><span class="line">        <span class="keyword">while</span>(q.size())&#123;</span><br><span class="line">            TreeNode* node=q.front();</span><br><span class="line">            <span class="keyword">int</span> val=qval.front();</span><br><span class="line">            q.pop(); qval.pop();</span><br><span class="line">            <span class="keyword">if</span>(!node-&gt;left &amp;&amp; !node-&gt;right)&#123;</span><br><span class="line">                <span class="keyword">if</span>(sum==val)</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(node-&gt;left)</span><br><span class="line">            &#123;</span><br><span class="line">                q.push(node-&gt;left);</span><br><span class="line">                qval.push(val+node-&gt;left-&gt;val);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(node-&gt;right)</span><br><span class="line">            &#123;</span><br><span class="line">                q.push(node-&gt;right);</span><br><span class="line">                qval.push(val+node-&gt;right-&gt;val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="106-从中序与后序遍历序列构造二叉树"><a href="#106-从中序与后序遍历序列构造二叉树" class="headerlink" title="106  从中序与后序遍历序列构造二叉树"></a>106  从中序与后序遍历序列构造二叉树</h3><p>我们可以发现后序遍历的数组最后一个元素代表的即为根节点。知道这个性质后，我们可以利用已知的根节点信息在中序遍历的数组中找到根节点所在的下标，然后根据其将中序遍历的数组分成左右两部分，左边部分即左子树，右边部分为右子树，针对每个部分可以用同样的方法继续递归下去构造。</p>
-<p><img src="https://ww1.sinaimg.cn/large/006w4HKkly1gmymr2itr5j31jk0v9dn2.jpg" alt="image"></p>
+<p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1gmymr2itr5j31jk0v9dn2.jpg" alt=""></p>
 <ul>
 <li>为了高效查找根节点元素在中序遍历数组中的下标，我们选择创建哈希表来存储中序序列，即建立一个（元素，下标）键值对的哈希表。</li>
 </ul>
@@ -704,19 +702,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">斐波那锲</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,6 +738,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SpaceX</a>
               </li>
              
@@ -748,15 +754,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">STL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vector</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -764,7 +762,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
+                <a href="javascript:void(0)" class="js-tag color2">vector</a>
               </li>
              
               <li class="article-tag-list-item">
