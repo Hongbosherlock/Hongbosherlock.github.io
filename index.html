@@ -323,6 +323,7 @@ var _hmt = _hmt || [];
 </ul>
 <h2 id="构造函数再探"><a href="#构造函数再探" class="headerlink" title="构造函数再探"></a>构造函数再探</h2><blockquote>
 <p>单例模式中构造函数在 private 区域。</p>
+</blockquote>
 <ul>
 <li>构造函数初始值列表：<ul>
 <li>如<code>const</code>或者引用类型的数据，只能初始化，不能赋值。（注意初始化和赋值的区别）</li>
@@ -340,7 +341,6 @@ var _hmt = _hmt || [];
 </li>
 <li>如果定义了其它构造函数，那么最好也提供一个默认构造函数。</li>
 </ul>
-</blockquote>
 <h3 id="委托构造函数-（delegating-constructor-C-11）"><a href="#委托构造函数-（delegating-constructor-C-11）" class="headerlink" title="委托构造函数 （delegating constructor, C++11）"></a>委托构造函数 （delegating constructor, <code>C++11</code>）</h3><ul>
 <li>委托构造函数将自己的职责委托给了类内想其他构造函数。</li>
 <li>当一个构造函数委托给另一个构造函数时，受委托的构造函数的初始值列表和函数体被依次执行。</li>
@@ -405,13 +405,16 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 <li>如果一定要在类内部定义，则要求静态成员必须是字面值常量类型的<code>constexpr</code>。<ul>
-<li><figure class="highlight plain"><figcaption><span>constexptr int period </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">- 静态成员函数不包含 this 指针，也不能声明为 const 的。</span><br><span class="line">- 静态数据成员可以作为默认实参。</span><br><span class="line">- 静态数据成员的类型可以就是它所属的类类型：</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line">class Bar &#123;</span><br><span class="line">public:</span><br><span class="line">// ...</span><br><span class="line">private:</span><br><span class="line">    static Bar mem1; // ok: static member can have incomplete type</span><br><span class="line">    Bar *mem2; // ok: pointer member can have incomplete type</span><br><span class="line">    Bar mem3; // error: data members must have complete type</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li><code>static constexptr int period = 30</code></li>
 </ul>
 </li>
 </ul>
 </li>
+<li>静态成员函数不包含 this 指针，也不能声明为 const 的。</li>
+<li>静态数据成员可以作为默认实参。</li>
+<li>静态数据成员的类型可以就是它所属的类类型：</li>
 </ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bar</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">static</span> Bar mem1; <span class="comment">// ok: static member can have incomplete type</span></span><br><span class="line">    Bar *mem2; <span class="comment">// ok: pointer member can have incomplete type</span></span><br><span class="line">    Bar mem3; <span class="comment">// error: data members must have complete type</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -1132,19 +1135,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斐波那锲</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1152,11 +1147,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">指针</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">递归</a>
+                <a href="javascript:void(0)" class="js-tag color3">指针</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1164,19 +1159,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">斐波那锲</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vector</a>
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1188,7 +1179,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1196,7 +1187,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vector</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">马尔克斯</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
             
             <div class="clearfix"></div>
