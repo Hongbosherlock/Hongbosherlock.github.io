@@ -178,6 +178,440 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2019-sum" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/31/2019-sum/">成长的烦恼 —— 2019 总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/31/2019-sum/" class="archive-article-date">
+  	<time datetime="2019-12-31T14:37:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-31</time>
+  	
+</a>
+
+
+        
+   
+   <div>    
+     <!-- <span id="busuanzi_container_page_pv">
+  阅读量(<span id="busuanzi_value_page_pv"></span>)
+</span> -->
+  
+    </div>
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天是2019年的最后一天了，事实上明天和今天不会有太大差别，重要的是在这样一个具有仪式感的日子，总结过去，展望未来。</p>
+<p>本来不想写总结的，因为我觉得自己要说的太多了，而且有些心里话也不适合公开写出来。但还是有必要把今年的一些经历和感想记录下来，一方面是对我过去一年学习生活的总结，另一方面也是让关心我的朋友们了解一下我的近况。
+        
+          <a class="article-more-a" href="/2019/12/31/2019-sum/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">年度总结</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/生活//" class="article-tag-list-link color3">生活</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/31/2019-sum/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+ 
+
+
+
+
+  
+    <article id="post-recursion" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/20/recursion/">初识递归</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/20/recursion/" class="archive-article-date">
+  	<time datetime="2019-12-20T10:43:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-20</time>
+  	
+</a>
+
+
+        
+   
+   <div>    
+     <!-- <span id="busuanzi_container_page_pv">
+  阅读量(<span id="busuanzi_value_page_pv"></span>)
+</span> -->
+  
+    </div>
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是递归"><a href="#什么是递归" class="headerlink" title="什么是递归"></a>什么是递归</h3><p>一个函数调用本身就是递归。<br>递归和普通函数调用一样，是通过栈实现的。</p>
+<h3 id="递归的条件"><a href="#递归的条件" class="headerlink" title="递归的条件"></a>递归的条件</h3><ul>
+<li>一个问题的解可以分解为几个子问题的解</li>
+<li>这个问题与分解之后的子问题，除了数据规模不同，求解思路完全一样</li>
+<li>存在递归终止条件</li>
+</ul>
+<h3 id="递归的作用"><a href="#递归的作用" class="headerlink" title="递归的作用"></a>递归的作用</h3><ul>
+<li>代替多重循环</li>
+<li>解决本来就是用递归形式定义的问题</li>
+<li>将问题分解为规模更小的子问题进行求解</li>
+</ul>
+<blockquote>
+<p>写递归代码的关键就是找到如何将大问题分解为小问题的规律，并且基于此写出递推公式，再推敲出终止条件，最后将递推公式和终止条件翻译成代码。</p>
+</blockquote>
+<p>不要试图想清楚整个递和归的过程，这样容易被绕进去。</p>
+<p><strong>编写递归代码的关键是，只要遇到递归，我们就把它抽象成一个递推公式, 不用想一层层的调用关系，不要试图用人脑去分解递归的整个步骤。</strong></p>
+        
+          <a class="article-more-a" href="/2019/12/20/recursion/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">递归</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/20/recursion/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+ 
+
+
+
+
+  
+    <article id="post-vector" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/04/vector/">vector 用法总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/04/vector/" class="archive-article-date">
+  	<time datetime="2019-09-04T02:36:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
+  	
+</a>
+
+
+        
+   
+   <div>    
+     <!-- <span id="busuanzi_container_page_pv">
+  阅读量(<span id="busuanzi_value_page_pv"></span>)
+</span> -->
+  
+    </div>
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="vector-介绍"><a href="#vector-介绍" class="headerlink" title="vector 介绍"></a>vector 介绍</h4><p>vector 是表示可以改变大小的数组的序列容器。</p>
+<p>vector 能够容纳许多其他类型相同的元素,因此又被称为<strong>容器</strong>。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够<strong>存放任意类型的动态数组</strong>，能够增加和压缩数据。</p>
+<p>与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。</p>
+<p><strong>容器特性</strong></p>
+<p>1.顺序序列</p>
+<blockquote>
+<p>顺序容器中的元素按照严格的线性顺序排序。可以通过元素在序列中的位置访问对应的元素。</p>
+</blockquote>
+<p>2.动态数组</p>
+<blockquote>
+<p>支持对序列中的任意元素进行快速直接访问，甚至可以通过指针算述进行该操作。操供了在序列末尾相对快速地添加/删除元素的操作。</p>
+</blockquote>
+<p>3.能够感知内存分配器的（Allocator-aware）</p>
+<blockquote>
+<p>容器使用一个内存分配器对象来动态地处理它的存储需求。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/09/04/vector/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vector</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C//" class="article-tag-list-link color4">C++</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/04/vector/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+ 
+
+
+
+
+  
+    <article id="post-malloc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/08/malloc/">malloc 和 memset 总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/08/malloc/" class="archive-article-date">
+  	<time datetime="2019-06-08T12:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-08</time>
+  	
+</a>
+
+
+        
+   
+   <div>    
+     <!-- <span id="busuanzi_container_page_pv">
+  阅读量(<span id="busuanzi_value_page_pv"></span>)
+</span> -->
+  
+    </div>
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="malloc-函数"><a href="#malloc-函数" class="headerlink" title="malloc()函数"></a>malloc()函数</h3><h4 id="1、函数原型及说明："><a href="#1、函数原型及说明：" class="headerlink" title="1、函数原型及说明："></a>1、函数原型及说明：</h4><p>头文件：#include <stdlib.h></stdlib.h></p>
+<p>malloc() 函数用来动态地分配内存空间其原型为：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span>* <span class="title">malloc</span> <span class="params">(<span class="keyword">size_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p><strong>参数说明:</strong></p>
+<ul>
+<li>size 为需要分配的内存空间的大小，以字节（Byte）计。</li>
+<li>size -t 是无符号整数类型。</li>
+</ul>
+<p><strong>函数说明:</strong><br>malloc() 在堆区分配一块指定大小的内存空间，用来存放数据。<br>这块内存空间在函数执行完成后不会被初始化，它们的值是不确定的。<br>如果希望在分配内存的同时进行初始化，请使用 calloc() 函数。</p>
+        
+          <a class="article-more-a" href="/2019/06/08/malloc/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">malloc</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C//" class="article-tag-list-link color2">C</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/08/malloc/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+ 
+
+
+
+
+  
     <article id="post-stl" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -382,403 +816,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-string" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/string/">函数和字符串</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/10/string/" class="archive-article-date">
-  	<time datetime="2019-05-10T10:28:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-  	
-</a>
-
-
-        
-   
-   <div>    
-     <!-- <span id="busuanzi_container_page_pv">
-  阅读量(<span id="busuanzi_value_page_pv"></span>)
-</span> -->
-  
-    </div>
-      </header>
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>一维数组作为形参时的写法如下：</p>
-<ul>
-<li>类型名 数组名 []</li>
-</ul>
-<p>数组作为函数参数时，是传引用的，即形参数组改变了，实参数组也会改变。</p>
-<p>数组作为函数参数时，往往必须再用另一个参数来传入数组的大小。</p>
-<p>二维数组作为函数形参时，必须写明函数有多少列</p>
-<ul>
-<li>类型名 数组名 [][N]   N为列数</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/05/10/string/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C//" class="article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/10/string/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
- 
-
-
-
-
-  
-    <article id="post-pointer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/05/pointer/">指针</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/05/pointer/" class="archive-article-date">
-  	<time datetime="2019-05-05T04:27:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
-  	
-</a>
-
-
-        
-   
-   <div>    
-     <!-- <span id="busuanzi_container_page_pv">
-  阅读量(<span id="busuanzi_value_page_pv"></span>)
-</span> -->
-  
-    </div>
-      </header>
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>1、 &amp; 不能对没有地址的东西取址。</p>
-<p>2、指针是能够保存地址的变量。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">int</span>* p = &amp;i;</span><br><span class="line"><span class="keyword">int</span>* p,q;    <span class="comment">// p 是 int* 类型的指针，大小为8；q 是 int 整数，大小为4。</span></span><br><span class="line"><span class="keyword">int</span> *p,q;    <span class="comment">// p 是 int* 类型的指针，q 是 int 整数。       </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> *p,*q;   <span class="comment">// p 和 q 都是 int* 类型的指针。</span></span><br></pre></td></tr></table></figure></p>
-<p>这说明指针也有内存地址，而且指针变量的值就是其他变量的内存地址。</p>
-        
-          <a class="article-more-a" href="/2019/05/05/pointer/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">指针</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C//" class="article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/05/pointer/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
- 
-
-
-
-
-  
-    <article id="post-ipv6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/17/ipv6/">SCUNET使用IPv6的方法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/17/ipv6/" class="archive-article-date">
-  	<time datetime="2019-04-17T12:27:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	
-</a>
-
-
-        
-   
-   <div>    
-     <!-- <span id="busuanzi_container_page_pv">
-  阅读量(<span id="busuanzi_value_page_pv"></span>)
-</span> -->
-  
-    </div>
-      </header>
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/ipv.jpg" alt=""></p>
-<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>之前我一直是在 vps 上自搭梯子来科学上网（Do+ssr），虽说网速挺快，也能触达大部分网站。但还有一类网站无法访问，那就是 IPv6 网站。我曾经在 Ubuntu 下折腾了很久，都没有成功用上我的 ssr。最后看网上的教程，接入 IPv6 网络（开启 Teredo 隧道）
-        
-          <a class="article-more-a" href="/2019/04/17/ipv6/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IPv6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/17/ipv6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
- 
-
-
-
-
-  
-    <article id="post-zhishu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/08/zhishu/">第n小的质数</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/08/zhishu/" class="archive-article-date">
-  	<time datetime="2019-03-08T08:14:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-08</time>
-  	
-</a>
-
-
-        
-   
-   <div>    
-     <!-- <span id="busuanzi_container_page_pv">
-  阅读量(<span id="busuanzi_value_page_pv"></span>)
-</span> -->
-  
-    </div>
-      </header>
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>描述</strong><br>输入一个正整数n，求第n小的质数。<br><strong>输入</strong><br>一个不超过10000的正整数n。<br><strong>输出</strong><br>第n小的质数。</p>
-        
-          <a class="article-more-a" href="/2019/03/08/zhishu/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程基础//" class="article-tag-list-link color5">编程基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/08/zhishu/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
- 
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -933,19 +970,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">指针</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -953,7 +982,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color5">斐波那锲</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -961,19 +994,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">指针</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斐波那锲</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -989,15 +1030,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">队列</a>
+                <a href="javascript:void(0)" class="js-tag color2">vector</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1005,7 +1042,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vector</a>
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
