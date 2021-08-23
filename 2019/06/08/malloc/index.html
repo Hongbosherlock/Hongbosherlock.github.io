@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
 <meta property="og:description" content="malloc()函数1、函数原型及说明：头文件：#include  malloc() 函数用来动态地分配内存空间其原型为：1void* malloc (size_t size); 参数说明:  size 为需要分配的内存空间的大小，以字节（Byte）计。 size -t 是无符号整数类型。  函数说明:malloc() 在堆区分配一块指定大小的内存空间，用来存放数据。这块内存空间在函数执行完成后不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-18T10:30:19.621Z">
+<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png">
+<meta property="og:updated_time" content="2021-08-23T14:42:59.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="malloc 和 memset 总结">
 <meta name="twitter:description" content="malloc()函数1、函数原型及说明：头文件：#include  malloc() 函数用来动态地分配内存空间其原型为：1void* malloc (size_t size); 参数说明:  size 为需要分配的内存空间的大小，以字节（Byte）计。 size -t 是无符号整数类型。  函数说明:malloc() 在堆区分配一块指定大小的内存空间，用来存放数据。这块内存空间在函数执行完成后不">
+<meta name="twitter:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -264,11 +266,11 @@ var _hmt = _hmt || [];
 <p>但是对于多字节数据类型只能初始化为0，而不能初始化成别的初值，因为对所有字节按任意顺序赋值0的结果都是0，而如果初始化为其他的值，就会一个字节一个字节的进行赋值，从而出现奇怪的结果。如果将 int 类型数组初始化为1，那么因为int一般是4个字节，那么相当于将一个int元素初始化成了 <strong>0000 0001 0000 0001 0000 0001 0000 0001</strong>，<br>这样对于一个int元素肯定不是1，而是一个很大的数，结果出乎意料。</p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li><a href="https://www.cnblogs.com/hanyonglu/archive/2011/04/28/2031271.html" target="_blank" rel="noopener">malloc和free函数详解</a></li>
-<li><a href="https://blog.csdn.net/dan15188387481/article/details/49621447" target="_blank" rel="noopener">透彻分析C/C++中memset函数
-</a></li>
+<li><a href="https://blog.csdn.net/dan15188387481/article/details/49621447" target="_blank" rel="noopener">透彻分析C/C++中memset函数</a></li>
 <li><a href="http://www.cplusplus.com/reference/cstdlib/malloc/" target="_blank" rel="noopener">malloc -C++ Reference</a></li>
 <li><a href="http://www.cplusplus.com/reference/cstring/memset/" target="_blank" rel="noopener">memset -C++ Reference</a></li>
 </ul>
+<p><div align="center"><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png" style="zoom: 33%;"></div></p>
 
       
 
@@ -620,22 +622,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斐波那锲</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">malloc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">指针</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
               </li>
              
@@ -644,15 +630,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">斐波那锲</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">指针</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">递归</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+                <a href="javascript:void(0)" class="js-tag color2">malloc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,11 +658,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -676,11 +674,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -4,8 +4,122 @@
 
     
   <url>
+    <loc>https://hongbosherlock.github.io/2021/08/08/select-poll/</loc>
+    <lastmod>2021-08-23T15:02:51.124Z</lastmod>
+    <data>
+        <display>
+        <title>I/O多路复用：select 和 poll</title>
+        <pubTime>2021-08-08T14:44:50.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络编程" url="https://hongbosherlock.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hongbosherlock.github.io/2021/08/12/epoll/</loc>
+    <lastmod>2021-08-23T15:02:44.822Z</lastmod>
+    <data>
+        <display>
+        <title>I/O多路复用：epoll</title>
+        <pubTime>2021-08-12T14:59:19.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络编程" url="https://hongbosherlock.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hongbosherlock.github.io/2021/08/06/socket/</loc>
+    <lastmod>2021-08-23T14:46:07.489Z</lastmod>
+    <data>
+        <display>
+        <title>网络编程基础：socket</title>
+        <pubTime>2021-08-06T14:28:12.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络编程" url="https://hongbosherlock.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hongbosherlock.github.io/2020/12/31/2020-sum/</loc>
+    <lastmod>2021-08-23T14:43:31.466Z</lastmod>
+    <data>
+        <display>
+        <title>请回答 2020</title>
+        <pubTime>2020-12-31T10:51:38.000Z</pubTime>
+        
+        <tag>年度总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="https://hongbosherlock.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hongbosherlock.github.io/2019/12/31/2019-sum/</loc>
+    <lastmod>2021-08-23T14:43:26.275Z</lastmod>
+    <data>
+        <display>
+        <title>成长的烦恼 —— 2019 总结</title>
+        <pubTime>2019-12-31T14:37:46.000Z</pubTime>
+        
+        <tag>年度总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="https://hongbosherlock.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hongbosherlock.github.io/2019/06/08/malloc/</loc>
+    <lastmod>2021-08-23T14:42:59.476Z</lastmod>
+    <data>
+        <display>
+        <title>malloc 和 memset 总结</title>
+        <pubTime>2019-06-08T12:57:28.000Z</pubTime>
+        
+        <tag>malloc</tag>
+         
+         
+           
+             
+              <breadCrumb title="C" url="https://hongbosherlock.github.io/categories/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hongbosherlock.github.io/2021/05/13/why-blog/</loc>
-    <lastmod>2021-08-10T13:57:00.284Z</lastmod>
+    <lastmod>2021-08-23T14:42:21.649Z</lastmod>
     <data>
         <display>
         <title>为什么写博客和微博</title>
@@ -20,7 +134,7 @@
     
   <url>
     <loc>https://hongbosherlock.github.io/2021/05/30/safe-and-justice/</loc>
-    <lastmod>2021-08-10T13:55:33.404Z</lastmod>
+    <lastmod>2021-08-23T14:42:13.166Z</lastmod>
     <data>
         <display>
         <title>我们都渴望安全与正义</title>
@@ -34,12 +148,12 @@
 
     
   <url>
-    <loc>https://hongbosherlock.github.io/2021/07/18/23-birth/</loc>
-    <lastmod>2021-08-10T13:34:16.899Z</lastmod>
+    <loc>https://hongbosherlock.github.io/2021/07/12/friend/</loc>
+    <lastmod>2021-08-23T14:41:51.698Z</lastmod>
     <data>
         <display>
-        <title>写在23岁第一天</title>
-        <pubTime>2021-07-18T14:17:46.000Z</pubTime>
+        <title>一点关于“朋友”的感想</title>
+        <pubTime>2021-07-12T13:20:39.000Z</pubTime>
         
          
            
@@ -49,12 +163,30 @@
 
     
   <url>
-    <loc>https://hongbosherlock.github.io/2021/07/12/friend/</loc>
-    <lastmod>2021-08-10T13:32:55.707Z</lastmod>
+    <loc>https://hongbosherlock.github.io/2020/11/17/social-dilemma/</loc>
+    <lastmod>2021-08-23T14:41:44.956Z</lastmod>
     <data>
         <display>
-        <title>一点关于“朋友”的感想</title>
-        <pubTime>2021-07-12T13:20:39.000Z</pubTime>
+        <title>智能陷阱：愿者上钩</title>
+        <pubTime>2020-11-17T09:54:42.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="科技" url="https://hongbosherlock.github.io/categories/%E7%A7%91%E6%8A%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hongbosherlock.github.io/2021/07/18/23-birth/</loc>
+    <lastmod>2021-08-23T14:41:31.724Z</lastmod>
+    <data>
+        <display>
+        <title>写在23岁第一天</title>
+        <pubTime>2021-07-18T14:17:46.000Z</pubTime>
         
          
            
@@ -142,44 +274,6 @@
 
     
   <url>
-    <loc>https://hongbosherlock.github.io/2020/11/17/social-dilemma/</loc>
-    <lastmod>2021-02-10T04:59:42.735Z</lastmod>
-    <data>
-        <display>
-        <title>智能陷阱：愿者上钩</title>
-        <pubTime>2020-11-17T09:54:42.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="科技" url="https://hongbosherlock.github.io/categories/%E7%A7%91%E6%8A%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hongbosherlock.github.io/2019/12/31/2019-sum/</loc>
-    <lastmod>2021-02-10T04:56:45.664Z</lastmod>
-    <data>
-        <display>
-        <title>成长的烦恼 —— 2019 总结</title>
-        <pubTime>2019-12-31T14:37:46.000Z</pubTime>
-        
-        <tag>年度总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="https://hongbosherlock.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hongbosherlock.github.io/2019/05/05/pointer/</loc>
     <lastmod>2021-02-10T04:55:26.512Z</lastmod>
     <data>
@@ -213,26 +307,6 @@
            
              
               <breadCrumb title="文艺" url="https://hongbosherlock.github.io/categories/%E6%96%87%E8%89%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hongbosherlock.github.io/2020/12/31/2020-sum/</loc>
-    <lastmod>2021-01-30T02:30:20.660Z</lastmod>
-    <data>
-        <display>
-        <title>请回答 2020</title>
-        <pubTime>2020-12-31T10:51:38.000Z</pubTime>
-        
-        <tag>年度总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="https://hongbosherlock.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
           
         </display>
     </data>
@@ -409,26 +483,6 @@
            
              
               <breadCrumb title="算法" url="https://hongbosherlock.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hongbosherlock.github.io/2019/06/08/malloc/</loc>
-    <lastmod>2021-01-18T10:30:19.621Z</lastmod>
-    <data>
-        <display>
-        <title>malloc 和 memset 总结</title>
-        <pubTime>2019-06-08T12:57:28.000Z</pubTime>
-        
-        <tag>malloc</tag>
-         
-         
-           
-             
-              <breadCrumb title="C" url="https://hongbosherlock.github.io/categories/C/"/>
           
         </display>
     </data>
