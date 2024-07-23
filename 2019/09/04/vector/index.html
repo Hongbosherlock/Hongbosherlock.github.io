@@ -9,17 +9,17 @@
   <title>vector 用法总结 | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="vector 介绍vector 是表示可以改变大小的数组的序列容器。 vector 能够容纳许多其他类型相同的元素,因此又被称为容器。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够存放任意类型的动态数组，能够增加和压缩数据。 与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。 容器特性 1.顺序序列  顺">
-<meta name="keywords" content="vector">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vector 用法总结">
 <meta property="og:url" content="https://hongbosherlock.github.io/2019/09/04/vector/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
 <meta property="og:description" content="vector 介绍vector 是表示可以改变大小的数组的序列容器。 vector 能够容纳许多其他类型相同的元素,因此又被称为容器。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够存放任意类型的动态数组，能够增加和压缩数据。 与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。 容器特性 1.顺序序列  顺">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-18T10:33:04.929Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-09-04T02:36:34.000Z">
+<meta property="article:modified_time" content="2024-07-23T12:57:10.997Z">
+<meta property="article:author" content="Xu Hongbo">
+<meta property="article:tag" content="vector">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vector 用法总结">
-<meta name="twitter:description" content="vector 介绍vector 是表示可以改变大小的数组的序列容器。 vector 能够容纳许多其他类型相同的元素,因此又被称为容器。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够存放任意类型的动态数组，能够增加和压缩数据。 与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。 容器特性 1.顺序序列  顺">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -56,7 +56,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -74,10 +74,8 @@ var _hmt = _hmt || [];
 			<img src="/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Xu Hongbo</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">Stay Hungry, Stay Foolish.</p>
 		
 
 		<nav class="header-menu">
@@ -134,10 +132,8 @@ var _hmt = _hmt || [];
 				<img src="/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Xu Hongbo</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Stay Hungry, Stay Foolish.<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -229,44 +225,56 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>2.动态数组</p>
 <blockquote>
-<p>支持对序列中的任意元素进行快速直接访问，甚至可以通过指针算述进行该操作。操供了在序列末尾相对快速地添加/删除元素的操作。</p>
+<p>支持对序列中的任意元素进行快速直接访问，甚至可以通过指针算述进行该操作。操供了在序列末尾相对快速地添加&#x2F;删除元素的操作。</p>
 </blockquote>
 <p>3.能够感知内存分配器的（Allocator-aware）</p>
 <blockquote>
 <p>容器使用一个内存分配器对象来动态地处理它的存储需求。</p>
 </blockquote>
-<a id="more"></a>
-<h4 id="声明及初始化"><a href="#声明及初始化" class="headerlink" title="声明及初始化"></a>声明及初始化</h4><p><strong>头文件</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>vector 是一个模板类，所以需要用 vector<typename> arry 这样的方式来声明一个 vector。<br>vector 型变量的声明以及初始化的形式也有许多, 常用的有以下几种形式:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a;             <span class="comment">//声明一个 int 型向量 a</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(<span class="number">10</span>);         <span class="comment">//声明一个初始大小为 10 的向量</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(<span class="number">10</span>, <span class="number">1</span>);      <span class="comment">//声明一个初始大小为 10 且初始值都为 1 的向量</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; b(a);          <span class="comment">//声明并用向量 a 初始化向量 b </span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; b(a.begin(), a.begin()+<span class="number">3</span>); <span class="comment">//将a向量中从第0个到第2个(共3个)作为向量b的初始值</span></span><br></pre></td></tr></table></figure></typename></p>
-<p>除此之外, 还可以直接使用数组来初始化向量。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125; ;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(n, n+<span class="number">5</span>) ;      <span class="comment">//将数组 n 的前 5 个元素作为向量 a 的初值</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(n+<span class="number">1</span>, n+<span class="number">4</span>) ;    <span class="comment">//将 n[1]-n[4] 范围内的元素作为向量 a 的初值</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="基本函数实现"><a href="#基本函数实现" class="headerlink" title="基本函数实现"></a>基本函数实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">void push_back(const T&amp; x);   //向量尾部增加一个元素X</span><br><span class="line">void pop_back();   //删除向量中最后一个元素</span><br><span class="line"></span><br><span class="line">插入 - insert</span><br><span class="line">iterator insert(iterator it,const T&amp; x);     //向量中迭代器指向元素前增加一个元素x</span><br><span class="line">// vec.insert(vec.begin()+i,a);     在第i+1个元素前面插入a;</span><br><span class="line">vec.insert(a.begin(), 1000);            //将1000插入到向量a的起始位置前</span><br><span class="line">vec.insert(a.begin(), 3, 1000) ;        //将1000分别插入到向量元素位置的0-2处(共3个元素)</span><br><span class="line">b.insert(b.begin(), a.begin(), a.end()) ;   //将a.begin(), a.end()之间的全部元素插入到b.begin()前</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除 - erase</span><br><span class="line">iterator erase(iterator it);  //删除向量中迭代器指向元素</span><br><span class="line">// vec.erase(vec.begin()+2);  删除第3个元素</span><br><span class="line">b.erase(b.begin()) ;                     //将起始位置的元素删除</span><br><span class="line">b.erase(b.begin(), b.begin()+3) ;        //将(b.begin(),b.begin()+3)之间的元素删除</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">iterator begin();    //返回向量头指针，指向第一个元素</span><br><span class="line">iterator end();      //返回向量尾指针，指向向量最后一个元素的下一个位置</span><br><span class="line"></span><br><span class="line">int size() const;    //返回向量中元素的个数</span><br><span class="line">void clear();        //清空向量中所有元素</span><br><span class="line">bool empty() const;  //判断向量是否为空，若为空，则向量中无元素</span><br></pre></td></tr></table></figure>
-<p><strong>迭代</strong><br>使用迭代器将容器中数据输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt;::iterator it; </span><br><span class="line">auto it  //上面的简写</span><br><span class="line">//声明一个迭代器，来访问vector容器，作用：遍历或者指向vector容器的元素 </span><br><span class="line">for(it=v.begin(); it!=v.end(); it++)</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;*it&lt;&lt;&quot; &quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<span id="more"></span>
+
+
+<h4 id="声明及初始化"><a href="#声明及初始化" class="headerlink" title="声明及初始化"></a>声明及初始化</h4><p><strong>头文件</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>vector 是一个模板类，所以需要用 vector<typename> arry 这样的方式来声明一个 vector。<br>vector 型变量的声明以及初始化的形式也有许多, 常用的有以下几种形式:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; a;             <span class="comment">//声明一个 int 型向量 a</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; <span class="title function_">a</span><span class="params">(<span class="number">10</span>)</span>;         <span class="comment">//声明一个初始大小为 10 的向量</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; <span class="title function_">a</span><span class="params">(<span class="number">10</span>, <span class="number">1</span>)</span>;      <span class="comment">//声明一个初始大小为 10 且初始值都为 1 的向量</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; <span class="title function_">b</span><span class="params">(a)</span>;          <span class="comment">//声明并用向量 a 初始化向量 b </span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; <span class="title function_">b</span><span class="params">(a.begin(), a.begin()+<span class="number">3</span>)</span>; <span class="comment">//将a向量中从第0个到第2个(共3个)作为向量b的初始值</span></span><br></pre></td></tr></table></figure>
+
+<p>除此之外, 还可以直接使用数组来初始化向量。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125; ;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; <span class="title function_">a</span><span class="params">(n, n+<span class="number">5</span>)</span> ;      <span class="comment">//将数组 n 的前 5 个元素作为向量 a 的初值</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; <span class="title function_">a</span><span class="params">(n+<span class="number">1</span>, n+<span class="number">4</span>)</span> ;    <span class="comment">//将 n[1]-n[4] 范围内的元素作为向量 a 的初值</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="基本函数实现"><a href="#基本函数实现" class="headerlink" title="基本函数实现"></a>基本函数实现</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">void push_back(const T&amp; x);   //向量尾部增加一个元素X</span><br><span class="line">void pop_back();   //删除向量中最后一个元素</span><br><span class="line"></span><br><span class="line">插入 - insert</span><br><span class="line">iterator insert(iterator it,const T&amp; x);     //向量中迭代器指向元素前增加一个元素x</span><br><span class="line">// vec.insert(vec.begin()+i,a);     在第i+1个元素前面插入a;</span><br><span class="line">vec.insert(a.begin(), 1000);            //将1000插入到向量a的起始位置前</span><br><span class="line">vec.insert(a.begin(), 3, 1000) ;        //将1000分别插入到向量元素位置的0-2处(共3个元素)</span><br><span class="line">b.insert(b.begin(), a.begin(), a.end()) ;   //将a.begin(), a.end()之间的全部元素插入到b.begin()前</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除 - erase</span><br><span class="line">iterator erase(iterator it);  //删除向量中迭代器指向元素</span><br><span class="line">// vec.erase(vec.begin()+2);  删除第3个元素</span><br><span class="line">b.erase(b.begin()) ;                     //将起始位置的元素删除</span><br><span class="line">b.erase(b.begin(), b.begin()+3) ;        //将(b.begin(),b.begin()+3)之间的元素删除</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">iterator begin();    //返回向量头指针，指向第一个元素</span><br><span class="line">iterator end();      //返回向量尾指针，指向向量最后一个元素的下一个位置</span><br><span class="line"></span><br><span class="line">int size() const;    //返回向量中元素的个数</span><br><span class="line">void clear();        //清空向量中所有元素</span><br><span class="line">bool empty() const;  //判断向量是否为空，若为空，则向量中无元素</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><strong>迭代</strong><br>使用迭代器将容器中数据输出 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt;::iterator it; </span><br><span class="line">auto it  //上面的简写</span><br><span class="line">//声明一个迭代器，来访问vector容器，作用：遍历或者指向vector容器的元素 </span><br><span class="line">for(it=v.begin(); it!=v.end(); it++)</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;*it&lt;&lt;&quot; &quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>v.end()</strong> 指向容器器的最后一个元素的后⼀个位置。</p>
-<p><strong>排序</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sort(vec.begin(),vec.end());    <span class="comment">//默认从小到大</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果想 sort 来降序，可重写 sort </span></span><br><span class="line">sort(a,a+n,compare);</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">return</span> a&lt; b;</span><br><span class="line">    <span class="comment">//升序排列，如果改为 return a &gt; b，则为降序 </span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">reverse(obj.begin(),obj.end()); <span class="comment">//从大到小</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>排序</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sort(vec.begin(),vec.end());    <span class="comment">//默认从小到大</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果想 sort 来降序，可重写 sort </span></span><br><span class="line">sort(a,a+n,compare);</span><br><span class="line"><span class="type">bool</span> <span class="title function_">compare</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span> </span><br><span class="line">&#123; </span><br><span class="line">    <span class="keyword">return</span> a&lt; b;</span><br><span class="line">    <span class="comment">//升序排列，如果改为 return a &gt; b，则为降序 </span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">reverse(obj.begin(),obj.end()); <span class="comment">//从大到小 </span></span><br></pre></td></tr></table></figure>
+
+
 <p><strong>二维数组</strong></p>
 <ul>
 <li>声明了一个动态二维数组</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; vec;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; vec;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>先定义好二维数组结构，再直接赋值</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//得到一个 5 行 3 列的数组</span></span><br><span class="line"><span class="comment">//由 vector 实现的二维数组，可以通过 resize() 的形式改变行、列值</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">array</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">array</span>.size(); i++)</span><br><span class="line">    <span class="built_in">array</span>[i].resize(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">array</span>.size(); i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="built_in">array</span>[<span class="number">0</span>].size();j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">array</span>[i][j] = (i+<span class="number">1</span>)*(j+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//得到一个 5 行 3 列的数组</span></span><br><span class="line"><span class="comment">//由 vector 实现的二维数组，可以通过 resize() 的形式改变行、列值</span></span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">array</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; array.<span class="built_in">size</span>(); i++)</span><br><span class="line">    array[i].<span class="built_in">resize</span>(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; array.<span class="built_in">size</span>(); i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; array[<span class="number">0</span>].<span class="built_in">size</span>();j++)</span><br><span class="line">    &#123;</span><br><span class="line">        array[i][j] = (i<span class="number">+1</span>)*(j<span class="number">+1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
 <li>固定一维的大小</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a[maxn];</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; a[maxn];</span><br></pre></td></tr></table></figure>
 <p>上式类似声明了一个二维数组，第一维的大小是固定的（不超过maxn），但第二维的大小不固定。</p>
 <h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>使用 vector 需要注意以下几点：</p>
 <ul>
 <li>如果要表示的向量长度较长（需要为向量内部保存很多数），容易导致内存泄漏，而且效率会很低。</li>
-<li>vector 作为函数的参数或者返回值时，需要注意它的写法：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">func</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;a, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;b)</span></span></span><br><span class="line"><span class="function"> <span class="comment">// “&amp;”绝不可少。</span></span></span><br></pre></td></tr></table></figure>
-</li>
+<li>vector 作为函数的参数或者返回值时，需要注意它的写法：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> <span class="title function_">func</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;&amp;a, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;&amp;b)</span></span><br><span class="line"> <span class="comment">// “&amp;”绝不可少。</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
-<li><a href="https://blog.csdn.net/duan19920101/article/details/50617190" target="_blank" rel="noopener">C++ 中vector的使用方法</a></li>
-<li><a href="https://www.cnblogs.com/mr-wid/archive/2013/01/22/2871105.html" target="_blank" rel="noopener">学习C++ -&gt; 向量(vector)</a></li>
-<li><a href="https://blog.csdn.net/w_linux/article/details/71600574" target="_blank" rel="noopener">C++（笔记）浅析vector容器的实例</a></li>
+<li><a href="https://blog.csdn.net/duan19920101/article/details/50617190">C++ 中vector的使用方法</a></li>
+<li><a href="https://www.cnblogs.com/mr-wid/archive/2013/01/22/2871105.html">学习C++ -&gt; 向量(vector)</a></li>
+<li><a href="https://blog.csdn.net/w_linux/article/details/71600574">C++（笔记）浅析vector容器的实例</a></li>
 </ul>
 
       
@@ -421,7 +429,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#vector-介绍"><span class="toc-number">1.</span> <span class="toc-text">vector 介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#声明及初始化"><span class="toc-number">2.</span> <span class="toc-text">声明及初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基本函数实现"><span class="toc-number">3.</span> <span class="toc-text">基本函数实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意事项"><span class="toc-number">4.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考链接"><span class="toc-number">5.</span> <span class="toc-text">参考链接</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#vector-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">vector 介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">声明及初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.</span> <span class="toc-text">基本函数实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-number">5.</span> <span class="toc-text">参考链接</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -467,7 +475,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 Xu Hongbo
+    		&copy; 2024 Xu Hongbo
     	</div>
 
       
@@ -619,7 +627,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,7 +635,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,10 +659,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SpaceX</a>
               </li>
              
@@ -663,15 +667,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -14,11 +14,11 @@
 <meta property="og:url" content="https://hongbosherlock.github.io/2021/02/10/c++_class/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
 <meta property="og:description" content="本章主要关注数据抽象的主要性，数据抽象能帮我们将对象的具体实现与对象所能执行的操作分离开来。  Classes 之间的关系  继承(inheritance) 复合(composition) 委托(delegation)  定义抽象数据类型 类的基本思想：数据抽象（data abstraction）和封装（encapsulation）。 数据抽象是一种依赖于接口（interface）和实现（imp">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-02-11T09:16:08.363Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-02-10T12:37:24.000Z">
+<meta property="article:modified_time" content="2024-07-23T12:57:10.993Z">
+<meta property="article:author" content="Xu Hongbo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ Primer [第 7 章类]">
-<meta name="twitter:description" content="本章主要关注数据抽象的主要性，数据抽象能帮我们将对象的具体实现与对象所能执行的操作分离开来。  Classes 之间的关系  继承(inheritance) 复合(composition) 委托(delegation)  定义抽象数据类型 类的基本思想：数据抽象（data abstraction）和封装（encapsulation）。 数据抽象是一种依赖于接口（interface）和实现（imp">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -55,7 +55,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -73,10 +73,8 @@ var _hmt = _hmt || [];
 			<img src="/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Xu Hongbo</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">Stay Hungry, Stay Foolish.</p>
 		
 
 		<nav class="header-menu">
@@ -133,10 +131,8 @@ var _hmt = _hmt || [];
 				<img src="/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Xu Hongbo</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Stay Hungry, Stay Foolish.<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -233,16 +229,15 @@ var _hmt = _hmt || [];
 </ul>
 <h3 id="类成员-（Member）"><a href="#类成员-（Member）" class="headerlink" title="类成员 （Member）"></a>类成员 （Member）</h3><ul>
 <li>必须在类的内部声明，不能在其他地方增加成员。</li>
-<li><p>成员可以是数据，函数，类型别名。</p>
-<a id="more"></a>
-<h3 id="类的成员函数"><a href="#类的成员函数" class="headerlink" title="类的成员函数"></a>类的成员函数</h3></li>
-<li><p>成员函数的<strong>声明</strong>必须在类的内部。</p>
-</li>
+<li>成员可以是数据，函数，类型别名。<span id="more"></span></li>
+</ul>
+<h3 id="类的成员函数"><a href="#类的成员函数" class="headerlink" title="类的成员函数"></a>类的成员函数</h3><ul>
+<li>成员函数的<strong>声明</strong>必须在类的内部。</li>
 <li>成员函数的<strong>定义</strong>既可以在类的内部也可以在外部。</li>
 <li>使用点运算符 <code>.</code> 调用成员函数。实际上是在替<code>.</code>前面的对象调用它。</li>
 <li>必须对任何<code>const</code>或引用类型成员以及没有默认构造函数的类类型的任何成员使用初始化式。</li>
-<li><code>ConstRef::ConstRef(int ii): i(ii), ci(i), ri(ii) { }</code></li>
-<li>默认实参： <code>Sales_item(const std::string &amp;book): isbn(book), units_sold(0), revenue(0.0) { }</code></li>
+<li><code>ConstRef::ConstRef(int ii): i(ii), ci(i), ri(ii) &#123; &#125;</code></li>
+<li>默认实参： <code>Sales_item(const std::string &amp;book): isbn(book), units_sold(0), revenue(0.0) &#123; &#125;</code></li>
 <li><code>*this</code>：<ul>
 <li>每个成员函数都有一个额外的，隐含的形参<code>this</code>。</li>
 <li><code>this</code>总是指向当前对象，因此<code>this</code>是一个<strong>常量指针</strong>。</li>
@@ -269,9 +264,9 @@ var _hmt = _hmt || [];
 <li>构造函数是特殊的成员函数。</li>
 <li>构造函数放在类的<code>public</code>部分。</li>
 <li>与类同名的成员函数。</li>
-<li><code>Sales_item(): units_sold(0), revenue(0.0) { }</code></li>
+<li><code>Sales_item(): units_sold(0), revenue(0.0) &#123; &#125;</code></li>
 <li><code>=default</code>要求编译器合成默认的构造函数。(<code>C++11</code>)</li>
-<li>初始化列表：冒号和花括号之间的代码： <code>Sales_item(): units_sold(0), revenue(0.0) { }</code></li>
+<li>初始化列表：冒号和花括号之间的代码： <code>Sales_item(): units_sold(0), revenue(0.0) &#123; &#125;</code></li>
 </ul>
 <h2 id="访问控制与封装"><a href="#访问控制与封装" class="headerlink" title="访问控制与封装"></a>访问控制与封装</h2><ul>
 <li><strong>访问说明符</strong>（access specifiers）：<ul>
@@ -289,7 +284,7 @@ var _hmt = _hmt || [];
 <li>允许特定的<strong>非成员函数</strong>访问一个类的<strong>私有成员</strong>.</li>
 <li>友元的声明以关键字 <code>friend</code>开始。 <code>friend Sales_data add(const Sales_data&amp;, const Sales_data&amp;);</code>表示非成员函数<code>add</code>可以访问类的非公有成员。</li>
 <li>通常将友元声明放在<strong>类定义的开始或者结尾</strong>。<ul>
-<li>在类外也要为友元函数提供独立的声明。 </li>
+<li>在类外也要为友元函数提供独立的声明。</li>
 </ul>
 </li>
 <li>类之间的友元：<ul>
@@ -323,7 +318,7 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 <li>一个 const 成员函数如果以引用的形式返回 *this ，那么它的返回类型将是常量引用。</li>
-<li><code>class Screen</code> 仅声明类，而暂时不定义它。 </li>
+<li><code>class Screen</code> 仅声明类，而暂时不定义它。</li>
 </ul>
 <h2 id="类的作用域"><a href="#类的作用域" class="headerlink" title="类的作用域"></a>类的作用域</h2><ul>
 <li>每个类都会定义它自己的作用域。在类的作用域之外，普通的数据和函数成员只能由引用、对象、指针使用成员访问运算符来访问。</li>
@@ -344,7 +339,7 @@ var _hmt = _hmt || [];
 </li>
 <li>最好让构造函数初始值的顺序和成员声明的顺序保持一致。</li>
 <li>如果一个构造函数为所有参数都提供了默认实参，那么它实际上也定义了默认的构造函数。<ul>
-<li>不能有多个提供了所有实参的构造函数，会导致默认构造函数不明确。 </li>
+<li>不能有多个提供了所有实参的构造函数，会导致默认构造函数不明确。</li>
 </ul>
 </li>
 </ul>
@@ -354,12 +349,12 @@ var _hmt = _hmt || [];
 <h3 id="委托构造函数-（delegating-constructor-C-11）"><a href="#委托构造函数-（delegating-constructor-C-11）" class="headerlink" title="委托构造函数 （delegating constructor, C++11）"></a>委托构造函数 （delegating constructor, <code>C++11</code>）</h3><ul>
 <li>委托构造函数将自己的职责委托给了类内想其他构造函数。</li>
 <li>当一个构造函数委托给另一个构造函数时，受委托的构造函数的初始值列表和函数体被依次执行。</li>
-<li><code>Sale_data(): Sale_data(&quot;&quot;, 0, 0) {}</code></li>
+<li><code>Sale_data(): Sale_data(&quot;&quot;, 0, 0) &#123;&#125;</code></li>
 </ul>
 <h3 id="隐式的类型转换"><a href="#隐式的类型转换" class="headerlink" title="隐式的类型转换"></a>隐式的类型转换</h3><ul>
 <li>如果构造函数<strong>只接受一个实参</strong>，则它实际上定义了转换为此类类型的<strong>隐式转换机制</strong>。这种构造函数又叫<strong>转换构造函数</strong>（converting constructor）。</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> null_book = <span class="string">"9-999-99999-9"</span>;</span><br><span class="line"><span class="comment">// constructs a temporary Sales_data object</span></span><br><span class="line"><span class="comment">// with units_sold and revenue equal to 0 and bookNo equal to null_book</span></span><br><span class="line">item.combine(null_book);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string null_book = <span class="string">&quot;9-999-99999-9&quot;</span>;</span><br><span class="line"><span class="comment">// constructs a temporary Sales_data object</span></span><br><span class="line"><span class="comment">// with units_sold and revenue equal to 0 and bookNo equal to null_book</span></span><br><span class="line">item.<span class="built_in">combine</span>(null_book);</span><br></pre></td></tr></table></figure>
 <ul>
 <li>编译器只会自动地执行 <strong>仅一步</strong> 类型转换。</li>
 <li>抑制构造函数定义的隐式转换：<ul>
@@ -424,7 +419,7 @@ var _hmt = _hmt || [];
 <li>静态数据成员可以作为默认实参。</li>
 <li>静态数据成员的类型可以就是它所属的类类型：</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bar</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">static</span> Bar mem1; <span class="comment">// ok: static member can have incomplete type</span></span><br><span class="line">    Bar *mem2; <span class="comment">// ok: pointer member can have incomplete type</span></span><br><span class="line">    Bar mem3; <span class="comment">// error: data members must have complete type</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Bar</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">static</span> Bar mem1; <span class="comment">// ok: static member can have incomplete type</span></span><br><span class="line">    Bar *mem2; <span class="comment">// ok: pointer member can have incomplete type</span></span><br><span class="line">    Bar mem3; <span class="comment">// error: data members must have complete type</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -567,7 +562,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义抽象数据类型"><span class="toc-number">1.</span> <span class="toc-text">定义抽象数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类成员-（Member）"><span class="toc-number">1.1.</span> <span class="toc-text">类成员 （Member）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类的成员函数"><span class="toc-number">1.2.</span> <span class="toc-text">类的成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非成员函数"><span class="toc-number">1.3.</span> <span class="toc-text">非成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类的构造函数"><span class="toc-number">1.4.</span> <span class="toc-text">类的构造函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问控制与封装"><span class="toc-number">2.</span> <span class="toc-text">访问控制与封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#友元-friend"><span class="toc-number">2.1.</span> <span class="toc-text">友元(friend)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#封装"><span class="toc-number">2.2.</span> <span class="toc-text">封装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的其他特性"><span class="toc-number">3.</span> <span class="toc-text">类的其他特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的作用域"><span class="toc-number">4.</span> <span class="toc-text">类的作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造函数再探"><span class="toc-number">5.</span> <span class="toc-text">构造函数再探</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#委托构造函数-（delegating-constructor-C-11）"><span class="toc-number">5.1.</span> <span class="toc-text">委托构造函数 （delegating constructor, C++11）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式的类型转换"><span class="toc-number">5.2.</span> <span class="toc-text">隐式的类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聚合类-（aggregate-class）"><span class="toc-number">5.3.</span> <span class="toc-text">聚合类 （aggregate class）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字面值常量类"><span class="toc-number">5.4.</span> <span class="toc-text">字面值常量类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的静态成员"><span class="toc-number">6.</span> <span class="toc-text">类的静态成员</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%8A%BD%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">定义抽象数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%88%90%E5%91%98-%EF%BC%88Member%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">类成员 （Member）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">类的成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">非成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.</span> <span class="toc-text">类的构造函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B0%81%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">访问控制与封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E5%85%83-friend"><span class="toc-number">2.1.</span> <span class="toc-text">友元(friend)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">封装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E5%85%B6%E4%BB%96%E7%89%B9%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">类的其他特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">4.</span> <span class="toc-text">类的作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%86%8D%E6%8E%A2"><span class="toc-number">5.</span> <span class="toc-text">构造函数再探</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A7%94%E6%89%98%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0-%EF%BC%88delegating-constructor-C-11%EF%BC%89"><span class="toc-number">5.1.</span> <span class="toc-text">委托构造函数 （delegating constructor, C++11）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.2.</span> <span class="toc-text">隐式的类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E7%B1%BB-%EF%BC%88aggregate-class%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">聚合类 （aggregate class）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E9%9D%A2%E5%80%BC%E5%B8%B8%E9%87%8F%E7%B1%BB"><span class="toc-number">5.4.</span> <span class="toc-text">字面值常量类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E9%9D%99%E6%80%81%E6%88%90%E5%91%98"><span class="toc-number">6.</span> <span class="toc-text">类的静态成员</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -613,7 +608,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 Xu Hongbo
+    		&copy; 2024 Xu Hongbo
     	</div>
 
       
@@ -765,7 +760,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -773,7 +768,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -797,10 +792,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SpaceX</a>
               </li>
              
@@ -809,15 +800,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
              
               <li class="article-tag-list-item">

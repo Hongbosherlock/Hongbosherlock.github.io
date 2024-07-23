@@ -9,21 +9,21 @@
   <title>SCUNET使用IPv6的方法 | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="引言之前我一直是在 vps 上自搭梯子来科学上网（Do+ssr），虽说网速挺快，也能触达大部分网站。但还有一类网站无法访问，那就是 IPv6 网站。我曾经在 Ubuntu 下折腾了很久，都没有成功用上我的 ssr。最后看网上的教程，接入 IPv6 网络（开启 Teredo 隧道）">
-<meta name="keywords" content="IPv6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SCUNET使用IPv6的方法">
 <meta property="og:url" content="https://hongbosherlock.github.io/2019/04/17/ipv6/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
 <meta property="og:description" content="引言之前我一直是在 vps 上自搭梯子来科学上网（Do+ssr），虽说网速挺快，也能触达大部分网站。但还有一类网站无法访问，那就是 IPv6 网站。我曾经在 Ubuntu 下折腾了很久，都没有成功用上我的 ssr。最后看网上的教程，接入 IPv6 网络（开启 Teredo 隧道）">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/ipv.jpg">
 <meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1g25z8qrt14j30is05c0te.jpg">
 <meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1g25z9q03ruj30gu0593yr.jpg">
 <meta property="og:image" content="https://hongbosherlock.github.io/2019/04/17/ipv6/![](https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png)">
-<meta property="og:updated_time" content="2021-02-10T05:08:17.904Z">
+<meta property="article:published_time" content="2019-04-17T12:27:29.000Z">
+<meta property="article:modified_time" content="2024-07-23T12:57:10.997Z">
+<meta property="article:author" content="Xu Hongbo">
+<meta property="article:tag" content="IPv6">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SCUNET使用IPv6的方法">
-<meta name="twitter:description" content="引言之前我一直是在 vps 上自搭梯子来科学上网（Do+ssr），虽说网速挺快，也能触达大部分网站。但还有一类网站无法访问，那就是 IPv6 网站。我曾经在 Ubuntu 下折腾了很久，都没有成功用上我的 ssr。最后看网上的教程，接入 IPv6 网络（开启 Teredo 隧道）">
 <meta name="twitter:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/ipv.jpg">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
@@ -61,7 +61,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -79,10 +79,8 @@ var _hmt = _hmt || [];
 			<img src="/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Xu Hongbo</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">Stay Hungry, Stay Foolish.</p>
 		
 
 		<nav class="header-menu">
@@ -139,10 +137,8 @@ var _hmt = _hmt || [];
 				<img src="/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Xu Hongbo</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Stay Hungry, Stay Foolish.<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -224,22 +220,28 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/ipv.jpg" alt=""></p>
-<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>之前我一直是在 vps 上自搭梯子来科学上网（Do+ssr），虽说网速挺快，也能触达大部分网站。但还有一类网站无法访问，那就是 IPv6 网站。我曾经在 Ubuntu 下折腾了很久，都没有成功用上我的 ssr。最后看网上的教程，接入 IPv6 网络（开启 Teredo 隧道）<a id="more"></a>，修改了 hosts 文件，再配合<a href="https://github.com/XX-net/XX-Net" target="_blank" rel="noopener">XX-Net</a>一起食用,又恢复了原来的 freedom。关于 Ubuntu 下如何科学上网，抽个时间单独写一篇吧。逃:）</p>
-<p>相比 Ubuntu，win 就不那么友好了。我在校园网、寝室电信、家里的电信网络环境里，都能在 Ubuntu 下开启 IPv6 服务。但是 win 复杂的配置让我摸不着头脑（好吧，其实是我不懂），就一直没能在 win 上体验过 IPv6 的便捷。网上已经有人试过通过配置 vps 和服务器端的 ss(r) 来使用 IPv6 服务，方法有些麻烦，我就懒得折腾了。正好前几天权游第八季开播，这么火的剧我还没看过一集，而且质量也很好。强哥就给我推荐了<a href="https://bt.byr.cn/login.php" target="_blank" rel="noopener">北邮人</a>,这是个 IPv6 的 BT 网站，有很多高质量的影视资源。于是，我就开始了 win 下 IPv6 的探索之旅······</p>
-<h3 id="啥是-IPv6？"><a href="#啥是-IPv6？" class="headerlink" title="啥是 IPv6？"></a>啥是 IPv6？</h3><p>别说 IPv6 ，很多人可能连 <a href="https://baike.baidu.com/item/IPv4" target="_blank" rel="noopener">IPv4</a> 都不太清楚。我之前也只是听过这两个名词，直到学了<strong>计算机网络</strong>，我才逐渐揭开了 IPv6 神秘的面纱。</p>
+        <p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/ipv.jpg"></p>
+<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>之前我一直是在 vps 上自搭梯子来科学上网（Do+ssr），虽说网速挺快，也能触达大部分网站。但还有一类网站无法访问，那就是 IPv6 网站。我曾经在 Ubuntu 下折腾了很久，都没有成功用上我的 ssr。最后看网上的教程，接入 IPv6 网络（开启 Teredo 隧道）<span id="more"></span>，修改了 hosts 文件，再配合<a href="https://github.com/XX-net/XX-Net">XX-Net</a>一起食用,又恢复了原来的 freedom。关于 Ubuntu 下如何科学上网，抽个时间单独写一篇吧。逃:）</p>
+<p>相比 Ubuntu，win 就不那么友好了。我在校园网、寝室电信、家里的电信网络环境里，都能在 Ubuntu 下开启 IPv6 服务。但是 win 复杂的配置让我摸不着头脑（好吧，其实是我不懂），就一直没能在 win 上体验过 IPv6 的便捷。网上已经有人试过通过配置 vps 和服务器端的 ss(r) 来使用 IPv6 服务，方法有些麻烦，我就懒得折腾了。正好前几天权游第八季开播，这么火的剧我还没看过一集，而且质量也很好。强哥就给我推荐了<a href="https://bt.byr.cn/login.php">北邮人</a>,这是个 IPv6 的 BT 网站，有很多高质量的影视资源。于是，我就开始了 win 下 IPv6 的探索之旅······</p>
+<h3 id="啥是-IPv6？"><a href="#啥是-IPv6？" class="headerlink" title="啥是 IPv6？"></a>啥是 IPv6？</h3><p>别说 IPv6 ，很多人可能连 <a href="https://baike.baidu.com/item/IPv4">IPv4</a> 都不太清楚。我之前也只是听过这两个名词，直到学了<strong>计算机网络</strong>，我才逐渐揭开了 IPv6 神秘的面纱。</p>
 <p>IPv6 是下一代因特网协议。大部分因特网使用 IPv4，而且此协议在 20 多年来被证明是可靠的、富于弹性的。然而，IPv4 也存在局限性并且随着因特网的扩展会导致许多问题。IPv6 是 IPv4 的更新版本并且它将逐渐替代 IPv4 而作为网际标准。</p>
 <p>IPv6 地址的大小和格式使得寻址功能大为增强。</p>
 <p>IPv6 地址大小为 128 位。首选 IPv6 地址表示法为 x:x:x:x:x:x:x:x，其中每个 x 是地址的 8 个 16 位部分的十六进制值。IPv6 地址范围从 0000:0000:0000:0000:0000:0000:0000:0000 至 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff。</p>
 <h3 id="如何开启IPv6"><a href="#如何开启IPv6" class="headerlink" title="如何开启IPv6"></a>如何开启IPv6</h3><p> <strong>ISP 商直接提供 IPv6 支持</strong></p>
 <blockquote>
 <p>部分地区的运营商已开通 IPv6原生支持。比如电信运营商已经在骨干网实现了IPv6支持。</p>
+</blockquote>
+<blockquote>
 <p>高校教育网一般已开通原生 IPv6。</p>
 </blockquote>
 <p><strong>通过各种隧道获取 IPv6 支持</strong></p>
 <blockquote>
 <p>公网ip用户：6to4 隧道</p>
-<p>内网ip用户：<a href="https://github.com/XX-net/XX-Net/wiki/teredo" target="_blank" rel="noopener">teredo 隧道</a></p>
+</blockquote>
+<blockquote>
+<p>内网ip用户：<a href="https://github.com/XX-net/XX-Net/wiki/teredo">teredo 隧道</a></p>
+</blockquote>
+<blockquote>
 <p>未开通原生 IPv6 的教育网用户：教育网 ISATAP 隧道</p>
 </blockquote>
 <p>教育网用户可以通过双栈及 ISATAP 隧道的方式进行 IPv6 的访问。</p>
@@ -251,54 +253,62 @@ var _hmt = _hmt || [];
 <p>我是使用了 ISATAP 隧道方式接入了 IPv6 网络。</p>
 <p><strong>启动</strong></p>
 <p>Win+X 打开 CMD 或 Windows PowerShell（管理员）, 在命令行下操作。</p>
-<p>若系统自动启用了其他隧道会影响正常访问，可选择禁用其他IPv6隧道：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netsh interface teredo set state disable    （禁用 teredo 隧道）</span><br><span class="line">netsh interface 6to4 set state disable      （禁用 6to4 隧道）</span><br></pre></td></tr></table></figure></p>
+<p>若系统自动启用了其他隧道会影响正常访问，可选择禁用其他IPv6隧道：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netsh interface teredo set state disable    （禁用 teredo 隧道）</span><br><span class="line">netsh interface 6to4 set state disable      （禁用 6to4 隧道）</span><br></pre></td></tr></table></figure>
+
 <p>设定 ISATAP 路由器和启用 ISATAP 隧道：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netsh interface isatap set state default</span><br><span class="line">netsh int ipv6 isatap set router 202.115.39.98  //&lt;ISATAP隧道服务器地址&gt;</span><br><span class="line">netsh int ipv6 isatap set state enabled</span><br></pre></td></tr></table></figure>
-<p><strong>测试 IPv6 连接</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping -6 ipv6.test-ipv6.com</span><br><span class="line">ping -6 [2001:470:1:18::125]</span><br></pre></td></tr></table></figure></p>
-<p>连接成功：</p>
-<p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1g25z8qrt14j30is05c0te.jpg" alt=""></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netsh interface isatap set state default</span><br><span class="line">netsh int ipv6 isatap set router 202.115.39.98  //&lt;ISATAP隧道服务器地址&gt;</span><br><span class="line">netsh int ipv6 isatap set state enabled</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>测试 IPv6 连接</strong><br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping -6 ipv6.test-ipv6.com</span><br><span class="line">ping -6 [2001:470:1:18::125]</span><br></pre></td></tr></table></figure><br>连接成功：</p>
+<p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1g25z8qrt14j30is05c0te.jpg"></p>
 <p>不需要每个包都收到了，只要有包成功发送接收，就表明连通了。</p>
-<p><strong>重置 IPv6 配置（可选）</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh interface ipv6 reset</span><br></pre></td></tr></table></figure></p>
-<p><strong>检查</strong></p>
-<p>通过命令 ipconfig /all 查看当前网络信息:</p>
+<p><strong>重置 IPv6 配置（可选）</strong><br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh interface ipv6 reset</span><br></pre></td></tr></table></figure><br><strong>检查</strong></p>
+<p>通过命令 ipconfig &#x2F;all 查看当前网络信息:</p>
 <blockquote>
 <p>若有2001:250:2003:为前缀的IPv6地址，说明已正常连接了我校IPv6网，</p>
 <p>若是其他前缀的IPv6地址，如FE80：或2001：0:：等开头的，说明IPv6未连通或是连接的非我校IPv6网。</p>
 </blockquote>
 <p><strong>如果发现掉线了：</strong></p>
-<p>执行这3条，全禁掉<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netsh interface teredo set state disabled</span><br><span class="line">netsh interface 6to4 set state disabled</span><br><span class="line">netsh interface ipv6 isatap set state disabled</span><br></pre></td></tr></table></figure></p>
-<p>查看teredo状态<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh interface ipv6 show teredo stat</span><br></pre></td></tr></table></figure></p>
+<p>执行这3条，全禁掉</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netsh interface teredo set state disabled</span><br><span class="line">netsh interface 6to4 set state disabled</span><br><span class="line">netsh interface ipv6 isatap set state disabled</span><br></pre></td></tr></table></figure>
+
+<p>查看teredo状态</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netsh interface ipv6 show teredo stat</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>teredo状态如下：</p>
-<p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1g25z9q03ruj30gu0593yr.jpg" alt=""></p>
+<p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/006w4HKkly1g25z9q03ruj30gu0593yr.jpg"></p>
 <p>最后再重复之前的设置过程就好了。</p>
 <p>以下操作为非必须。如果按照上述提示操作以后仍无法正常访问 IPv6 站点，可以尝试：</p>
 <ul>
 <li>右键点击桌面“计算机”图标，选择“管理”，展开“服务和应用程序”，选择“服务”，确认“IP Helper”服务已开启；</li>
 <li>确认 Teredo 隧道已经关闭（管理员模式在命令行运行 netsh int teredo set state disable）；</li>
-<li>确认原生 IPv6 已经关闭（ Internet 协议版本 6 (TCP/IPv6)前的对勾取消，位置在控制面板→网络和 Internet→网络和共享中心→更改适配器设置→双击本地连接→属性）；<br>尝试重启系统。</li>
+<li>确认原生 IPv6 已经关闭（ Internet 协议版本 6 (TCP&#x2F;IPv6)前的对勾取消，位置在控制面板→网络和 Internet→网络和共享中心→更改适配器设置→双击本地连接→属性）；<br>尝试重启系统。</li>
 </ul>
 <h3 id="IPv6常用资源"><a href="#IPv6常用资源" class="headerlink" title="IPv6常用资源"></a>IPv6常用资源</h3><p><strong>一、IPTV</strong></p>
-<p>清华大学：<a href="http://iptv.tsinghua.edu.cn/" target="_blank" rel="noopener">http://iptv.tsinghua.edu.cn/</a></p>
-<p>北京邮电大学 <a href="http://tv.byr.cn/show" target="_blank" rel="noopener">http://tv.byr.cn/show</a></p>
-<p>中国科技大学：<a href="http://tv6.ustc.edu.cn/" target="_blank" rel="noopener">http://tv6.ustc.edu.cn/</a></p>
-<p>东北大学：<a href="http://video.neu6.edu.cn/" target="_blank" rel="noopener">http://video.neu6.edu.cn/</a></p>
-<p>沈阳航空航天：<a href="http://dh.sau6.com/" target="_blank" rel="noopener">http://dh.sau6.com/</a></p>
-<p>安徽农业大学：<a href="http://itv.ahau.edu.cn/" target="_blank" rel="noopener">http://itv.ahau.edu.cn/</a></p>
+<p>清华大学：<a href="http://iptv.tsinghua.edu.cn/">http://iptv.tsinghua.edu.cn/</a></p>
+<p>北京邮电大学 <a href="http://tv.byr.cn/show">http://tv.byr.cn/show</a></p>
+<p>中国科技大学：<a href="http://tv6.ustc.edu.cn/">http://tv6.ustc.edu.cn/</a></p>
+<p>东北大学：<a href="http://video.neu6.edu.cn/">http://video.neu6.edu.cn/</a></p>
+<p>沈阳航空航天：<a href="http://dh.sau6.com/">http://dh.sau6.com/</a></p>
+<p>安徽农业大学：<a href="http://itv.ahau.edu.cn/">http://itv.ahau.edu.cn/</a></p>
 <p><strong>二、BT</strong></p>
-<p>六维空间：<a href="http://bt.neu6.edu.cn/" target="_blank" rel="noopener">http://bt.neu6.edu.cn/</a></p>
-<p>北邮人：<a href="http://bt.byr.cn/" target="_blank" rel="noopener">http://bt.byr.cn/</a></p>
-<p>上大乐乎：<a href="http://bt6.shu6.edu.cn/" target="_blank" rel="noopener">http://bt6.shu6.edu.cn/</a></p>
-<p>品知人大：<a href="http://bt.ruc6.edu.cn/" target="_blank" rel="noopener">http://bt.ruc6.edu.cn/</a></p>
+<p>六维空间：<a href="http://bt.neu6.edu.cn/">http://bt.neu6.edu.cn/</a></p>
+<p>北邮人：<a href="http://bt.byr.cn/">http://bt.byr.cn/</a></p>
+<p>上大乐乎：<a href="http://bt6.shu6.edu.cn/">http://bt6.shu6.edu.cn/</a></p>
+<p>品知人大：<a href="http://bt.ruc6.edu.cn/">http://bt.ruc6.edu.cn/</a></p>
 <p><strong>三、其他</strong></p>
-<p>Google : <a href="https://ipv6.google.com/" target="_blank" rel="noopener">https://ipv6.google.com/</a></p>
-<p>ipv6测试 ：<a href="http://result.ds.test-ipv6.com/" target="_blank" rel="noopener">http://result.ds.test-ipv6.com/</a></p>
-<p>ipv6论坛：<a href="http://www.ipv6forum.com/" target="_blank" rel="noopener">http://www.ipv6forum.com/</a></p>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://github.com/tuna/ipv6.tsinghua.edu.cn/blob/master/isatap.md" target="_blank" rel="noopener">ISATAP隧道</a></p>
-<p><a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Win10" target="_blank" rel="noopener">IPv6 Win10</a></p>
-<p><a href="http://imc.scu.edu.cn/info/1012/1089.htm" target="_blank" rel="noopener">CNGI驻地网开通及IPv6使用指南</a></p>
-<p><a href="https://www.cnblogs.com/xuanmanstein/p/7675406.html" target="_blank" rel="noopener">ping找不到主机问题</a></p>
-<p><br></p>
-<div style="text-align: center"><br><img src="![](https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png)" width="50%" height="50%" align="center"><br></div>
+<p>Google : <a href="https://ipv6.google.com/">https://ipv6.google.com/</a></p>
+<p>ipv6测试 ：<a href="http://result.ds.test-ipv6.com/">http://result.ds.test-ipv6.com/</a></p>
+<p>ipv6论坛：<a href="http://www.ipv6forum.com/">http://www.ipv6forum.com/</a></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://github.com/tuna/ipv6.tsinghua.edu.cn/blob/master/isatap.md">ISATAP隧道</a></p>
+<p><a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Win10">IPv6 Win10</a></p>
+<p><a href="http://imc.scu.edu.cn/info/1012/1089.htm">CNGI驻地网开通及IPv6使用指南</a></p>
+<p><a href="https://www.cnblogs.com/xuanmanstein/p/7675406.html">ping找不到主机问题</a></p>
+<br>
+
+<div style="text-align: center">
+<img src="![](https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png)" width="50%" height="50%" align=center >
+</div>
 
 
       
@@ -453,7 +463,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#引言"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#啥是-IPv6？"><span class="toc-number">2.</span> <span class="toc-text">啥是 IPv6？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何开启IPv6"><span class="toc-number">3.</span> <span class="toc-text">如何开启IPv6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具体实现"><span class="toc-number">4.</span> <span class="toc-text">具体实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPv6常用资源"><span class="toc-number">5.</span> <span class="toc-text">IPv6常用资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考链接"><span class="toc-number">6.</span> <span class="toc-text">参考链接</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%95%A5%E6%98%AF-IPv6%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">啥是 IPv6？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFIPv6"><span class="toc-number">3.</span> <span class="toc-text">如何开启IPv6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.</span> <span class="toc-text">具体实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPv6%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90"><span class="toc-number">5.</span> <span class="toc-text">IPv6常用资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-number">6.</span> <span class="toc-text">参考链接</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -499,7 +509,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 Xu Hongbo
+    		&copy; 2024 Xu Hongbo
     	</div>
 
       
@@ -651,7 +661,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,7 +669,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -683,10 +693,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SpaceX</a>
               </li>
              
@@ -695,15 +701,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
              
               <li class="article-tag-list-item">

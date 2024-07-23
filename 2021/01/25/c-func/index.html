@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://hongbosherlock.github.io">
   <title>C++ Primer [第 6 章函数] | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="6.1 函数基础1. 实参和形参的区别  形参：在函数参数列表中声明的局部变量。 它们由每次调用函数时提供的实参初始化。 实参：在函数调用中提供的值，用于初始化函数的形参。 2. 局部对象   （1）局部静态对象 局部静态对象在程序的执行路径第一次经过对象定义语句时初始化，在函数结束时还存在，直到程序终止才被销毁。  局部静态对象只被初始化一次。  (2) 函数应该在头文件中声明，在源文件中定义">
+  <meta name="description" content="6.1 函数基础1. 实参和形参的区别  形参：在函数参数列表中声明的局部变量。 它们由每次调用函数时提供的实参初始化。 实参：在函数调用中提供的值，用于初始化函数的形参。   2. 局部对象 （1）局部静态对象 局部静态对象在程序的执行路径第一次经过对象定义语句时初始化，在函数结束时还存在，直到程序终止才被销毁。  局部静态对象只被初始化一次。  (2) 函数应该在头文件中声明，在源文件中定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ Primer [第 6 章函数]">
 <meta property="og:url" content="https://hongbosherlock.github.io/2021/01/25/c-func/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
-<meta property="og:description" content="6.1 函数基础1. 实参和形参的区别  形参：在函数参数列表中声明的局部变量。 它们由每次调用函数时提供的实参初始化。 实参：在函数调用中提供的值，用于初始化函数的形参。 2. 局部对象   （1）局部静态对象 局部静态对象在程序的执行路径第一次经过对象定义语句时初始化，在函数结束时还存在，直到程序终止才被销毁。  局部静态对象只被初始化一次。  (2) 函数应该在头文件中声明，在源文件中定义">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-28T15:03:46.765Z">
+<meta property="og:description" content="6.1 函数基础1. 实参和形参的区别  形参：在函数参数列表中声明的局部变量。 它们由每次调用函数时提供的实参初始化。 实参：在函数调用中提供的值，用于初始化函数的形参。   2. 局部对象 （1）局部静态对象 局部静态对象在程序的执行路径第一次经过对象定义语句时初始化，在函数结束时还存在，直到程序终止才被销毁。  局部静态对象只被初始化一次。  (2) 函数应该在头文件中声明，在源文件中定">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-01-25T04:58:49.000Z">
+<meta property="article:modified_time" content="2024-07-23T12:57:10.993Z">
+<meta property="article:author" content="Xu Hongbo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ Primer [第 6 章函数]">
-<meta name="twitter:description" content="6.1 函数基础1. 实参和形参的区别  形参：在函数参数列表中声明的局部变量。 它们由每次调用函数时提供的实参初始化。 实参：在函数调用中提供的值，用于初始化函数的形参。 2. 局部对象   （1）局部静态对象 局部静态对象在程序的执行路径第一次经过对象定义语句时初始化，在函数结束时还存在，直到程序终止才被销毁。  局部静态对象只被初始化一次。  (2) 函数应该在头文件中声明，在源文件中定义">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -55,7 +55,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -73,10 +73,8 @@ var _hmt = _hmt || [];
 			<img src="/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Xu Hongbo</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">Stay Hungry, Stay Foolish.</p>
 		
 
 		<nav class="header-menu">
@@ -133,10 +131,8 @@ var _hmt = _hmt || [];
 				<img src="/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Xu Hongbo</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Stay Hungry, Stay Foolish.<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -218,48 +214,55 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><br></p>
+        <br>
+
 <h3 id="6-1-函数基础"><a href="#6-1-函数基础" class="headerlink" title="6.1 函数基础"></a>6.1 函数基础</h3><p><strong>1. 实参和形参的区别</strong></p>
 <ul>
 <li>形参：在函数参数列表中声明的局部变量。 它们由每次调用函数时提供的实参初始化。</li>
-<li><p>实参：在函数调用中提供的值，用于初始化函数的形参。</p>
-<p><strong>2. 局部对象</strong></p>
-</li>
+<li>实参：在函数调用中提供的值，用于初始化函数的形参。</li>
 </ul>
+<p> <strong>2. 局部对象</strong></p>
 <p>（1）局部静态对象</p>
 <p>局部静态对象在程序的执行路径第一次经过对象定义语句时初始化，在函数结束时还存在，直到程序终止才被销毁。</p>
 <ul>
 <li>局部静态对象只被初始化一次。</li>
 </ul>
 <p>(2) 函数应该在头文件中声明，在源文件中定义</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <p> <strong>3.分离式编译</strong></p>
 <h3 id="6-2-参数传递"><a href="#6-2-参数传递" class="headerlink" title="6.2 参数传递"></a>6.2 参数传递</h3><p><strong>1. 使用引用避免拷贝</strong></p>
 <p>string 对象可能会非常长，所以应该尽量避免直接拷贝它们，这时使用引用形参是比较明智的选择。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// compare the length of two strings</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isShorter</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> &amp;s1, <span class="keyword">const</span> <span class="built_in">string</span> &amp;s2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s1.size() &lt; s2.size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// compare the length of two strings</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">isShorter</span><span class="params">(<span class="type">const</span> string &amp;s1, <span class="type">const</span> string &amp;s2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s<span class="number">1.</span><span class="built_in">size</span>() &lt; s<span class="number">2.</span><span class="built_in">size</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>尽量使用常量引用。</li>
 <li>如果函数无需改变引用形参的值，最好将其声明为<strong>常量引用</strong>。</li>
 </ul>
 <p><strong>2. const 形参和实参</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fcn</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> i)</span> </span>&#123; <span class="comment">/* fcn 能读取 i，但是不能向 i 写值 */</span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">fcn</span><span class="params">(<span class="type">const</span> <span class="type">int</span> i)</span> </span>&#123; <span class="comment">/* fcn 能读取 i，但是不能向 i 写值 */</span>&#125;</span><br></pre></td></tr></table></figure>
+
 <p>调用 fcn 函数时，既可以传入 const int，也可以传入 int。</p>
 <p><strong>3. 数组引用形参</strong></p>
 <p>形参也可以是数组的引用</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ok: parameter is a reference to an array; the dimension is part of the type</span></span><br><span class="line">void print(int (&amp;arr)[10])</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> elem : arr)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; elem &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ok: parameter is a reference to an array; the dimension is part of the type</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">int</span> (&amp;arr)[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> elem : arr)</span><br><span class="line">        cout &lt;&lt; elem &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>(&amp;arr)</code> 两端的括号不可少</li>
 <li>这一用法无形中限制了只能将函数作用于大小为 10 的数组</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int k[10] = &#123;0,1,2,3,4,5,6,7,8,9&#125;;</span><br><span class="line">printf(k);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int k[10] = &#123;0,1,2,3,4,5,6,7,8,9&#125;;</span><br><span class="line">printf(k);</span><br></pre></td></tr></table></figure>
+
 <p><strong>4. 传递多维数组</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// matrix 指向数组的首元素，该数组的元素是又 10 个整数构成的数组</span></span><br><span class="line">void printf(int (*matrix)[10], int size)</span><br><span class="line"></span><br><span class="line"><span class="comment">//等价定义</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printf</span><span class="params">(<span class="keyword">int</span> matrix[][<span class="number">10</span>], <span class="keyword">int</span> size)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// matrix 指向数组的首元素，该数组的元素是又 10 个整数构成的数组</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printf</span><span class="params">(<span class="type">int</span> (*matrix)[<span class="number">10</span>], <span class="type">int</span> size)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">//等价定义</span></span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printf</span><span class="params">(<span class="type">int</span> matrix[][<span class="number">10</span>], <span class="type">int</span> size)</span></span></span><br></pre></td></tr></table></figure>
+
 <p><strong>5. main 处理命令行选项</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int main(int argc, int *argv[])</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int main(int argc, int *argv[])</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>第二个形参 argv是一个数组，它的元素是指向 C 风格字符串的指针。</li>
 <li>第一个形参 argc 表示数组中字符串的数量。<blockquote>
-<p>argv[0] = “prog”; // or argv[0] might point to an empty string<br>argv[1] = “-d”;<br>argv[2] = “-o”;<br>argv[3] = “ofile”;<br>argv[4] = “data0”;<br>argv[5] = 0;</p>
+<p>argv[0] &#x3D; “prog”; &#x2F;&#x2F; or argv[0] might point to an empty string<br>argv[1] &#x3D; “-d”;<br>argv[2] &#x3D; “-o”;<br>argv[3] &#x3D; “ofile”;<br>argv[4] &#x3D; “data0”;<br>argv[5] &#x3D; 0;</p>
 </blockquote>
 </li>
 </ul>
@@ -274,13 +277,12 @@ var _hmt = _hmt || [];
 <th>解释</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>initializer_list&lt;T&gt; lst;</code></td>
 <td>默认初始化；<code>T</code>类型元素的空列表</td>
 </tr>
 <tr>
-<td><code>initializer_list&lt;T&gt; lst{a,b,c...};</code></td>
+<td><code>initializer_list&lt;T&gt; lst&#123;a,b,c...&#125;;</code></td>
 <td><code>lst</code>的元素数量和初始值一样多；<code>lst</code>的元素是对应初始值的副本；列表中的元素是<code>const</code>。</td>
 </tr>
 <tr>
@@ -303,10 +305,10 @@ var _hmt = _hmt || [];
 <td><code>lst.end()</code></td>
 <td>返回指向<code>lst</code>中微元素下一位置的指针</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p><code>initializer_list</code>使用 demo：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">err_msg</span><span class="params">(ErrCode e, <span class="built_in">initializer_list</span>&lt;<span class="built_in">string</span>&gt; il)</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; e.msg &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> bed = il.begin(); beg != il.end(); ++ beg)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *beg &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">err_msg(ErrCode(<span class="number">0</span>), &#123;<span class="string">"functionX"</span>, <span class="string">"okay&#125;);</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">err_msg</span><span class="params">(ErrCode e, initializer_list&lt;string&gt; il)</span></span>&#123;</span><br><span class="line">    cout &lt;&lt; e.msg &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> bed = il.<span class="built_in">begin</span>(); beg != il.<span class="built_in">end</span>(); ++ beg)</span><br><span class="line">        cout &lt;&lt; *beg &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">err_msg</span>(<span class="built_in">ErrCode</span>(<span class="number">0</span>), &#123;<span class="string">&quot;functionX&quot;</span>, <span class="string">&quot;okay&#125;);</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>initializer_list</code> 对象中的元素永远是常量值。</li>
 <li>所有实参类型相同，可以使用 <code>initializer_list</code>的标准库类型。</li>
@@ -322,7 +324,8 @@ var _hmt = _hmt || [];
 <li><strong>不要返回局部对象的引用或指针</strong>。</li>
 <li><strong>引用返回左值</strong>：函数的返回类型决定函数调用是否是左值。调用一个返回引用的函数得到左值；其他返回类型得到右值。</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> &amp;<span class="title">get_val</span><span class="params">(<span class="built_in">string</span> &amp;str, <span class="built_in">string</span>::size_type ix)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str[ix]; <span class="comment">// get_val assumes the given index is valid</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="string">"a value"</span>)</span></span>;</span><br><span class="line">get_val(s, <span class="number">0</span>) = <span class="string">'A'</span>; <span class="comment">// changes s[0] to A</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">char</span> &amp;<span class="title">get_val</span><span class="params">(string &amp;str, string::size_type ix)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str[ix]; <span class="comment">// get_val assumes the given index is valid</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">string <span class="title">s</span><span class="params">(<span class="string">&quot;a value&quot;</span>)</span></span>;</span><br><span class="line"><span class="built_in">get_val</span>(s, <span class="number">0</span>) = <span class="string">&#x27;A&#x27;</span>; <span class="comment">// changes s[0] to A</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>列表初始化返回值</strong>：函数可以返回花括号包围的值的列表。（<code>C++11</code>）</li>
 <li><strong>主函数main的返回值</strong>：如果结尾没有<code>return</code>，编译器将隐式地插入一条返回0的<code>return</code>语句。返回0代表执行成功。</li>
@@ -330,17 +333,19 @@ var _hmt = _hmt || [];
 <p><strong>3. 返回数组指针</strong></p>
 <ul>
 <li><p><code>Type (*function (parameter_list))[dimension]</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int (*func(int i))[10];</span><br><span class="line"></span><br><span class="line">- func(int i)表示调用 func 函数时需要一个 int 类型的实参。</span><br><span class="line">- (*func(int i)) 意味着我们可以对函数调用的结果执行解引用的操作</span><br><span class="line">- (*func(int i))[10] 表示解引用 func 的调用将得到一个大小是 10 的数组</span><br><span class="line">- int (*func(int i))[10] 表示数组中的元素是 int 类型。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int (*func(int i))[10];</span><br><span class="line"></span><br><span class="line">- func(int i)表示调用 func 函数时需要一个 int 类型的实参。</span><br><span class="line">- (*func(int i)) 意味着我们可以对函数调用的结果执行解引用的操作</span><br><span class="line">- (*func(int i))[10] 表示解引用 func 的调用将得到一个大小是 10 的数组</span><br><span class="line">- int (*func(int i))[10] 表示数组中的元素是 int 类型。</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用类型别名：</p>
 </li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> arrT[<span class="number">10</span>];  <span class="comment">// arrT 是一个类型别名，它表示的类型是含有 10 个整数的数组。</span></span><br><span class="line"><span class="keyword">using</span> arrT = <span class="keyword">int</span>[<span class="number">10</span>;];</span><br><span class="line"></span><br><span class="line"><span class="function">arrT* <span class="title">func</span><span class="params">()</span> </span>&#123;...&#125;;  <span class="comment">// func 返回一个指向含有 10 个整数的数组的指针。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> arrT[<span class="number">10</span>];  <span class="comment">// arrT 是一个类型别名，它表示的类型是含有 10 个整数的数组。</span></span><br><span class="line"><span class="keyword">using</span> arrT = <span class="type">int</span>[<span class="number">10</span>;];</span><br><span class="line"></span><br><span class="line"><span class="function">arrT* <span class="title">func</span><span class="params">()</span> </span>&#123;...&#125;;  <span class="comment">// func 返回一个指向含有 10 个整数的数组的指针。</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>使用 <code>decltype</code>： <code>decltype(odd) *arrPtr(int i) {...}</code></li>
-<li><strong>尾置返回类型</strong>： </li>
+<li>使用 <code>decltype</code>： <code>decltype(odd) *arrPtr(int i) &#123;...&#125;</code></li>
+<li><strong>尾置返回类型</strong>：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在形参列表后面以一个`-&gt;`开始：</span><br><span class="line">auto func(int i) -&gt; int(*)[10]（C++11）</span><br><span class="line">// func 接受一个 int 类型的实参，返回一个指针，该指针指向含有 10 个整数的数组。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在形参列表后面以一个`-&gt;`开始：</span><br><span class="line">auto func(int i) -&gt; int(*)[10]（C++11）</span><br><span class="line">// func 接受一个 int 类型的实参，返回一个指针，该指针指向含有 10 个整数的数组。</span><br></pre></td></tr></table></figure>
+
 <h3 id="6-4-函数重载"><a href="#6-4-函数重载" class="headerlink" title="6.4 函数重载"></a>6.4 函数重载</h3><ul>
 <li><strong>重载</strong>：如果同一作用域内几个函数名字相同但形参列表不同，我们称之为重载（overload）函数。<blockquote>
 <p>必须要形参数量或者形参类型不同，不能仅仅返回类型不同。</p>
@@ -367,7 +372,7 @@ var _hmt = _hmt || [];
 </ul>
 <h4 id="constexpr函数"><a href="#constexpr函数" class="headerlink" title="constexpr函数"></a>constexpr函数</h4><ul>
 <li>指能用于常量表达式的函数。</li>
-<li><code>constexpr int new_sz() {return 42;}</code></li>
+<li><code>constexpr int new_sz() &#123;return 42;&#125;</code></li>
 <li>函数的返回类型及所有形参类型都要是字面值类型。</li>
 <li>只有一个 return 语句。</li>
 <li><code>constexpr</code>函数应该在头文件中定义。</li>
@@ -379,14 +384,16 @@ var _hmt = _hmt || [];
 </ul>
 <p>开关调试状态：</p>
 <p><code>CC -D NDEBUG main.c</code>可以定义这个变量<code>NDEBUG</code>。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifndef</span> NDEBUG</span></span><br><span class="line">        <span class="comment">// 如果 NDEBUG 未定义，则执行这段代码</span></span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; __func__ &lt;&lt; <span class="string">"..."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="keyword">ifndef</span> NDEBUG</span></span><br><span class="line">        <span class="comment">// 如果 NDEBUG 未定义，则执行这段代码</span></span><br><span class="line">        cerr &lt;&lt; __func__ &lt;&lt; <span class="string">&quot;...&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="6-6-函数匹配"><a href="#6-6-函数匹配" class="headerlink" title="6.6 函数匹配"></a>6.6 函数匹配</h3><ul>
 <li>重载函数匹配的<strong>三个步骤</strong>：1.候选函数；2.可行函数；3.寻找最佳匹配。</li>
 <li><strong>候选函数</strong>：选定本次调用对应的重载函数集，集合中的函数称为候选函数（candidate function）。</li>
 <li><strong>可行函数</strong>：考察本次调用提供的实参，选出可以被这组实参调用的函数，新选出的函数称为可行函数（viable function）。</li>
 <li><strong>寻找最佳匹配</strong>：基本思想：实参类型和形参类型越接近，它们匹配地越好。</li>
 </ul>
-<h3 id="6-7-函数指针"><a href="#6-7-函数指针" class="headerlink" title="6.7 函数指针"></a>6.7 函数指针</h3><p><strong>函数指针</strong>：是指向函数的指针。函数的类型由它的<strong>返回类型</strong>和<strong>形参类型</strong>共同决定。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">lengthCompare</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> &amp;, <span class="keyword">const</span> <span class="built_in">string</span> &amp;)</span></span>;</span><br><span class="line"><span class="comment">//该函数类型是 bool(const string &amp;, const string &amp;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//声明函数指针 pf，pf 两端的括号必不可少</span></span><br><span class="line"><span class="comment">// pf 指向一个函数，该函数的参数是两个 const string 的引用，返回值是 bool 类型</span></span><br><span class="line"><span class="keyword">bool</span> (*pf)(<span class="keyword">const</span> <span class="built_in">string</span> &amp;, <span class="keyword">const</span> <span class="built_in">string</span> &amp;);</span><br><span class="line"></span><br><span class="line">pf = lengthCompare; <span class="comment">// pf now points to the function named lengthCompare</span></span><br><span class="line">pf = &amp;lengthCompare; <span class="comment">// equivalent assignment: address-of operator is optional</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> b1 = pf(<span class="string">"hello"</span>, <span class="string">"goodbye"</span>); <span class="comment">// calls lengthCompare</span></span><br><span class="line"><span class="keyword">bool</span> b2 = (*pf)(<span class="string">"hello"</span>, <span class="string">"goodbye"</span>); <span class="comment">// equivalent call</span></span><br><span class="line"><span class="keyword">bool</span> b3 = lengthCompare(<span class="string">"hello"</span>, <span class="string">"goodbye"</span>); <span class="comment">// equivalent call</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="6-7-函数指针"><a href="#6-7-函数指针" class="headerlink" title="6.7 函数指针"></a>6.7 函数指针</h3><p><strong>函数指针</strong>：是指向函数的指针。函数的类型由它的<strong>返回类型</strong>和<strong>形参类型</strong>共同决定。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">lengthCompare</span><span class="params">(<span class="type">const</span> string &amp;, <span class="type">const</span> string &amp;)</span></span>;</span><br><span class="line"><span class="comment">//该函数类型是 bool(const string &amp;, const string &amp;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//声明函数指针 pf，pf 两端的括号必不可少</span></span><br><span class="line"><span class="comment">// pf 指向一个函数，该函数的参数是两个 const string 的引用，返回值是 bool 类型</span></span><br><span class="line"><span class="built_in">bool</span> (*pf)(<span class="type">const</span> string &amp;, <span class="type">const</span> string &amp;);</span><br><span class="line"></span><br><span class="line">pf = lengthCompare; <span class="comment">// pf now points to the function named lengthCompare</span></span><br><span class="line">pf = &amp;lengthCompare; <span class="comment">// equivalent assignment: address-of operator is optional</span></span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> b1 = <span class="built_in">pf</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>); <span class="comment">// calls lengthCompare</span></span><br><span class="line"><span class="type">bool</span> b2 = (*pf)(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>); <span class="comment">// equivalent call</span></span><br><span class="line"><span class="type">bool</span> b3 = <span class="built_in">lengthCompare</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>); <span class="comment">// equivalent call</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>函数指针形参</strong>：<ul>
 <li>形参中使用函数定义或者函数指针定义效果一样。</li>
@@ -394,8 +401,10 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// third parameter is a function type and is automatically treated as a pointer to function</span></span><br><span class="line">void useBigger(const string &amp;s1, const string &amp;s2, bool pf(const string &amp;, const string &amp;));</span><br><span class="line"><span class="comment">// equivalent declaration: explicitly define the parameter as a pointer to function</span></span><br><span class="line">void useBigger(const string &amp;s1, const string &amp;s2, bool (*pf)(const string &amp;, const string &amp;));</span><br></pre></td></tr></table></figure>
-<p>直接使用函数指针冗长而繁琐：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Func and Func2 have function type</span></span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="keyword">bool</span> <span class="title">Func</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp;, <span class="keyword">const</span> <span class="built_in">string</span>&amp;)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">decltype</span><span class="params">(lengthCompare)</span> Func2</span>; <span class="comment">// equivalent type</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// FuncP and FuncP2 have pointer to function type</span></span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">bool</span><span class="params">(*FuncP)</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp;, <span class="keyword">const</span> <span class="built_in">string</span>&amp;)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">decltype</span><span class="params">(lengthCompare)</span> *FuncP2</span>; <span class="comment">// equivalent type</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// equivalent declarations of useBigger using type aliases</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">useBigger</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp;, <span class="keyword">const</span> <span class="built_in">string</span>&amp;, Func)</span></span>; <span class="comment">//编译器自动地将 Func 表示的函数类型转换为指针</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">useBigger</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp;, <span class="keyword">const</span> <span class="built_in">string</span>&amp;, FuncP2)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// third parameter is a function type and is automatically treated as a pointer to function</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">useBigger</span><span class="params">(<span class="type">const</span> string &amp;s1, <span class="type">const</span> string &amp;s2, <span class="type">bool</span> pf(<span class="type">const</span> string &amp;, <span class="type">const</span> string &amp;))</span></span>;</span><br><span class="line"><span class="comment">// equivalent declaration: explicitly define the parameter as a pointer to function</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">useBigger</span><span class="params">(<span class="type">const</span> string &amp;s1, <span class="type">const</span> string &amp;s2, <span class="type">bool</span> (*pf)(<span class="type">const</span> string &amp;, <span class="type">const</span> string &amp;))</span></span>;</span><br></pre></td></tr></table></figure>
+<p>直接使用函数指针冗长而繁琐：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Func and Func2 have function type</span></span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="type">bool</span> <span class="title">Func</span><span class="params">(<span class="type">const</span> string&amp;, <span class="type">const</span> string&amp;)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">decltype</span><span class="params">(lengthCompare)</span> Func2</span>; <span class="comment">// equivalent type</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// FuncP and FuncP2 have pointer to function type</span></span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">bool</span><span class="params">(*FuncP)</span><span class="params">(<span class="type">const</span> string&amp;, <span class="type">const</span> string&amp;)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">decltype</span><span class="params">(lengthCompare)</span> *FuncP2</span>; <span class="comment">// equivalent type</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// equivalent declarations of useBigger using type aliases</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">useBigger</span><span class="params">(<span class="type">const</span> string&amp;, <span class="type">const</span> string&amp;, Func)</span></span>; <span class="comment">//编译器自动地将 Func 表示的函数类型转换为指针</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">useBigger</span><span class="params">(<span class="type">const</span> string&amp;, <span class="type">const</span> string&amp;, FuncP2)</span></span>;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>返回指向函数的指针</strong>：<ul>
 <li>1.类型别名；<ul>
@@ -552,7 +561,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-函数基础"><span class="toc-number">1.</span> <span class="toc-text">6.1 函数基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-参数传递"><span class="toc-number">2.</span> <span class="toc-text">6.2 参数传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-返回类型和-return-语句"><span class="toc-number">3.</span> <span class="toc-text">6.3 返回类型和 return 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-函数重载"><span class="toc-number">4.</span> <span class="toc-text">6.4 函数重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-特殊用途语言特性"><span class="toc-number">5.</span> <span class="toc-text">6.5 特殊用途语言特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#默认实参"><span class="toc-number">5.1.</span> <span class="toc-text">默认实参</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内联（inline）函数"><span class="toc-number">5.2.</span> <span class="toc-text">内联（inline）函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#constexpr函数"><span class="toc-number">5.3.</span> <span class="toc-text">constexpr函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#调试帮助"><span class="toc-number">5.4.</span> <span class="toc-text">调试帮助</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-6-函数匹配"><span class="toc-number">6.</span> <span class="toc-text">6.6 函数匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-7-函数指针"><span class="toc-number">7.</span> <span class="toc-text">6.7 函数指针</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">6.1 函数基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">2.</span> <span class="toc-text">6.2 参数传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%E5%92%8C-return-%E8%AF%AD%E5%8F%A5"><span class="toc-number">3.</span> <span class="toc-text">6.3 返回类型和 return 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="toc-number">4.</span> <span class="toc-text">6.4 函数重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-%E7%89%B9%E6%AE%8A%E7%94%A8%E9%80%94%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7"><span class="toc-number">5.</span> <span class="toc-text">6.5 特殊用途语言特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%AE%9E%E5%8F%82"><span class="toc-number">5.1.</span> <span class="toc-text">默认实参</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%81%94%EF%BC%88inline%EF%BC%89%E5%87%BD%E6%95%B0"><span class="toc-number">5.2.</span> <span class="toc-text">内联（inline）函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#constexpr%E5%87%BD%E6%95%B0"><span class="toc-number">5.3.</span> <span class="toc-text">constexpr函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E8%AF%95%E5%B8%AE%E5%8A%A9"><span class="toc-number">5.4.</span> <span class="toc-text">调试帮助</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-6-%E5%87%BD%E6%95%B0%E5%8C%B9%E9%85%8D"><span class="toc-number">6.</span> <span class="toc-text">6.6 函数匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-7-%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88"><span class="toc-number">7.</span> <span class="toc-text">6.7 函数指针</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -598,7 +607,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 Xu Hongbo
+    		&copy; 2024 Xu Hongbo
     	</div>
 
       
@@ -750,7 +759,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -758,7 +767,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -782,10 +791,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SpaceX</a>
               </li>
              
@@ -794,15 +799,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
              
               <li class="article-tag-list-item">

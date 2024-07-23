@@ -14,11 +14,11 @@
 <meta property="og:url" content="https://hongbosherlock.github.io/2019/03/08/zhishu/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
 <meta property="og:description" content="描述输入一个正整数n，求第n小的质数。输入一个不超过10000的正整数n。输出第n小的质数。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-18T10:33:17.585Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-03-08T08:14:21.000Z">
+<meta property="article:modified_time" content="2024-07-23T12:57:10.997Z">
+<meta property="article:author" content="Xu Hongbo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第n小的质数">
-<meta name="twitter:description" content="描述输入一个正整数n，求第n小的质数。输入一个不超过10000的正整数n。输出第n小的质数。">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -55,7 +55,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -73,10 +73,8 @@ var _hmt = _hmt || [];
 			<img src="/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Xu Hongbo</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">Stay Hungry, Stay Foolish.</p>
 		
 
 		<nav class="header-menu">
@@ -133,10 +131,8 @@ var _hmt = _hmt || [];
 				<img src="/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Xu Hongbo</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Stay Hungry, Stay Foolish.<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -219,7 +215,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>描述</strong><br>输入一个正整数n，求第n小的质数。<br><strong>输入</strong><br>一个不超过10000的正整数n。<br><strong>输出</strong><br>第n小的质数。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <p><strong>样例输入</strong></p>
 <blockquote>
 <p>10</p>
@@ -229,9 +226,10 @@ var _hmt = _hmt || [];
 <p>29</p>
 </blockquote>
 <p><strong>方法一</strong><br>判断一个数n是不是素数，可以用2到$\sqrt{n}$之间的所有整数去除n，看能否整除，如果都不能则n是质数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;s</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">int</span> m=<span class="number">1</span>,i,t=<span class="number">2</span>,f;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"2"</span>);</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">	</span><br><span class="line">		<span class="keyword">while</span>(t&lt;=n)&#123;</span><br><span class="line">			f=<span class="number">1</span>;</span><br><span class="line">			m+=<span class="number">2</span>;    <span class="comment">//偶数不是质数，步长可以加大 </span></span><br><span class="line">			<span class="keyword">for</span>(i=<span class="number">3</span>;i&lt;=<span class="built_in">sqrt</span>(m);i=i+<span class="number">2</span>)&#123;   <span class="comment">//m是奇数，当然不能被偶数整除，步长也可以加大。</span></span><br><span class="line">				<span class="keyword">if</span>(m%i==<span class="number">0</span>)&#123;</span><br><span class="line">				  f=<span class="number">0</span>;</span><br><span class="line">				  <span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(i&gt;<span class="built_in">sqrt</span>(m))</span><br><span class="line">			 t++;</span><br><span class="line">			 </span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="built_in">printf</span>(<span class="string">"%d"</span>,m);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span>s</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> &#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="type">int</span> m=<span class="number">1</span>,i,t=<span class="number">2</span>,f;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">	</span><br><span class="line">		<span class="keyword">while</span>(t&lt;=n)&#123;</span><br><span class="line">			f=<span class="number">1</span>;</span><br><span class="line">			m+=<span class="number">2</span>;    <span class="comment">//偶数不是质数，步长可以加大 </span></span><br><span class="line">			<span class="keyword">for</span>(i=<span class="number">3</span>;i&lt;=<span class="built_in">sqrt</span>(m);i=i+<span class="number">2</span>)&#123;   <span class="comment">//m是奇数，当然不能被偶数整除，步长也可以加大。</span></span><br><span class="line">				<span class="keyword">if</span>(m%i==<span class="number">0</span>)&#123;</span><br><span class="line">				  f=<span class="number">0</span>;</span><br><span class="line">				  <span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(i&gt;<span class="built_in">sqrt</span>(m))</span><br><span class="line">			 t++;</span><br><span class="line">			 </span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,m);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>方法二</strong><br>筛选法求质数：把2到n中所有的数都列出来，然后从2开始，先划掉n内所有2的倍数，然后每一次从下一个剩下的数（必然是素数）开始，划掉其n内的所有倍数。最后剩下的数，都是素数。<br>以空间换时间，加快了计算速度</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_NUM 1000000</span></span><br><span class="line"><span class="keyword">bool</span> isPrime[MAX_NUM+<span class="number">10</span>];  <span class="comment">//值为1表示i为素数 </span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=MAX_NUM;i++)</span><br><span class="line">		isPrime[i]=<span class="literal">true</span>;   <span class="comment">//开始假设所有数都是素数 </span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=MAX_NUM;i++)&#123;   <span class="comment">//每一次将一个素数的所有倍数标记为非素数 </span></span><br><span class="line">		<span class="keyword">if</span>(isPrime[i])&#123;			   <span class="comment">//仅标记素数的倍数 </span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>*i;j&lt;=MAX_NUM;j+=i)</span><br><span class="line">				isPrime[j]=<span class="literal">false</span>;	<span class="comment">//将素数i的倍数标记为非素数 </span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> c=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=MAX_NUM;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(isPrime[i])</span><br><span class="line">			c++;</span><br><span class="line">		<span class="keyword">if</span>(c==n)&#123;</span><br><span class="line">	</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_NUM 1000000</span></span><br><span class="line"><span class="type">bool</span> isPrime[MAX_NUM<span class="number">+10</span>];  <span class="comment">//值为1表示i为素数 </span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=MAX_NUM;i++)</span><br><span class="line">		isPrime[i]=<span class="literal">true</span>;   <span class="comment">//开始假设所有数都是素数 </span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=MAX_NUM;i++)&#123;   <span class="comment">//每一次将一个素数的所有倍数标记为非素数 </span></span><br><span class="line">		<span class="keyword">if</span>(isPrime[i])&#123;			   <span class="comment">//仅标记素数的倍数 </span></span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">2</span>*i;j&lt;=MAX_NUM;j+=i)</span><br><span class="line">				isPrime[j]=<span class="literal">false</span>;	<span class="comment">//将素数i的倍数标记为非素数 </span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> c=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=MAX_NUM;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(isPrime[i])</span><br><span class="line">			c++;</span><br><span class="line">		<span class="keyword">if</span>(c==n)&#123;</span><br><span class="line">	</span><br><span class="line">			cout&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -420,7 +418,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 Xu Hongbo
+    		&copy; 2024 Xu Hongbo
     	</div>
 
       
@@ -572,7 +570,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,7 +578,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,10 +602,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SpaceX</a>
               </li>
              
@@ -616,15 +610,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
              
               <li class="article-tag-list-item">

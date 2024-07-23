@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://hongbosherlock.github.io">
   <title>malloc 和 memset 用法总结 | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="malloc()函数1、函数原型及说明：头文件：#include &amp;lt;stdlib.h&amp;gt; malloc() 函数用来动态地分配内存空间其原型为：1void* malloc (size_t size); 参数说明:  size 为需要分配的内存空间的大小，以字节（Byte）计。 size -t 是无符号整数类型。  函数说明:malloc() 在堆区分配一块指定大小的内存空间，用来存放数据">
-<meta name="keywords" content="malloc">
+  <meta name="description" content="malloc()函数1、函数原型及说明：头文件：#include &lt;stdlib.h&gt; malloc() 函数用来动态地分配内存空间其原型为： 1void* malloc (size_t size); 参数说明:  size 为需要分配的内存空间的大小，以字节（Byte）计。 size -t 是无符号整数类型。  函数说明:malloc() 在堆区分配一块指定大小的内存空间，用来存放数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="malloc 和 memset 用法总结">
 <meta property="og:url" content="https://hongbosherlock.github.io/2019/06/08/malloc/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
-<meta property="og:description" content="malloc()函数1、函数原型及说明：头文件：#include &amp;lt;stdlib.h&amp;gt; malloc() 函数用来动态地分配内存空间其原型为：1void* malloc (size_t size); 参数说明:  size 为需要分配的内存空间的大小，以字节（Byte）计。 size -t 是无符号整数类型。  函数说明:malloc() 在堆区分配一块指定大小的内存空间，用来存放数据">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="malloc()函数1、函数原型及说明：头文件：#include &lt;stdlib.h&gt; malloc() 函数用来动态地分配内存空间其原型为： 1void* malloc (size_t size); 参数说明:  size 为需要分配的内存空间的大小，以字节（Byte）计。 size -t 是无符号整数类型。  函数说明:malloc() 在堆区分配一块指定大小的内存空间，用来存放数">
+<meta property="og:locale">
 <meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png">
-<meta property="og:updated_time" content="2021-08-24T08:18:55.833Z">
+<meta property="article:published_time" content="2019-06-08T12:57:28.000Z">
+<meta property="article:modified_time" content="2024-07-23T12:57:10.997Z">
+<meta property="article:author" content="Xu Hongbo">
+<meta property="article:tag" content="malloc">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="malloc 和 memset 用法总结">
-<meta name="twitter:description" content="malloc()函数1、函数原型及说明：头文件：#include &amp;lt;stdlib.h&amp;gt; malloc() 函数用来动态地分配内存空间其原型为：1void* malloc (size_t size); 参数说明:  size 为需要分配的内存空间的大小，以字节（Byte）计。 size -t 是无符号整数类型。  函数说明:malloc() 在堆区分配一块指定大小的内存空间，用来存放数据">
 <meta name="twitter:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
@@ -58,7 +58,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -76,10 +76,8 @@ var _hmt = _hmt || [];
 			<img src="/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Xu Hongbo</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">Stay Hungry, Stay Foolish.</p>
 		
 
 		<nav class="header-menu">
@@ -136,10 +134,8 @@ var _hmt = _hmt || [];
 				<img src="/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Xu Hongbo</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Stay Hungry, Stay Foolish.<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -222,33 +218,38 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="malloc-函数"><a href="#malloc-函数" class="headerlink" title="malloc()函数"></a>malloc()函数</h3><h4 id="1、函数原型及说明："><a href="#1、函数原型及说明：" class="headerlink" title="1、函数原型及说明："></a>1、函数原型及说明：</h4><p>头文件：<code>#include &lt;stdlib.h&gt;</code></p>
-<p>malloc() 函数用来动态地分配内存空间其原型为：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span>* <span class="title">malloc</span> <span class="params">(<span class="keyword">size_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>malloc() 函数用来动态地分配内存空间其原型为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span>* <span class="title">malloc</span> <span class="params">(<span class="type">size_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure>
 <p><strong>参数说明:</strong></p>
 <ul>
 <li>size 为需要分配的内存空间的大小，以字节（Byte）计。</li>
 <li>size -t 是无符号整数类型。</li>
 </ul>
 <p><strong>函数说明:</strong><br>malloc() 在堆区分配一块指定大小的内存空间，用来存放数据。<br>这块内存空间在函数执行完成后不会被初始化，它们的值是不确定的。<br>如果希望在分配内存的同时进行初始化，请使用 calloc() 函数。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <p><strong>返回值:</strong><br>分配成功返回指向该内存的地址，失败则返回NULL。<br>关于分配失败的原因，应该有多种，比如说空间不足就是一种。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">free</span><span class="params">(<span class="keyword">void</span> *FirstByte)</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">free</span><span class="params">(<span class="type">void</span> *FirstByte)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>该函数是将之前用malloc分配的空间还给程序或者是操作系统，也就是释放了这块内存，让它重新得到自由。</p>
 <h4 id="2、函数的用法："><a href="#2、函数的用法：" class="headerlink" title="2、函数的用法："></a>2、函数的用法：</h4><p>向malloc申请的空间的大小是以字节为单位的。</p>
 <ul>
 <li><strong>返回的结果是<code>void*</code>，需要类型转换为自己需要的类型 。</strong></li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* num;</span><br><span class="line">num = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(n*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br></pre></td></tr></table></figure>
-<p>程序示例：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* malloc example: random string generator*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;      /* printf, scanf, NULL */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;     /* malloc, free, rand */</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i,n;</span><br><span class="line">  <span class="keyword">char</span> * buffer;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span> (<span class="string">"How long do you want the string? "</span>);</span><br><span class="line">  <span class="built_in">scanf</span> (<span class="string">"%d"</span>, &amp;i);</span><br><span class="line"></span><br><span class="line">  buffer = (<span class="keyword">char</span>*) <span class="built_in">malloc</span> (i+<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">if</span> (buffer==<span class="literal">NULL</span>) <span class="built_in">exit</span> (<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (n=<span class="number">0</span>; n&lt;i; n++)</span><br><span class="line">    buffer[n]=rand()%<span class="number">26</span>+<span class="string">'a'</span>;</span><br><span class="line">  buffer[i]=<span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span> (<span class="string">"Random string: %s\n"</span>,buffer);</span><br><span class="line">  <span class="built_in">free</span> (buffer);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* num;</span><br><span class="line">num = (<span class="type">int</span>*)<span class="built_in">malloc</span>(n*<span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br></pre></td></tr></table></figure>
+<p>程序示例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* malloc example: random string generator*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span>      <span class="comment">/* printf, scanf, NULL */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span>     <span class="comment">/* malloc, free, rand */</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span> <span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> i,n;</span><br><span class="line">  <span class="type">char</span> * buffer;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span> (<span class="string">&quot;How long do you want the string? &quot;</span>);</span><br><span class="line">  <span class="built_in">scanf</span> (<span class="string">&quot;%d&quot;</span>, &amp;i);</span><br><span class="line"></span><br><span class="line">  buffer = (<span class="type">char</span>*) <span class="built_in">malloc</span> (i+<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">if</span> (buffer==<span class="literal">NULL</span>) <span class="built_in">exit</span> (<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (n=<span class="number">0</span>; n&lt;i; n++)</span><br><span class="line">    buffer[n]=rand()%<span class="number">26</span>+<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">  buffer[i]=<span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span> (<span class="string">&quot;Random string: %s\n&quot;</span>,buffer);</span><br><span class="line">  <span class="built_in">free</span> (buffer);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>该程序生成一个由用户指定的长度的字符串，由字母字符组成。此字符串的可能长度仅受malloc可用内存量的限制。</p>
 <h4 id="3、注意事项："><a href="#3、注意事项：" class="headerlink" title="3、注意事项："></a>3、注意事项：</h4><ul>
 <li>malloc的返回值是一个指针，指向一段可用内存的起始地址。</li>
 <li>申请了内存空间后，必须检查是否分配成功。</li>
 <li>当不需要再使用申请的内存时，记得释放；释放后应该把指向这块内存的指针指向NULL，防止程序后面不小心使用了它。</li>
 <li>malloc() 和 free() 这两个函数应该配对。如果申请后不释放会出现内存泄露。</li>
-<li>虽然malloc()函数的类型是(void<em>),任何类型的指针都可以转换成(void </em>),但是最好还是在前面进行强制类型转换，因为这样可以躲过一些编译器的检查。</li>
+<li>虽然malloc()函数的类型是(void*),任何类型的指针都可以转换成(void *),但是最好还是在前面进行强制类型转换，因为这样可以躲过一些编译器的检查。</li>
 </ul>
 <h3 id="memset-函数"><a href="#memset-函数" class="headerlink" title="memset()函数"></a>memset()函数</h3><h4 id="1、函数原型及说明：-1"><a href="#1、函数原型及说明：-1" class="headerlink" title="1、函数原型及说明："></a>1、函数原型及说明：</h4><p>头文件：<code>#include &lt;string.h&gt;</code></p>
-<p>memset() 函数用来将指定内存的前n个字节设置为特定的值，其原型为：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> * <span class="title">memset</span><span class="params">( <span class="keyword">void</span> * ptr, <span class="keyword">int</span> value, <span class="keyword">size_t</span> num )</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>memset() 函数用来将指定内存的前n个字节设置为特定的值，其原型为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> * <span class="title function_">memset</span><span class="params">( <span class="type">void</span> * ptr, <span class="type">int</span> value, <span class="type">size_t</span> num )</span>;</span><br></pre></td></tr></table></figure>
 <p><strong>参数说明：</strong></p>
 <ul>
 <li>ptr 为要操作的内存的指针。</li>
@@ -258,26 +259,30 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>函数说明:</strong>  memset() 会将 ptr 所指的内存区域的前 num 个字节的值都设置为 value，然后返回指向 ptr 的指针。</p>
 <p><strong>返回值:</strong>   返回指向 ptr 的指针。</p>
-<h4 id="2、函数用法："><a href="#2、函数用法：" class="headerlink" title="2、函数用法："></a>2、函数用法：</h4><p>memset() 可以将一段内存空间全部设置为特定的值，所以经常用来初始化字符数组。例如：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">memset</span>(str, <span class="string">'\0'</span>, <span class="keyword">sizeof</span>(str)<span class="number">-1</span>); <span class="comment">// 0或者'\0'是等价的</span></span><br></pre></td></tr></table></figure></p>
-<p>对整型数组初始化：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* num;</span><br><span class="line">num = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>( n*<span class="keyword">sizeof</span>(<span class="keyword">int</span>) );</span><br><span class="line"><span class="built_in">memset</span>(num,<span class="number">0</span>,n*<span class="keyword">sizeof</span>(<span class="keyword">int</span>) );</span><br></pre></td></tr></table></figure></p>
+<h4 id="2、函数用法："><a href="#2、函数用法：" class="headerlink" title="2、函数用法："></a>2、函数用法：</h4><p>memset() 可以将一段内存空间全部设置为特定的值，所以经常用来初始化字符数组。例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> str[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">memset</span>(str, <span class="string">&#x27;\0&#x27;</span>, <span class="keyword">sizeof</span>(str)<span class="number">-1</span>); <span class="comment">// 0或者&#x27;\0&#x27;是等价的</span></span><br></pre></td></tr></table></figure>
+
+<p>对整型数组初始化：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* num;</span><br><span class="line">num = (<span class="type">int</span>*)<span class="built_in">malloc</span>( n*<span class="built_in">sizeof</span>(<span class="type">int</span>) );</span><br><span class="line"><span class="built_in">memset</span>(num,<span class="number">0</span>,n*<span class="built_in">sizeof</span>(<span class="type">int</span>) );</span><br></pre></td></tr></table></figure>
+
 <h4 id="3、注意事项：-1"><a href="#3、注意事项：-1" class="headerlink" title="3、注意事项："></a>3、注意事项：</h4><ul>
-<li>memset() 中的第三个参数一定要使用 sizeof 操作符，因为每个系统下对类型长度的定义可能不一样。</li>
-<li>memset() 中的第一个参数一定要是一个已知的、已经被分配内存的地址，否则会出错。</li>
-</ul>
-<ul>
-<li><strong>最重要的一点：</strong> 对于单字节数据类型（char）可以初始化为任意支持的值，多字节数据类型只能初始化为 0。</li>
+<li><p>memset() 中的第三个参数一定要使用 sizeof 操作符，因为每个系统下对类型长度的定义可能不一样。</p>
+</li>
+<li><p>memset() 中的第一个参数一定要是一个已知的、已经被分配内存的地址，否则会出错。</p>
+</li>
+<li><p><strong>最重要的一点：</strong> 对于单字节数据类型（char）可以初始化为任意支持的值，多字节数据类型只能初始化为 0。</p>
+</li>
 </ul>
 <p><strong>原因：</strong></p>
 <p>memset是按照字节对待初始化空间进行初始化的，也就是说，函数里面的第二个参数的那个初值（一般为0）是按照一个个字节往第一个参数所指区域赋值的，所以，对于单字节数据类型（char）可以初始化为任意支持的值，都没有问题。</p>
 <p>但是对于多字节数据类型只能初始化为0，而不能初始化成别的初值，因为对所有字节按任意顺序赋值0的结果都是0，而如果初始化为其他的值，就会一个字节一个字节的进行赋值，从而出现奇怪的结果。如果将 int 类型数组初始化为1，那么因为int一般是4个字节，那么相当于将一个int元素初始化成了 <strong>0000 0001 0000 0001 0000 0001 0000 0001</strong>，<br>这样对于一个int元素肯定不是1，而是一个很大的数，结果出乎意料。</p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
-<li><a href="https://www.cnblogs.com/hanyonglu/archive/2011/04/28/2031271.html" target="_blank" rel="noopener">malloc和free函数详解</a></li>
-<li><a href="https://blog.csdn.net/dan15188387481/article/details/49621447" target="_blank" rel="noopener">透彻分析C/C++中memset函数</a></li>
-<li><a href="http://www.cplusplus.com/reference/cstdlib/malloc/" target="_blank" rel="noopener">malloc -C++ Reference</a></li>
-<li><a href="http://www.cplusplus.com/reference/cstring/memset/" target="_blank" rel="noopener">memset -C++ Reference</a></li>
+<li><a href="https://www.cnblogs.com/hanyonglu/archive/2011/04/28/2031271.html">malloc和free函数详解</a></li>
+<li><a href="https://blog.csdn.net/dan15188387481/article/details/49621447">透彻分析C&#x2F;C++中memset函数</a></li>
+<li><a href="http://www.cplusplus.com/reference/cstdlib/malloc/">malloc -C++ Reference</a></li>
+<li><a href="http://www.cplusplus.com/reference/cstring/memset/">memset -C++ Reference</a></li>
 </ul>
-<p><div align="center"><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png" style="zoom: 33%;"></div></p>
-
+<div align=center><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png" style="zoom: 33%;" />
       
 
       
@@ -430,7 +435,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#malloc-函数"><span class="toc-number">1.</span> <span class="toc-text">malloc()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、函数原型及说明："><span class="toc-number">1.1.</span> <span class="toc-text">1、函数原型及说明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、函数的用法："><span class="toc-number">1.2.</span> <span class="toc-text">2、函数的用法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、注意事项："><span class="toc-number">1.3.</span> <span class="toc-text">3、注意事项：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#memset-函数"><span class="toc-number">2.</span> <span class="toc-text">memset()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、函数原型及说明：-1"><span class="toc-number">2.1.</span> <span class="toc-text">1、函数原型及说明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、函数用法："><span class="toc-number">2.2.</span> <span class="toc-text">2、函数用法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、注意事项：-1"><span class="toc-number">2.3.</span> <span class="toc-text">3、注意事项：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考链接"><span class="toc-number">3.</span> <span class="toc-text">参考链接</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#malloc-%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">malloc()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B%E5%8F%8A%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">1、函数原型及说明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">2、函数的用法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">3、注意事项：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#memset-%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">memset()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B%E5%8F%8A%E8%AF%B4%E6%98%8E%EF%BC%9A-1"><span class="toc-number">2.1.</span> <span class="toc-text">1、函数原型及说明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">2、函数用法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A-1"><span class="toc-number">2.3.</span> <span class="toc-text">3、注意事项：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-number">3.</span> <span class="toc-text">参考链接</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -476,7 +481,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 Xu Hongbo
+    		&copy; 2024 Xu Hongbo
     	</div>
 
       
@@ -628,7 +633,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -636,7 +641,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,10 +665,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SpaceX</a>
               </li>
              
@@ -672,15 +673,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">结构体</a>
               </li>
              
               <li class="article-tag-list-item">
