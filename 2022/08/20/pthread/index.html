@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://hongbosherlock.github.io">
   <title>C++ 多线程编程示例 | HongboSherlock&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="创建线程下面的程序，我们可以用它来创建一个 POSIX 线程： 12#include &lt;pthread.h&gt;pthread_create (thread, attr, start_routine, arg)">
+  <meta name="description" content="创建线程下面的程序，我们可以用它来创建一个 POSIX 线程： 12#include &lt;pthread.h&gt;pthread_create (thread, attr, start_routine, arg)  使用 -lpthread 库编译下面的程序： 1$ g++ test.cpp -lpthread -o test.o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ 多线程编程示例">
 <meta property="og:url" content="https://hongbosherlock.github.io/2022/08/20/pthread/index.html">
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
-<meta property="og:description" content="创建线程下面的程序，我们可以用它来创建一个 POSIX 线程： 12#include &lt;pthread.h&gt;pthread_create (thread, attr, start_routine, arg)">
+<meta property="og:description" content="创建线程下面的程序，我们可以用它来创建一个 POSIX 线程： 12#include &lt;pthread.h&gt;pthread_create (thread, attr, start_routine, arg)  使用 -lpthread 库编译下面的程序： 1$ g++ test.cpp -lpthread -o test.o">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-08-20T12:17:22.000Z">
-<meta property="article:modified_time" content="2024-07-26T12:56:44.965Z">
+<meta property="article:modified_time" content="2024-07-26T13:09:56.692Z">
 <meta property="article:author" content="Leoneo">
 <meta name="twitter:card" content="summary">
   
@@ -216,12 +216,9 @@ var _hmt = _hmt || [];
       
         <h2 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h2><p>下面的程序，我们可以用它来创建一个 POSIX 线程：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="built_in">pthread_create</span> (thread, attr, start_routine, arg) </span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
 <p>使用 -lpthread 库编译下面的程序：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ g++ test.cpp -lpthread -o test.o</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <h3 id="条件变量"><a href="#条件变量" class="headerlink" title="条件变量"></a>条件变量</h3><p><code>pthread_cond_wait</code> unlocks the mutex just before it sleeps，but then it reaquires the mutex (which may require waiting) when it is signalled, before it wakes up. </p>
 <h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h4><blockquote>
 <p>创建两个线程，其中一个输出1-52，另外一个输出A-Z。</p>
@@ -235,14 +232,17 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>in parent thread, got mutex a, waiting for mutex b<br>in child thread, got mutex b, waiting for mutex a</p>
 </blockquote>
-<p>关键字</p>
-<blockquote>
+<p>关键字:</p>
+<ul>
+<li><blockquote>
 <p>noexcept  explicit</p>
 </blockquote>
-<p>std::ref   <a href="https://murphypei.github.io/blog/2019/04/cpp-std-ref">C++11 的 std::ref 用法 | 拾荒志 (murphypei.github.io)</a></p>
-<p>std::bind</p>
-<p><a href="http://en.cppreference.com/w/cpp/utility/forward">std::forward</a></p>
-<p>auto&amp; </p>
+</li>
+<li>std::ref   <a href="https://murphypei.github.io/blog/2019/04/cpp-std-ref">C++11 的 std::ref 用法 | 拾荒志 (murphypei.github.io)</a></li>
+<li>std::bind</li>
+<li><a href="http://en.cppreference.com/w/cpp/utility/forward">std::forward</a></li>
+<li>auto&amp;</li>
+</ul>
 
       
 
