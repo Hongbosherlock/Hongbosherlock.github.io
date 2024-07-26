@@ -15,14 +15,14 @@
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
 <meta property="og:description" content="阻塞 VS 非阻塞阻塞 VS 非阻塞当应用程序调用阻塞 I&#x2F;O 完成某个操作时，应用程序会被挂起，等待内核完成操作，感觉上应用程序像是被“阻塞”了一样。实际上，内核所做的事情是将 CPU 时间切换给其他有需要的进程，网络应用程序在这种情况下就会得不到 CPU 时间做该做的事情。 非阻塞 I&#x2F;O 则不然，当应用程序调用非阻塞 I&#x2F;O 完成某个操作时，内核立即返回，不会把">
 <meta property="og:locale">
-<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/table823.png">
-<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/epolltable.png">
-<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png">
+<meta property="og:image" content="https://images.leoneo.top/2024/tech/table823.png">
+<meta property="og:image" content="https://images.leoneo.top/2024/tech/epolltable.png">
+<meta property="og:image" content="https://images.leoneo.top/card.png">
 <meta property="article:published_time" content="2021-08-12T14:59:19.000Z">
-<meta property="article:modified_time" content="2024-07-24T04:53:55.956Z">
+<meta property="article:modified_time" content="2024-07-26T12:40:58.402Z">
 <meta property="article:author" content="Xu Hongbo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/table823.png">
+<meta name="twitter:image" content="https://images.leoneo.top/2024/tech/table823.png">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -232,13 +232,13 @@ var _hmt = _hmt || [];
 </ul>
 <p>循环写入：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 向文件描述符 fd 写入 n 字节数 */</span></span><br><span class="line"><span class="function"><span class="type">ssize_t</span> <span class="title">writen</span><span class="params">(<span class="type">int</span> fd, <span class="type">const</span> <span class="type">void</span> * data, <span class="type">size_t</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">size_t</span>      nleft;</span><br><span class="line">    <span class="type">ssize_t</span>     nwritten;</span><br><span class="line">    <span class="type">const</span> <span class="type">char</span>  *ptr;</span><br><span class="line"> </span><br><span class="line">    ptr = data;</span><br><span class="line">    nleft = n;</span><br><span class="line">    <span class="comment">// 如果还有数据没被拷贝完成，就一直循环</span></span><br><span class="line">    <span class="keyword">while</span> (nleft &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> ( (nwritten = <span class="built_in">write</span>(fd, ptr, nleft)) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">           <span class="comment">/* 这里 EINTR 是非阻塞 non-blocking 情况下，通知我们再次调用 write() */</span></span><br><span class="line">            <span class="keyword">if</span> (nwritten &lt; <span class="number">0</span> &amp;&amp; errno == EINTR)</span><br><span class="line">                nwritten = <span class="number">0</span>;      </span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>;         <span class="comment">/* 出错退出 */</span></span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">/* 指针增大，剩下字节数变小 */</span></span><br><span class="line">        nleft -= nwritten;</span><br><span class="line">        ptr   += nwritten;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>下表总结了 read 和 write 在阻塞模式和非阻塞模式下的不同行为特性：<br><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/table823.png" alt="table823" style="zoom: 80%;" /><br>阻塞模式下的 write 有个特例, 就是对方主动关闭了套接字，这个时候 write 调用会立即返回，并通过返回值告诉应用程序实际写入的字节数，如果再次对这样的套接字进行 write 操作，就会返回失败。失败是通过返回值 -1 来通知到应用程序的。</p>
+<p>下表总结了 read 和 write 在阻塞模式和非阻塞模式下的不同行为特性：<br><img src="https://images.leoneo.top/2024/tech/table823.png" alt="table823" style="zoom: 80%;" /><br>阻塞模式下的 write 有个特例, 就是对方主动关闭了套接字，这个时候 write 调用会立即返回，并通过返回值告诉应用程序实际写入的字节数，如果再次对这样的套接字进行 write 操作，就会返回失败。失败是通过返回值 -1 来通知到应用程序的。</p>
 <p><strong>accept</strong></p>
 <p>有必要将监听套接字设置为非阻塞的，对于 accept 的返回值，需要正确地处理各种看似异常的错误，例如忽略 EWOULDBLOCK、EAGAIN 等。</p>
 <p><strong>connect</strong></p>
 <p>在非阻塞 TCP 套接字上调用 connect 函数，会立即返回一个 EINPROGRESS 错误。TCP 三次握手会正常进行，应用程序可以继续做其他初始化的事情。当该连接建立成功或者失败时，通过 I&#x2F;O 多路复用 select、poll 等可以进行连接的状态检测。</p>
 <h3 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h3><p>下面这张图来自 The Linux Programming Interface(No Starch Press)。这张图直观地为我们展示了 select、poll、epoll 几种不同的 I&#x2F;O 复用技术在面对不同文件描述符大小时的表现差异。</p>
-<p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/epolltable.png" alt="epolltable"></p>
+<p><img src="https://images.leoneo.top/2024/tech/epolltable.png" alt="epolltable"></p>
 <p>epoll 的性能是最好的，而随着文件描述符的增大，常规的 select 和 poll 方法性能逐渐变得很差。</p>
 <p>本质上 epoll 还是一种 I&#x2F;O 多路复用技术， epoll 通过监控注册的多个描述字，来进行 I&#x2F;O 事件的分发处理。不同于 poll 的是，epoll 不仅提供了默认的 level-triggered（条件触发）机制，还提供了性能更为强劲的 edge-triggered（边缘触发）机制。</p>
 <p>使用 epoll 进行网络程序的编写，需要三个步骤，分别是 epoll_create，epoll_ctl 和 epoll_wait。</p>
@@ -286,7 +286,7 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>一般我们认为，<strong>边缘触发的效率比条件触发的效率要高。</strong></p>
 <p>epoll 通过改进的接口设计，避免了用户态 - 内核态频繁的数据拷贝，大大提高了系统性能。在使用 epoll 的时候，我们一定要理解条件触发和边缘触发两种模式。条件触发的意思是只要满足事件的条件，比如有数据需要读，就一直不断地把这个事件传递给用户；而边缘触发的意思是只有第一次满足条件的时候才触发，之后就不会再传递同样的事件了。</p>
-<div align=center><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png" style="zoom: 33%;" />
+<div align=center><img src="https://images.leoneo.top/card.png" style="zoom: 33%;" />
       
 
       

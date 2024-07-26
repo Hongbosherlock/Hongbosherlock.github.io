@@ -15,16 +15,16 @@
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
 <meta property="og:description" content="socket APIsocket 的主要API都定义在sys&#x2F;socket.h头文件中 现代PC大多采用小端字节序，因此小端字节序又被称为主机字节序。  小端字节序则是指整数的高位字节存储在内存的高地址处，而低位字节则存储在内存的低地址处。  发送端总是把要发送的数据转化成大端字节序数据后再发送,因此大端字节序也称为网络字节序，它给所有接收数据的主机提供了一个正确解释收到的格式化数据的保证。(JA">
 <meta property="og:locale">
-<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/tcp_hands.png">
-<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/sendbuf.png">
-<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/cs_socket.jpg">
-<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/udp.png">
-<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png">
+<meta property="og:image" content="https://images.leoneo.top/2024/tech/tcp_hands.png">
+<meta property="og:image" content="https://images.leoneo.top/2024/tech/sendbuf.png">
+<meta property="og:image" content="https://images.leoneo.top/2024/tech/cs_socket.jpg">
+<meta property="og:image" content="https://images.leoneo.top/2024/tech/udp.png">
+<meta property="og:image" content="https://images.leoneo.top/card.png">
 <meta property="article:published_time" content="2021-08-06T14:28:12.000Z">
-<meta property="article:modified_time" content="2024-07-24T04:53:55.956Z">
+<meta property="article:modified_time" content="2024-07-26T12:40:58.402Z">
 <meta property="article:author" content="Xu Hongbo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/tcp_hands.png">
+<meta name="twitter:image" content="https://images.leoneo.top/2024/tech/tcp_hands.png">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -272,7 +272,7 @@ var _hmt = _hmt || [];
 <p><code>sockfd</code>参数由 socket 系统调用返回一个 socket。<code>serv_addr</code>参数是服务器监听的 socket 地址，<code>addrlen</code>参数则指定这个地址的长度。</p>
 <p>connect成功时返回0。一旦成功建立连接，sockfd就唯一地标识了这个连接，客户端就可以通过读写sockfd来与服务器通信。connect失败则返回-1并设置errno。其中两种常见的errno是ECONNREFUSED和ETIMEDOUT。</p>
 <p><strong>如果不开启服务端，TCP 客户端的 connect 函数会直接返回“Connection refused”报错信息。</strong></p>
-<p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/tcp_hands.png" alt="tcp_hands"></p>
+<p><img src="https://images.leoneo.top/2024/tech/tcp_hands.png" alt="tcp_hands"></p>
 <blockquote>
 <p>服务器端通过 socket，bind 和 listen 完成了被动套接字的准备工作，被动的意思就是等着别人来连接，然后调用 accept，就会阻塞在这里，等待客户端的连接来临；客户端通过调用 socket 和 connect 函数之后，也会阻塞。</p>
 </blockquote>
@@ -296,7 +296,7 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>发送成功仅仅表示的是数据被拷贝到了发送缓冲区中，并不意味着连接对端已经收到所有的数据。至于什么时候发送到对端的接收缓冲区，或者更进一步说，什么时候被对方应用程序缓冲所接收，对我们而言完全都是透明的。</p>
 </blockquote>
-<img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/sendbuf.png" alt="sendbuf" style="zoom:80%;" />
+<img src="https://images.leoneo.top/2024/tech/sendbuf.png" alt="sendbuf" style="zoom:80%;" />
 
 <h4 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h4><p>recv 函数：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">ssize_t</span> <span class="title">recv</span><span class="params">(<span class="type">int</span> sockfd,<span class="type">void</span>*buf,<span class="type">size_t</span> size,<span class="type">int</span> flags)</span></span>;</span><br></pre></td></tr></table></figure>
@@ -332,9 +332,9 @@ var _hmt = _hmt || [];
 <p>I&#x2F;O模型有多种，图中，服务器使用的是I&#x2F;O复用技术之一的select系统调用。当监听到连接请求后，服务器就调用accept函数接受它，并分配一个逻辑单元为新的连接服务。逻辑单元可以是新创建的子进程、子线程或者其他服务器给客户端分配的逻辑单元是由fork系统调用创建的子进程。逻辑单元读取客户请求，处理该请求，然后将处理结果返回给客户端。客户端接收到服务器反馈的结果之后，可以继续向服务器发送请求，也可以立即主动关闭连接。</p>
 <p>如果客户端主动关闭连接，则服务器执行被动关闭连接。至此，双方的通信结束。需要注意的是，服务器在处理一个客户请求的同时还会继续监听其他客户请求，否则就变成了效率低下的串行服务器了（必须先处理完前一个客户的请求，才能继续处理下一个客户请求）。图中，服务器同时监听多个客户请求是通过select系统调用实现的。</p>
 <p>TCP服务器和TCP客户端的工作流程：</p>
-<p><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/cs_socket.jpg" alt="cs_socket"></p>
+<p><img src="https://images.leoneo.top/2024/tech/cs_socket.jpg" alt="cs_socket"></p>
 <h3 id="UDP-编程"><a href="#UDP-编程" class="headerlink" title="UDP 编程"></a>UDP 编程</h3><p>UDP 是一种“数据报”协议，而 TCP 是一种面向连接的“数据流”协议。<br>下面这张图是 UDP 程序设计时的主要过程。</p>
-<img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/udp.png" alt="udp" style="zoom: 25%;" />
+<img src="https://images.leoneo.top/2024/tech/udp.png" alt="udp" style="zoom: 25%;" />
 
 <ul>
 <li>服务器端创建 UDP 套接字之后，绑定到本地端口，调用 recvfrom 函数等待客户端的报文发送；</li>
@@ -365,7 +365,7 @@ var _hmt = _hmt || [];
 <li>本地套接字的编程接口和 IPv4、IPv6 套接字编程接口是一致的，可以支持字节流和数据报两种协议。</li>
 <li>本地套接字的实现效率大大高于 IPv4 和 IPv6 的字节流、数据报套接字实现。</li>
 </ul>
-<div align=center><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png" style="zoom: 33%;" />
+<div align=center><img src="https://images.leoneo.top/card.png" style="zoom: 33%;" />
       
 
       

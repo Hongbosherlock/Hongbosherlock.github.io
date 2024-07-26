@@ -15,12 +15,12 @@
 <meta property="og:site_name" content="HongboSherlock&#39;blog">
 <meta property="og:description" content="我们可以使用 fgets 方法等待标准输入，但无法同时在套接字有数据的时候读出数据； 我们也可以使用 read 方法等待套接字有数据返回，但无法同时在标准输入有数据的情况下，读入数据并发送给对方。  I&#x2F;O 多路复用的设计初衷就是解决这样的场景。我们可以把标准输入、套接字等都看做 I&#x2F;O 的一路，多路复用的意思，就是在任何一路 I&#x2F;O 有“事件”发生的情况下，通知应">
 <meta property="og:locale">
-<meta property="og:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png">
+<meta property="og:image" content="https://images.leoneo.top/card.png">
 <meta property="article:published_time" content="2021-08-08T14:44:50.000Z">
-<meta property="article:modified_time" content="2024-07-24T04:53:55.956Z">
+<meta property="article:modified_time" content="2024-07-26T12:40:58.402Z">
 <meta property="article:author" content="Xu Hongbo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png">
+<meta name="twitter:image" content="https://images.leoneo.top/card.png">
   
     <link rel="alternative" href="/atom.xml" title="HongboSherlock&#39;blog" type="application/atom+xml">
   
@@ -284,7 +284,7 @@ var _hmt = _hmt || [];
 <li>在 select 里，文件描述符的个数已经随着 fd_set 的实现而固定，没有办法对此进行配置；</li>
 <li>在 poll 里，我们可以控制 pollfd 结构的数组大小，即突破原来 select 函数最大描述符的限制，在这种情况下，应用程序调用者需要分配 pollfd 数组并通知 poll 函数该数组的大小。</li>
 </ul>
-<div align=center><img src="https://gitee.com/HongboSherlock/blog-image/raw/master/img/IMG_0468.png" style="zoom: 33%;" />
+<div align=center><img src="https://images.leoneo.top/card.png" style="zoom: 33%;" />
       
 
       
