@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://images.leoneo.top/2025/tech/202506161947709.png">
 <meta property="og:image" content="https://images.leoneo.top/2025/tech/202506161949775.png">
 <meta property="article:published_time" content="2024-07-11T10:57:28.000Z">
-<meta property="article:modified_time" content="2025-06-16T11:49:57.722Z">
+<meta property="article:modified_time" content="2025-06-16T12:22:19.644Z">
 <meta property="article:author" content="Leoneo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://images.leoneo.top/2025/tech/low_bit.webp">
@@ -238,6 +238,8 @@ var _hmt = _hmt || [];
 <p>“量化”这个词来源于物理学和工程学领域，用于描述将连续信号转换为离散信号的过程。</p>
 </blockquote>
 <p>计算机里面数值有很多种表示方式，如浮点表示的 FP32、FP16，整数表示的 INT32、INT16、INT8，量化一般是将 FP32、FP16 降低为 INT8 甚至 INT4 等低比特表示。</p>
+<span id="more"></span>
+
 <p><img src="https://images.leoneo.top/2025/tech/202506161939865.png"></p>
 <p>模型量化则是一种将浮点值映射到低比特离散值的技术，可以有效的减少模型的参数大小、内存消耗和推理延迟，但往往带来较大的精度损失。尤其是在极低比特（&lt;4bit）、二值网络（1bit）、甚至将梯度进行量化时，带来的精度挑战更大。本节将会重点讲解低比特量化的通用基本原理。</p>
 <h2 id="AI-特点和量化优势"><a href="#AI-特点和量化优势" class="headerlink" title="AI 特点和量化优势"></a>AI 特点和量化优势</h2><h3 id="神经网络特点"><a href="#神经网络特点" class="headerlink" title="神经网络特点"></a>神经网络特点</h3><p>低比特量化主要用在推理的场景，因此以量化和推理的视角来看，神经网络一般具有以下特点：</p>
@@ -393,8 +395,9 @@ var _hmt = _hmt || [];
 <li><p>量化方法分类：量化方法主要包括量化训练（QAT）、动态离线量化（PTQ Dynamic）和静态离线量化（PTQ Static），各有适用场景和优缺点。</p>
 </li>
 </ul>
-<p><img src="https://images.leoneo.top/2025/tech/202506161949775.png"></p>
-
+<p align="center">
+<img src="https://images.leoneo.top/2025/tech/202506161949775.png" alt="模型压缩" style="width: 40%; height: auto;">
+</p>
       
 
       
