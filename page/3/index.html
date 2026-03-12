@@ -179,6 +179,107 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-c-func" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/25/c-func/">C++ Primer [第 6 章函数]</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/25/c-func/" class="archive-article-date">
+  	<time datetime="2021-01-25T04:58:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-25</time>
+  	
+</a>
+
+
+        
+   
+   <div>    
+     <!-- <span id="busuanzi_container_page_pv">
+  阅读量(<span id="busuanzi_value_page_pv"></span>)
+</span> -->
+  
+    </div>
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <br>
+
+<h3 id="6-1-函数基础"><a href="#6-1-函数基础" class="headerlink" title="6.1 函数基础"></a>6.1 函数基础</h3><p><strong>1. 实参和形参的区别</strong></p>
+<ul>
+<li>形参：在函数参数列表中声明的局部变量。 它们由每次调用函数时提供的实参初始化。</li>
+<li>实参：在函数调用中提供的值，用于初始化函数的形参。</li>
+</ul>
+<p> <strong>2. 局部对象</strong></p>
+<p>（1）局部静态对象</p>
+<p>局部静态对象在程序的执行路径第一次经过对象定义语句时初始化，在函数结束时还存在，直到程序终止才被销毁。</p>
+<ul>
+<li>局部静态对象只被初始化一次。</li>
+</ul>
+<p>(2) 函数应该在头文件中声明，在源文件中定义</p>
+        
+          <a class="article-more-a" href="/2021/01/25/c-func/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C//" class="article-tag-list-link color4">C++</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/25/c-func/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+ 
+
+
+
+
+  
     <article id="post-binary-tree" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -701,120 +802,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-vector" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/04/vector/">vector 用法总结</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/04/vector/" class="archive-article-date">
-  	<time datetime="2019-09-04T02:36:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
-  	
-</a>
-
-
-        
-   
-   <div>    
-     <!-- <span id="busuanzi_container_page_pv">
-  阅读量(<span id="busuanzi_value_page_pv"></span>)
-</span> -->
-  
-    </div>
-      </header>
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="vector-介绍"><a href="#vector-介绍" class="headerlink" title="vector 介绍"></a>vector 介绍</h4><p>vector 是表示可以改变大小的数组的序列容器。</p>
-<p>vector 能够容纳许多其他类型相同的元素,因此又被称为<strong>容器</strong>。  与 string 相同, vector 同属于 STL 中的一种自定义的数据类型,可以广义上认为是一个能够<strong>存放任意类型的动态数组</strong>，能够增加和压缩数据。</p>
-<p>与数组相比，vector 消耗更多内存以换取管理存储和以有效方式动态增长的能力。</p>
-<p><strong>容器特性</strong></p>
-<p>1.顺序序列</p>
-<blockquote>
-<p>顺序容器中的元素按照严格的线性顺序排序。可以通过元素在序列中的位置访问对应的元素。</p>
-</blockquote>
-<p>2.动态数组</p>
-<blockquote>
-<p>支持对序列中的任意元素进行快速直接访问，甚至可以通过指针算述进行该操作。操供了在序列末尾相对快速地添加&#x2F;删除元素的操作。</p>
-</blockquote>
-<p>3.能够感知内存分配器的（Allocator-aware）</p>
-<blockquote>
-<p>容器使用一个内存分配器对象来动态地处理它的存储需求。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/09/04/vector/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vector</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C//" class="article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/04/vector/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
- 
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -829,7 +816,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Leoneo
+    		&copy; 2026 Leoneo
     	</div>
 
       

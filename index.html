@@ -179,6 +179,104 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-fp8_blockwise" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/11/fp8_blockwise/">DeepSeek-V3 FP8 量化浅析</a>
+    </h1>
+  
+
+        
+        <a href="/2025/03/11/fp8_blockwise/" class="archive-article-date">
+  	<time datetime="2025-03-11T02:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-03-11</time>
+  	
+</a>
+
+
+        
+   
+   <div>    
+     <!-- <span id="busuanzi_container_page_pv">
+  阅读量(<span id="busuanzi_value_page_pv"></span>)
+</span> -->
+  
+    </div>
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p align="center">
+<img src="https://images.leoneo.top/2026/tech/IMG_4945.jpg" alt="模型压缩" style="width: 40%; height: auto;">
+</p>
+
+<blockquote>
+<p>拖延症终于更了…这篇文章 25 年春节前首发在我的公众号，后来又发在了<a href="https://zhuanlan.zhihu.com/p/20269638568">知乎</a>。是当时少有的率先讲解Deepseek v3量化的文章，也算小火了一把。</p>
+</blockquote>
+<p>DeepSeek-V3 横空出世，不仅效果惊人，训练和推理成本也极低。</p>
+<p>一个重要的原因就是采用了 FP8 进行训练和推理。</p>
+<p>今天我们来一起探究其中的原理：</p>
+<h2 id="Group-Block-wise-量化"><a href="#Group-Block-wise-量化" class="headerlink" title="Group&#x2F;Block-wise 量化"></a>Group&#x2F;Block-wise 量化</h2><p>分块量化（Block-wise Quantization），也称为分组量化（Per-group Quantization），是一种细粒度量化方法。</p>
+        
+          <a class="article-more-a" href="/2025/03/11/fp8_blockwise/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/大模型量化//" class="article-tag-list-link color1">大模型量化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/03/11/fp8_blockwise/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+ 
+
+
+
+
+  
     <article id="post-low_bit_quant" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -654,105 +752,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-socket" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/06/socket/">网络编程基础：socket</a>
-    </h1>
-  
-
-        
-        <a href="/2021/08/06/socket/" class="archive-article-date">
-  	<time datetime="2021-08-06T14:28:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-06</time>
-  	
-</a>
-
-
-        
-   
-   <div>    
-     <!-- <span id="busuanzi_container_page_pv">
-  阅读量(<span id="busuanzi_value_page_pv"></span>)
-</span> -->
-  
-    </div>
-      </header>
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="socket-API"><a href="#socket-API" class="headerlink" title="socket API"></a>socket API</h3><p>socket 的主要API都定义在<code>sys/socket.h</code>头文件中</p>
-<p>现代PC大多采用小端字节序，因此小端字节序又被称为主机字节序。</p>
-<blockquote>
-<p>小端字节序则是指整数的高位字节存储在内存的高地址处，而低位字节则存储在内存的低地址处。</p>
-</blockquote>
-<p>发送端总是把要发送的数据转化成大端字节序数据后再发送,因此<strong>大端字节序也称为网络字节序</strong>，它给所有接收数据的主机提供了一个正确解释收到的格式化数据的保证。(JAVA虚拟机采用大端字节序)<br>为了保证网络字节序一致，POSIX 标准提供了如下的转换函数：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">uint16_t</span> <span class="title">htons</span> <span class="params">(<span class="type">uint16_t</span> hostshort)</span></span></span><br><span class="line"><span class="function"><span class="type">uint16_t</span> <span class="title">ntohs</span> <span class="params">(<span class="type">uint16_t</span> netshort)</span></span></span><br><span class="line"><span class="function"><span class="type">uint32_t</span> <span class="title">htonl</span> <span class="params">(<span class="type">uint32_t</span> hostlong)</span></span></span><br><span class="line"><span class="function"><span class="type">uint32_t</span> <span class="title">ntohl</span> <span class="params">(<span class="type">uint32_t</span> netlong)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// 这里函数中的 n 代表的就是 network，h 代表的是 host</span></span></span><br><span class="line"><span class="function"><span class="comment">// s 表示的是 short，l 表示的是 long，分别表示 16 位和 32 位的整数。</span></span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>AF_LOCAL：表示的是本地地址，对应的是 Unix 套接字，这种情况一般用于本地 socket 通信，很多情况下也可以写成 AF_UNIX、AF_FILE；</li>
-<li>AF_INET：因特网使用的 IPv4 地址；</li>
-<li>AF_INET6：因特网使用的 IPv6 地址。
-        
-          <a class="article-more-a" href="/2021/08/06/socket/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/网络编程//" class="article-tag-list-link color5">网络编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/06/socket/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
- 
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -767,7 +766,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Leoneo
+    		&copy; 2026 Leoneo
     	</div>
 
       

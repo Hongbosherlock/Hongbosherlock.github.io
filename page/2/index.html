@@ -179,6 +179,105 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-socket" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/06/socket/">网络编程基础：socket</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/06/socket/" class="archive-article-date">
+  	<time datetime="2021-08-06T14:28:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-06</time>
+  	
+</a>
+
+
+        
+   
+   <div>    
+     <!-- <span id="busuanzi_container_page_pv">
+  阅读量(<span id="busuanzi_value_page_pv"></span>)
+</span> -->
+  
+    </div>
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="socket-API"><a href="#socket-API" class="headerlink" title="socket API"></a>socket API</h3><p>socket 的主要API都定义在<code>sys/socket.h</code>头文件中</p>
+<p>现代PC大多采用小端字节序，因此小端字节序又被称为主机字节序。</p>
+<blockquote>
+<p>小端字节序则是指整数的高位字节存储在内存的高地址处，而低位字节则存储在内存的低地址处。</p>
+</blockquote>
+<p>发送端总是把要发送的数据转化成大端字节序数据后再发送,因此<strong>大端字节序也称为网络字节序</strong>，它给所有接收数据的主机提供了一个正确解释收到的格式化数据的保证。(JAVA虚拟机采用大端字节序)<br>为了保证网络字节序一致，POSIX 标准提供了如下的转换函数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">uint16_t</span> <span class="title">htons</span> <span class="params">(<span class="type">uint16_t</span> hostshort)</span></span></span><br><span class="line"><span class="function"><span class="type">uint16_t</span> <span class="title">ntohs</span> <span class="params">(<span class="type">uint16_t</span> netshort)</span></span></span><br><span class="line"><span class="function"><span class="type">uint32_t</span> <span class="title">htonl</span> <span class="params">(<span class="type">uint32_t</span> hostlong)</span></span></span><br><span class="line"><span class="function"><span class="type">uint32_t</span> <span class="title">ntohl</span> <span class="params">(<span class="type">uint32_t</span> netlong)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// 这里函数中的 n 代表的就是 network，h 代表的是 host</span></span></span><br><span class="line"><span class="function"><span class="comment">// s 表示的是 short，l 表示的是 long，分别表示 16 位和 32 位的整数。</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>AF_LOCAL：表示的是本地地址，对应的是 Unix 套接字，这种情况一般用于本地 socket 通信，很多情况下也可以写成 AF_UNIX、AF_FILE；</li>
+<li>AF_INET：因特网使用的 IPv4 地址；</li>
+<li>AF_INET6：因特网使用的 IPv6 地址。
+        
+          <a class="article-more-a" href="/2021/08/06/socket/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/网络编程//" class="article-tag-list-link color5">网络编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/06/socket/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+ 
+
+
+
+
+  
     <article id="post-friend" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -652,107 +751,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-c-func" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/25/c-func/">C++ Primer [第 6 章函数]</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/25/c-func/" class="archive-article-date">
-  	<time datetime="2021-01-25T04:58:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-25</time>
-  	
-</a>
-
-
-        
-   
-   <div>    
-     <!-- <span id="busuanzi_container_page_pv">
-  阅读量(<span id="busuanzi_value_page_pv"></span>)
-</span> -->
-  
-    </div>
-      </header>
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <br>
-
-<h3 id="6-1-函数基础"><a href="#6-1-函数基础" class="headerlink" title="6.1 函数基础"></a>6.1 函数基础</h3><p><strong>1. 实参和形参的区别</strong></p>
-<ul>
-<li>形参：在函数参数列表中声明的局部变量。 它们由每次调用函数时提供的实参初始化。</li>
-<li>实参：在函数调用中提供的值，用于初始化函数的形参。</li>
-</ul>
-<p> <strong>2. 局部对象</strong></p>
-<p>（1）局部静态对象</p>
-<p>局部静态对象在程序的执行路径第一次经过对象定义语句时初始化，在函数结束时还存在，直到程序终止才被销毁。</p>
-<ul>
-<li>局部静态对象只被初始化一次。</li>
-</ul>
-<p>(2) 函数应该在头文件中声明，在源文件中定义</p>
-        
-          <a class="article-more-a" href="/2021/01/25/c-func/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C//" class="article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/25/c-func/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
- 
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -767,7 +765,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Leoneo
+    		&copy; 2026 Leoneo
     	</div>
 
       
